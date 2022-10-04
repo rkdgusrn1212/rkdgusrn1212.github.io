@@ -24,7 +24,6 @@ description: >- # this means to ignore newlines until "baseurl:"
   개발자 강현구의 컴퓨터 공학 및 프로그래밍 지식 저장소
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://rkdgusrn1212.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: na
 github_username:  rkdgusrn1212
 
 # Build settings
