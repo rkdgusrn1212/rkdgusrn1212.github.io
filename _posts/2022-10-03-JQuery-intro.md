@@ -4,15 +4,17 @@ title:  "JQuery 개요"
 date:   2022-10-03 21:00:00 +0900
 categories: JQuery
 ---
-## JQuery란?
+
+## 1. JQuery란?
+
 - *JavaScript* 라이브러리
 - *$*키워드를 통해 *Dom 요소*의 접근과 수정을 용이하게 한다.
 - *이벤트 핸들링*을 용이하게 한다.
 - *AJAX*구현 API 제공, *AJAX*통신을 용이하게 한다.
 
-## Vanilla JS VS JQuery
+## 2. Vanilla-JS VS JQuery
 
-# Dom요소의 접근 비교
+### 2.1. Dom요소의 접근 비교
 
 ```#title```요소에 대한 접근
 
@@ -26,7 +28,7 @@ JQuery
 $("#title");
 ```
 
-# 이벤트 핸들링 비교
+### 2.2. 이벤트 핸들링 비교
 
 숨겨진 ```#message```요소가 ```#button```요소를 클릭했을때 보여지게 하기.
 
@@ -46,7 +48,7 @@ $( "#button" ).on( "click", function( event ) {
 });
 ```
 
-# AJAX 통신 비교
+### 2.3. AJAX 통신 비교
 
 비동기로 <https://rkdgusrn1212.github.io/>에서 get 요청으로 텍스트를 받아와 ```#content```요소에 넣기.
 
