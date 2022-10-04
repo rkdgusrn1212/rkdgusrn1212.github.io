@@ -2,7 +2,7 @@
 layout: post
 title: "Java EE 개요"
 date: 2022-10-04 13:05:00 +0900
-categories: Java EE
+categories: ["Java","Java EE"]
 ---
 
 ## 1. Java EE란?
