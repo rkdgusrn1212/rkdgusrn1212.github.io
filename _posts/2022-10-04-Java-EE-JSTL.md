@@ -7,10 +7,10 @@ categories: ["Java","Java EE", "JSTL"]
 
 ## 1. JSTL 이란?
 
-- 많은 *JSP* 응용에서 보편적으로 사용되는 기능들을 캡슐화한 *커스텀 태그* 라이브러리
-- *JSP 표준 태그 라이브러리*(*JavaServer Pages Standard Tag Library*)
-  + 현재 가장 마지막 버전은(*Java EE 8*에 사용) *Java EE 5*에 등장한 *JSTL 1.2*
-  + 공식 링크 : <https://www.oracle.com/java/technologies/jstl.html>
+- 많은 *JSP* 응용에서 보편적으로 사용되는 기능들을 캡슐화한 *커스텀 태그* 라이브러리.
+- *JSP 표준 태그 라이브러리*(*JavaServer Pages Standard Tag Library*).
+  + 현재 가장 마지막 버전은(*Java EE 8*에 사용) *Java EE 5*에 등장한 *JSTL 1.2*.
+  + 공식 링크 : <https://www.oracle.com/java/technologies/jstl.html>.
 - *Jakarta EE 8*부터는 기술이름이 *Jakarta Standard Tag Library*로 변경됨.
   + *Jakarta EE 8* : *JSTL 1.2*
   + *Jakarta EE 9* : *JSTL 2.0*
@@ -42,10 +42,24 @@ categories: ["Java","Java EE", "JSTL"]
 
 ## 3. JSTL 사용법.
 
-1. tagliv 디렉티브를 통해 라이브러리를 임포트.
+1. *JSTL*은 *tagliv 디렉티브*를 통해 해당 *JSP* 페이지에서 사용할 것을 명시해야 한다.
 
-예) jstl.core를 임포트하기.
+```
+<%@ taglib prefix=라이브러리_PREFIX uri=라이브러리_URI%>
+```
+1.1. 예시-JSTL core를 사용 명시하기.
 
 ```
 <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
+```
+
+2. *JSP*에서 *커스텀 태그*처럼 사용한다.
+
+```
+<라이브러리_PREFIX:태그이름 속성1="값"... 속성n="값">
+```
+또는
+
+```
+<라이브러리_PREFIX:태그이름 속성1="값"... 속성n="값">...</라이브러리_PREFIX:태그이름>
 ```
