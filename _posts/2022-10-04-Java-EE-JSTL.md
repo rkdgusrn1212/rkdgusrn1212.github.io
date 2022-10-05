@@ -7,8 +7,15 @@ categories: ["Java","Java EE", "JSTL"]
 
 ## 1. JSTL 이란?
 
-- *JSP 표준 태그 라이브러리*(*JavaServer Pages Standard Tag Library*)
 - 많은 *JSP* 응용에서 보편적으로 사용되는 기능들을 캡슐화한 *커스텀 태그* 라이브러리
+- *JSP 표준 태그 라이브러리*(*JavaServer Pages Standard Tag Library*)
+  + 현재 가장 마지막 버전은(*Java EE 8*에 사용) *Java EE 5*에 등장한 *JSTL 1.2*
+  + 공식 링크 : <https://www.oracle.com/java/technologies/jstl.html>
+- *Jakarta EE 8*부터는 기술이름이 *Jakarta Standard Tag Library*로 변경됨.
+  + *Jakarta EE 8* : *JSTL 1.2*
+  + *Jakarta EE 9* : *JSTL 2.0*
+  + *Jakarta EE 10*(최신) : *JSTL 3.0*
+  + 공식 링크 : <https://jakarta.ee/specifications/tags/>
 
 ## 2. JSTL의 구성
 
@@ -33,6 +40,7 @@ categories: ["Java","Java EE", "JSTL"]
   + prefix : *fn*
   + 링크 : <http://java.sun.com/jsp/jstl/functions>
 
-## 3. Jakarta Standard Tag Library
+## 3. JSTL 사용법.
 
-*이클립스 재단*의 *J4EE* 프로젝트로 이관된 이후 버전에서 가지는 이름.
+
+## 3. Jakarta Standard Tag Library
