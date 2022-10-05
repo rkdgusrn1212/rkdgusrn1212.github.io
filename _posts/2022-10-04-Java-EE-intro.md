@@ -15,7 +15,7 @@ categories: ["Java","Java EE"]
 ## 2. Java EE의 기술들(Technologies)
 
 - 마지막 버전인 *Java EE 8* 의 기술목록, [오라클 공식 문서](https://www.oracle.com/java/technologies/javaee/javaeetechnologies.html) 참조
-- 더 이상의 업데이트는 없다. 이유는 [Jakarta EE](/java/java%20ee/jakarta%20ee/2022/10/04/jakarta-ee.html))포스트를 참조.
+- 더 이상의 업데이트는 없다. 이유는 [Jakarta EE](/java/java%20ee/jakarta%20ee/2022/10/04/jakarta-ee-intro.html))포스트를 참조.
 
 ### 2.1 웹 어플리케이션 기술들
 
