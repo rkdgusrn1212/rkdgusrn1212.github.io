@@ -17,30 +17,35 @@ categories: ["Java","Java EE", "JSTL"]
   + *Jakarta EE 10*(최신) : *JSTL 3.0*
   + 공식 링크 : <https://jakarta.ee/specifications/tags/>
 
-## 2. JSTL의 구성
+## 2. JSTL의 구성(JSTL 1.1버전 이상)
 
 - *Core*
   + 기능 : 변수 지원, 흐름 제어, URL 관리 등등.
   + prefix : *c*
-  + 링크 : <http://java.sun.com/jsp/jstl/core>
+  + uri : <http://java.sun.com/jsp/jstl/core>
 - *XML*
   + 기능 : *XML*처리 기능, *XML* 흐름 제어, *XML* 번역.
   + prefix : *x*
-  + 링크 : <http://java.sun.com/jsp/jstl/xml>
+  + uri : <http://java.sun.com/jsp/jstl/xml>
 - *Internationalization*
-  + 기능 : Locale 기능, 메시지 포매팅, 숫자 및 날짜 포매팅.
+  + uri : Locale 기능, 메시지 포매팅, 숫자 및 날짜 포매팅.
   + prefix : *fmt*
-  + 링크 : <http://java.sun.com/jsp/jstl/fmt>
+  + uri : <http://java.sun.com/jsp/jstl/fmt>
 - *Database*
   + 기능 : DB와의 연결, SQL을 통한 DB작업들을 처리.
   + prefix : *sql*
-  + 링크 : <http://java.sun.com/jsp/jstl/sql>
+  + uri : <http://java.sun.com/jsp/jstl/sql>
 - *Functions*
-  + 기능 :  *Collection*의 길이를 반환, *String* 조작.
+  + uri :  *Collection*의 길이를 반환, *String* 조작.
   + prefix : *fn*
-  + 링크 : <http://java.sun.com/jsp/jstl/functions>
+  + uri : <http://java.sun.com/jsp/jstl/functions>
 
 ## 3. JSTL 사용법.
 
+1. tagliv 디렉티브를 통해 라이브러리를 임포트.
 
-## 3. Jakarta Standard Tag Library
+예) jstl.core를 임포트하기.
+
+```
+<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
+```
