@@ -63,3 +63,5 @@ categories: ["Java","Java EE", "JSTL"]
 ```
 <라이브러리_PREFIX:태그이름 속성1="값"... 속성n="값">...</라이브러리_PREFIX:태그이름>
 ```
+
+2.1. 예시-JSTL core의 set 태그를 사용해 browser 변수 선언하기
