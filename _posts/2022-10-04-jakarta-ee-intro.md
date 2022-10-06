@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Jakarta EE"
+title: "Jakarta EE 개요"
 date: 2022-10-04 18:12:00 +0900
 categories: ["Java","Java EE","Jakarta EE"]
 ---
