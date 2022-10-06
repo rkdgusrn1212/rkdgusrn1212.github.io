@@ -11,6 +11,15 @@ categories: ["Java","Java EE", "JSP Access Model"]
 - 1998년 *썬 마이크로시스템즈*에서 발표한 [*JSP 0.92* 기술 스펙](http://www.kirkdorffer.com/jspspecs/jsp092.html#model)에서 제시되었다.
 - *Model 1*과 *Model 2*로 구성된다.
 
+### 1.1 JSP Access Model이 공통적으로 가지는 특징
+
+![Model-common 구조](/assets/img/jsp-model-common.png)
+
+- *JSP* 파일은 처음 요청이 들어순간 어떤 *객체*로 컴파일 되어 서버 메모리에 올라감.
+  + 클라이언트 브라우저, *Java Servlet*등이 *JSP*파일에 요청을 보낸다.
+- 메모리상의 *객체*는 클라이언트로의 응답으로 *HTML* 파일을 보냄.
+- 서버는 *JSP*파일에 변동이 있는지 확인, 변동이 있다면 메모리상의 *객체*를 새로 컴파일한 *객체*로 바꿈.
+
 ## 2. Model 1
 
 > "요청이 *JSP* 파일로..."
