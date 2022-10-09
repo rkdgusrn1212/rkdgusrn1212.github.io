@@ -44,24 +44,24 @@ categories: ["Java","Java EE", "JSTL"]
 
 1. *JSTL*은 *tagliv 디렉티브*를 통해 해당 *JSP* 페이지에서 사용할 것을 명시해야 한다.
 
-```
-<%@ taglib prefix=라이브러리_PREFIX uri=라이브러리_URI%>
-```
-1.1. 예시-JSTL core를 사용 명시하기.
+   ```jsp
+   <%@ taglib prefix=라이브러리_PREFIX uri=라이브러리_URI%>
+   ```
 
-```
-<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
-```
+   - 예시-JSTL core를 사용 명시하기.
+
+   ```jsp
+   <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core"%>
+   ```
 
 2. *JSP*에서 *커스텀 태그*처럼 사용한다.
 
-```
-<라이브러리_PREFIX:태그이름 속성1="값"... 속성n="값">
-```
-또는
+   ```jsp
+   <라이브러리_PREFIX:태그이름 속성1="값"... 속성n="값"/>
+   ```
 
-```
-<라이브러리_PREFIX:태그이름 속성1="값"... 속성n="값">...</라이브러리_PREFIX:태그이름>
-```
+   또는
 
-2.1. 예시-JSTL core의 set 태그를 사용해 browser 변수 선언하기
+   ```jsp
+   <라이브러리_PREFIX:태그이름 속성1="값"... 속성n="값">...</라이브러리_PREFIX:태그이름>
+   ```
