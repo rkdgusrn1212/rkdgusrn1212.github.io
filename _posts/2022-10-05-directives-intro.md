@@ -27,7 +27,14 @@ categories: ["Java","Java EE", "Directive"]
 
 ## 2. Page Directive
 
-*JSP Page*의 종속 속성들을 정의하고 *JSP 컨테이너*에 전달하는 역할을 함.
+- *JSP Page*의 종속 속성들을 정의하고 *JSP 컨테이너*에 전달하는 역할을 함.
+
+- *jsp 기본 템플릿*에 포함. *필수적*이다.
+
+```jsp
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+	pageEncoding="EUC-KR"%>
+```
 
 ### 2.1. Page Directive 문법
 
@@ -50,24 +57,28 @@ page_directive_attr_list ::=
 { pageEncoding="peinfo" }
 { isELIgnored="true|false" }
 ```
+
 #### 2.1.1. language attribute
+
+```jsp
+<%@ page language="java"%>
+```
+
+- 필수적으로 정의하는 속성.
 
 - *스크립트릿*, *표현식*, *선언*에서 사용하는 *스크립트 언어*를 정의.
 
    > Defines the scripting language to be used in the scriptlets,
    expression scriptlets, and declarations within the body of the
    translation unit (the JSP page and any files included using
-   the include directive below). [JSP 2.3 spec]<https://download.oracle.com/otn-pub/jcp/jsp-2_3-mrel2-eval-spec/JSP2.3MR.pdf?AuthParam=1665297664_104314cb18582a6cd77a1b8481296130>
+   the include directive below). [JSR-245](https://jcp.org/en/jsr/detail?id=245)
 
-- Default는 *java*다.
-
-   > Default is java. [JSP 2.3 spec]<https://download.oracle.com/otn-pub/jcp/jsp-2_3-mrel2-eval-spec/JSP2.3MR.pdf?AuthParam=1665297664_104314cb18582a6cd77a1b8481296130>
-
+- 기본값는 *java*다. 그러나 관습적으로 명시.
 - *비 Java언어*를 설정하면 *fatal translation error*발생.
 
    > It is a fatal translation error for a directive with a non-java
 language attribute to appear after the first scripting element
-has been encountered. [JSP 2.3 spec]<https://download.oracle.com/otn-pub/jcp/jsp-2_3-mrel2-eval-spec/JSP2.3MR.pdf?AuthParam=1665297664_104314cb18582a6cd77a1b8481296130>
+has been encountered. [JSR-245](https://jcp.org/en/jsr/detail?id=245)
 
 - 아직까지 *Java*이외의 *Java*계열 언어에 대한 지원을 하는 *JSP 컨테이너*는 없음. __사실상 값은 *java*로 고정__.
 
@@ -84,13 +95,29 @@ has been encountered. [JSP 2.3 spec]<https://download.oracle.com/otn-pub/jcp/jsp
 #### 2.1.3. import attribute
 
 ```jsp
-<%@ page import="com.khgkjg12.do.MyObject" %>
+<%@ page import="com.khgkjg12.do.*" %>
 ```
 
 - *JSP page*의 *스크립팅 환경*에서 사용가능한 *Type*들을 명시한다.
    + *스크립팅 환경*은 *스크립트 언어*를 사용하는 영역을 말한다.
    + *Type*은 *Java Class*를 말함.
-- *Type*은 *Fully Qualified Class Name*으로 명시
-- *Java 소스*의 *import*와 같은 역할이다.
+- *Type*은 *Fully Qualified Class Name*으로 명시.
+   + *aster*를 사용, *와일드카드*로 패키지내 모든 클래스 *import* 가능.
+- *Java 소스*의 *import*와 같다.
+
+#### 2.1.4. session attribute
+
+```jsp
+<%@ page session="false" %>
+```
+
+- 기본값은 *true*다.
+- *false*일경우 session 내장 객체를 사용 할 수 없다.
+
+#### 2.1.4. buffer attribute
+
+- *JspWriter*의 출력 버퍼 사이즈를 지정.
+- *none*인 경우 버퍼를 안씀.
+- 기본값은 *8kb*이상의 구현값을 가진다.
 
 ## 4. TagLib Directive
