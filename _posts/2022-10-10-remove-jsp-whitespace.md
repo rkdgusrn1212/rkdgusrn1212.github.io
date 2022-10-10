@@ -11,7 +11,7 @@ categories: ["Java","Java EE", "Directive", "Page Directive","trimDirectiveWhite
 
 ## 2. Page Directive의 trimDirectiveWhitespaces 속성.
 
-   [Page Directive](https://rkdgusrn1212.github.io/java/java%20ee/directive/page%20directive/2022/10/10/page-directive-intro.html)의 [trimDirectiveWhitespaces](/java/java%20ee/directive/page%20directive/2022/10/10/page-directive-intro.html#215-trimdirectivewhitespaces-attribute) 속성은 해당 *JSP Page*의 응답에서 공백으로만 이루어진 *템플릿 택스트*들을 제거한다. 이는 페이지 최상단의 *디렉티브*들이 만들어낸 공백 *템플릿 택스트*들을 제거하여 최상단의 공백을 제거하는데 효과적이다. 다만, *페이지*에 존재하는 모든 공백 *템플릿 텍스트*가 응답에서 제거되어 원하지 않은 출력 결과가 나올 수 있기에 사용에 유의해야 함.
+   [Page Directive](/java/java%20ee/directive/page%20directive/2022/10/10/page-directive-intro.html)의 [trimDirectiveWhitespaces](/java/java%20ee/directive/page%20directive/2022/10/10/page-directive-intro.html#215-trimdirectivewhitespaces-attribute) 속성은 해당 *JSP Page*의 응답에서 공백으로만 이루어진 *템플릿 택스트*들을 제거한다. 이는 페이지 최상단의 *디렉티브*들이 만들어낸 공백 *템플릿 택스트*들을 제거하여 최상단의 공백을 제거하는데 효과적이다. 다만, *페이지*에 존재하는 모든 공백 *템플릿 텍스트*가 응답에서 제거되어 원하지 않은 출력 결과가 나올 수 있기에 사용에 유의해야 함.
 
 ## 3. trimDirectiveWhitespaces 속성 값에 따른 응답 html 파일 비교.
 
