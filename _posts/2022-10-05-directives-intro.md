@@ -218,4 +218,36 @@ evaluation of #{} expressions. [JSR-245](https://jcp.org/en/jsr/detail?id=245)
 
    \[출처 : [JSR-245](https://jcp.org/en/jsr/detail?id=245)\]
 
-## 4. TagLib Directive
+#### 2.1.13. deferredSyntaxAllowedAsLiteral attribute
+
+```jsp
+<@% page deferredSyntaxAllowedAsLiteral="true"%>
+```
+
+- *\#{*을 단순한 문자열로 인식 할 것인지 여부를 지정.
+- *\#{*은 EL의 지연된 평가([Deferred Evaluation](/java/java%20ee/el/2022/10/04/el-intro.html#212-deferred-evaluation)) 표현식에서 사용.
+- 기본값은 *false*.
+
+#### 2.1.14. trimDirectiveWhitespaces attribute
+
+```jsp
+<@% page trimDirectiveWhitespaces="true"%>
+```
+
+- *템플릿 텍스트*에서 공백을 처리할지 여부를 지정.
+   + *템플릿 텍스트*는 택스트로 이루어진 *[템플릿 데이터](/java/java%20ee/jsp/2022/10/07/jsp-intro.html#2-jsp-page%EC%9D%98-%EA%B5%AC%EC%84%B1)*
+- *true*일 경우 공백으로 이루어진 *템플릿 텍스트*는 출력에서 제거.
+   + 속성을 통해 공백인 *템플릿 텍스트*를 제거하면, *JSP 페이지*의 응답에서 *템플릿 텍스트를 동반하지 않는 디렉티브*가 끝나는 지점에 발생하는 공백들을 효과적으로 제거. 이는 클라이언트 브라우저에서 *jsp 페이지*의 소스보기로 확인 가능.
+
+      false일 경우
+
+      ```html
+      ```
+
+      true일 경우
+      
+      ```html
+      ```
+
+- *false*일 경우 공백으로 이루어진 *템플릿 텍스트*도 출력.
+- 기본값은 *false*.
