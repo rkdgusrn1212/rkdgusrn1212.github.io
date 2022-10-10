@@ -1,10 +1,9 @@
 ---
 layout: post
 title: "Page Directive 개요"
-date: 2022-10-10 22:01:00 +0900
+date: 2022-10-10 16:35:00 +0900
 categories: ["Java","Java EE", "Directive", "Page Directive"]
 ---
-
 
 ## 1. Page Directive
 
@@ -169,7 +168,7 @@ page’s implementation of Servlet.getServletInfo method. [JSR-245](https://jcp.
 ### 2.12. pageEncoding attribute
 
 ```jsp
-<@% page pageEncoding="EUC-KR"%>
+<%@ page pageEncoding="EUC-KR"%>
 ```
 
 - 필수 속성
@@ -178,7 +177,7 @@ page’s implementation of Servlet.getServletInfo method. [JSR-245](https://jcp.
 ### 2.13. isELIgnored attribute
 
 ```jsp
-<@% page isELIgnored="true"%>
+<%@ page isELIgnored="true"%>
 ```
 
 - *JSP 컨테이너*가 EL 표현식을 무시할 지 여부를 지정.
@@ -202,7 +201,7 @@ evaluation of #{} expressions. [JSR-245](https://jcp.org/en/jsr/detail?id=245)
 ### 2.14. deferredSyntaxAllowedAsLiteral attribute
 
 ```jsp
-<@% page deferredSyntaxAllowedAsLiteral="true"%>
+<%@ page deferredSyntaxAllowedAsLiteral="true"%>
 ```
 
 - *\#{*을 단순한 문자열로 인식 할 것인지 여부를 지정.
@@ -212,23 +211,16 @@ evaluation of #{} expressions. [JSR-245](https://jcp.org/en/jsr/detail?id=245)
 ### 2.15. trimDirectiveWhitespaces attribute
 
 ```jsp
-<@% page trimDirectiveWhitespaces="true"%>
+<%@ page trimDirectiveWhitespaces="true"%>
 ```
 
 - *템플릿 텍스트*에서 공백을 처리할지 여부를 지정.
    + *템플릿 텍스트*는 택스트로 이루어진 *[템플릿 데이터](/java/java%20ee/jsp/2022/10/07/jsp-intro.html#2-jsp-page%EC%9D%98-%EA%B5%AC%EC%84%B1)*
 - *true*일 경우 공백으로 이루어진 *템플릿 텍스트*는 출력에서 제거.
-   + 속성을 통해 공백인 *템플릿 텍스트*를 제거하면, *JSP 페이지*의 응답에서 *템플릿 텍스트를 동반하지 않는 디렉티브*가 끝나는 지점에 발생하는 공백들을 효과적으로 제거. 이는 클라이언트 브라우저에서 *jsp 페이지*의 소스보기로 확인 가능.
-
-      false일 경우
-
-      ```html
-      ```
-
-      true일 경우
-
-      ```html
-      ```
-
 - *false*일 경우 공백으로 이루어진 *템플릿 텍스트*도 출력.
 - 기본값은 *false*.
+- *JSP 페이지* 응답의 해드 윗부분, 최상단에서 *디렉티브*들이 유발하는 공백을 제거하는데 효과적이다.
+	+ *템플릿 텍스트를 동반하지 않는 디렉티브*들은 *JSP 페이지*의 응답에 공백을 발생시킨다.
+	+ *디렉티브*들로 인한 공백은 클라이언트 브라우저에서 해당 *JSP 페이지*의 소스 보기를 통해 확인 가능.
+	+ *디렉티브*가 유발한 최상단의 공백 이외에도 페이지 내의 모든 공백 *템플릿 텍스트*가 사라지므로 의도치 않는 곳의 공백이 사라지므로 사용에 유의해야 한다.
+	+ 관련 게시글 : [trimDirectiveWhitespaces 설정을 통한 JSP Page 응답 소스의 최상단 공백 제거](/java/java%20ee/directive/page%20directive/trimdirectivewhitespaces/2022/10/10/remove-jsp-whitespace.html)
