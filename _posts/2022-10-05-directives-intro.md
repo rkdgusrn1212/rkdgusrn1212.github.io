@@ -116,8 +116,106 @@ has been encountered. [JSR-245](https://jcp.org/en/jsr/detail?id=245)
 
 #### 2.1.4. buffer attribute
 
+```jsp
+<%@ page buffer = "16kb" %>
+```
+
 - *JspWriter*의 출력 버퍼 사이즈를 지정.
 - *none*인 경우 버퍼를 안씀.
-- 기본값은 *8kb*이상의 구현값을 가진다.
+- 대게 기본값은 *8kb*이다. *JSP 구성*에따라 기본값으로 *8kb* 이상 값을 가짐.
+
+#### 2.1.5. autoFlush attribute
+
+```jsp
+<%@ page autoFlush = "false" %>
+```
+
+- 버퍼가 가득 찼을 때, 자동으로 Flush 할지를 설정.
+- *true*일 경우, 버퍼가 다 차면 버퍼를 플러시하고 계속해서 작업 진행.
+- *false*일 경우, 버퍼가 다 차면 예외 발생 및 작업 중단.
+- 기본값은 *true*.
+
+#### 2.1.6. isThreadSafe attribute
+
+```jsp
+<%@ page isThreadSage="false"%>
+```
+
+- *false*일 경우 *웹 컨테이너*는 다수의 요청에 대한 응답을 단일 쓰래드를 통해 순차적으로 동기화 수행.
+- *true*일 경우 *웹 컨테이너*는 다중 쓰래드를 통해 다수의 요청을 동시에 비동기 수행.
+- 기본값은 *true*
+
+#### 2.1.7. info attribute
+
+```jsp
+<%@ page info="This page is written by khgkjg12"%>
+```
+
+- 값으로 해당 페이지를 설명해주는 문자열을 가짐.
+- 문자열 길이의 제한 없음.
+- 해당 페이지를 구현한 *Servlet*에서 *Servlet.getServletInfo* method를 통해 얻을 수 있음.
+
+   >  can subsequently be obtained from the
+page’s implementation of Servlet.getServletInfo method. [JSR-245](https://jcp.org/en/jsr/detail?id=245)
+
+#### 2.1.8. isErrorPage attribute
+
+```jsp
+<%@ page isErrorPage="false"%>
+```
+
+- 현재 *JSP page*가 *애러 페이지*인지 여부를 설정.
+- 기본값 *false*
+
+#### 2.1.9. isErrorPage attribute
+
+```jsp
+<%@ page errorPage="/error.jsp"%>
+```
+
+- 예외 및 *Throwable* 발생시 *포워딩*할 *애러 페이지*를 지정.
+- 값으로 *URL*을 사용
+
+#### 2.1.10. contentType attribute
+
+```jsp
+<%@ page contentType="text/html; charset=EUC-KR"%>
+```
+
+- 필수 속성.
+- 해당 *JSP page*를 구현한 *Servlet*에서 응답으로 보낼 문서의 *MIME 타입*과 *문자 인코딩(charset)*을 지정.
+
+#### 2.1.11. pageEncoding attribute
+
+```jsp
+<@% page pageEncoding="EUC-KR"%>
+```
+
+- 필수 속성
+- *JSP 컨테이너*가 *JSP 파일*을 *Servlet 소스*로 변환할 때 참고 할 인코딩.
+
+#### 2.1.12. isELIgnored attribute
+
+```jsp
+<@% page isELIgnored="true"%>
+```
+
+- *JSP 컨테이너*가 EL 표현식을 무시할 지 여부를 지정.
+- 기본값은 *web.xml* 버전에 따라 다름.
+   + *Servlet 2.3* 이하 버전이 명시된 *web.xml*을 사용하는 *Web Application*에서는 *isELIgnored=true*가 기본값이다.
+   + *Servlet 2.4* 이상 버전이 명시된 *web.xml*을 사용하는 *Web Application*에서는 *isELIgnored=false*가 기본값이다.
+
+   > The default mode for JSP pages in a Web Application delivered using a
+web.xml using the Servlet 2.3 or earlier format is to ignore EL expressions; this
+provides for backward compatibility.
+The default mode for JSP pages in a Web Application delivered using a
+web.xml using the Servlet 2.4 format is to evaluate EL expressions with the ${}
+syntax. Expressions using the #{} are evaluated starting with JSP 2.1. See
+Section , “Backwards Compatibility with JSP 2.0” for more details on the
+evaluation of #{} expressions. [JSR-245](https://jcp.org/en/jsr/detail?id=245)
+
+   ![ELIgnored 기본값](/assets/img/el-ignore-figure.png)
+
+   \[출처 : [JSR-245](https://jcp.org/en/jsr/detail?id=245)\]
 
 ## 4. TagLib Directive
