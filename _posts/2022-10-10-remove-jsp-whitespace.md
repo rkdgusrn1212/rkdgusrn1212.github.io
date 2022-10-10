@@ -7,7 +7,11 @@ categories: ["Java","Java EE", "Directive", "Page Directive","trimDirectiveWhite
 
 ## 1. JSP Page 응답 소스의 최상단에 공백이 발생하는 이유.
 
-*디렉티브*들은 *서블릿*으로 변환될 때 서블릿으로 하여금 해당 위치에 공백을 발생 시킴.
+각 *디렉티브*들은 보통 *JSP 페이지 소스*의 최상단에서 *가독성*을 위해 그 뒤에 *줄바꿈 문자*를 삽입하여 줄바꿈을 하게된다.
+
+그렇게 쓰여진 *줄바꿈 문자*는 *JSP 컨테이너*가 *servlet*으로 변환하는데도 그대로 남게되어 그대로 *변환된 서블릿*의 응답에 포함되게 되는 것이다.
+
+또한, *JSP 페이지 소스*최상단이 아닌 곳에서 사용되는 *Directive*들도 출력은 고려안하고 가독성만을 위해 *줄바꿈 문자*를 사용한다면 똑같은 결과를 얻게 된다.
 
 ## 2. Page Directive의 trimDirectiveWhitespaces 속성.
 
