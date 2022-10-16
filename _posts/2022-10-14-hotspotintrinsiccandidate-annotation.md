@@ -38,3 +38,7 @@ categories: ["java", "jvm", "hotspot", "hotspotintrinsiccandidate"]
 **@HotSpotIntrinsicCandidate**은 **JDK**의 코어 라이브러리에서만 선언 가능하고 **사용자 코드**에서는 선언이 불가하다. **@HotSpotIntrinsicCandidate**의 선언은 오로지 **JDK**을 만들고 배포하는 개발자 및 개발사들이 고려해야할 사항이다.
 
 > The {@code @HotSpotIntrinsicCandidate} annotation is internal to the Java libraries and is therefore not supposed to have any relevance for application code. [OpenJDK11 JavaDoc](https://github.com/AdoptOpenJDK/openjdk-jdk11/blob/master/src/java.base/share/classes/jdk/internal/HotSpotIntrinsicCandidate.java)
+
+## 3. @HotSpotIntrinsicCandidate은 HotSpot 내장 함수 기능을 보장하지는 못함.
+
+**HotSpot**은 구동되는 플랫폼에 따라 그 구현이 조금씩 다르다. 따라서 각 구현마다 **내장 함수** 목록도 조금씩 달라서 @HotSpotIntrinsicCandidate이 쓰여있더라도 하드웨어에 설치된 **HotSpot**에서는 **내장 함수**로 치환이 안될 수 있다.
