@@ -9,9 +9,9 @@ categories: ["java", "jvm", "hotspot", "hotspotintrinsiccandidate"]
 
 ### 1.1. HotSpot에서 내장 함수로 치환될 수 있는 JDK의 정적 메소드들을 표시
 
-**HotSpot JVM**에서는 최적화 기법중 하나로 **JDK**의 일부 **정적 메소드**들에 대한 고성능의 **내장 함수(intrinsic function)**[^intrinsics]들을 제공한다. **JDK 9**부터 등장한 **@HotSpotIntrinsicCandidate**은 **JDK**의 특정 메소드들이 **HotSpot**의 **내장 함수**로 치환될 수 있음을 나타낸다. 표시를 할뿐, 실제로 **@HotSpotIntrinsicCandidate**를 통해 **javac**의 Annotation Processor**가 **내장 함수** 또는 **네이티브 코드**로 변환해주는 기능은 없다. 해당 기능은 **JIT**의 역할이기 때문이다.
+**HotSpot JVM**에서는 최적화 기법중 하나로 **JDK**의 일부 **정적 메소드**들에 대한 고성능의 **내장 함수(intrinsic function)**[^intrinsics]들을 제공한다. **JDK 9**부터 등장한 **@HotSpotIntrinsicCandidate**은 **JDK**의 특정 메소드들이 **HotSpot**의 **내장 함수**로 치환될 수 있음을 나타낸다. 표시를 할뿐, 실제로 **@HotSpotIntrinsicCandidate**를 통해 **javac**의 **Annotation Processor**가 **내장 함수** 또는 **네이티브 코드**로 변환해주는 기능은 없다. 해당 기능은 **JIT**의 역할이기 때문이다.
 
-\[^intrinsics] 손으로 직접 최적화 작성한 **어셈블리어** 혹은 **컴파일러 IR**로 구성
+[^intrinsics]: 손으로 직접 최적화 작성한 **어셈블리어** 혹은 **컴파일러 IR**로 구성
 
 ### 1.2. JDK 사용자가 HotSpot의 내장함수 기능을 최대한 활용 할 수 있게 함
 
