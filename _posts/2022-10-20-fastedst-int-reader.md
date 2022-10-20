@@ -137,6 +137,111 @@ readInt();
 
 ## 3.1. 테스트 코드 작성
 
+- **Scanner** 사용
+
+```java
+import java.io.IOException;
+import java.util.Scanner;
+public class Main {
+
+	public static void main(String[] args) throws Exception {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("시작");
+		long startTime = System.currentTimeMillis();
+		for(int i=0 ;i<10000; i++) {
+			sc.nextInt();
+		}
+		long endTime = System.currentTimeMillis();
+		System.out.println(endTime-startTime);
+		sc.close();
+	}
+}
+```
+
+- **BufferedReader** 사용
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+public class Main {
+
+	public static void main(String[] args) throws Exception {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		Thread.sleep(3000);//3초안에 입력 붙여넣기
+		System.out.println("시작");
+		long startTime = System.currentTimeMillis();
+		for(int i=0 ;i<1000; i++) {
+			StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+			for(int j=0; j<10; j++) {
+				Integer.parseInt(st.nextToken());
+			}
+		}
+		long endTime = System.currentTimeMillis();
+		System.out.println(endTime-startTime);
+    br.close();
+	}
+}
+```
+
+- **사칙연산 사용 커스텀 메소드**사용
+
+```java
+import java.io.IOException;
+public class Main {
+
+	public static void main(String[] args) throws Exception {
+		Thread.sleep(3000);//3초안에 입력 붙여넣기
+		System.out.println("시작");
+		long startTime = System.currentTimeMillis();
+		for(int i=0 ;i<10000; i++) {
+			readInt();
+		}
+		long endTime = System.currentTimeMillis();
+		System.out.println(endTime-startTime);
+	}
+	static int readInt() throws IOException {
+		int sum = 0;
+		boolean isNegative = false;
+		while (true) {
+			int input = System.in.read();
+			if (input == '\n' || input == ' ')
+				return isNegative ? sum * -1 : sum;
+			else if (input == '-')
+				isNegative = true;
+			else
+				sum = (sum * 10) + input - '0';
+		}
+	}
+}
+```
+
+- **비트연산 사용 커스텀 메소드**사용
+
+```java
+public class Main {
+
+	public static void main(String[] args) throws Exception {
+		Thread.sleep(3000);//3초안에 입력 붙여넣기
+		System.out.println("시작");
+		long startTime = System.currentTimeMillis();
+		for(int i=0 ;i<10000; i++) {
+			readInt();
+		}
+		long endTime = System.currentTimeMillis();
+		System.out.println(endTime-startTime);
+	}
+	private static int readInt() throws Exception {
+		int c, n = System.in.read() & 15;
+		boolean isNegative = n == 13;
+		if (isNegative) n = System.in.read() & 15;
+		while ((c = System.in.read()) > 32) n = (n << 3) + (n << 1) + (c & 15);
+		return isNegative ? ~n + 1 : n;
+	}
+}
+```
+
 ## 3.2. 테스트 데이터 준비
 
  테스트 입력 데이터 준비, 및 복사해놓기. 한줄에 1~10쓰고 1000번 반복한 전체 데이터를 복사.
@@ -151,3 +256,12 @@ readInt();
 ## 3.3 테스트 프로그램 실행 및 데이터 붙여넣기
 
 3초간의 sleep시간안에 입력 스트림에 복사해둔 10000개의 숫자 데이터를 붙여넣기 후 enter, 프로그램은 3초의 sleep이 끝난후 startTime에 타임스템프를 찍고 스트림을 읽기 시작한다.
+
+```
+...
+1 2 3 4 5 6 7 8 9 10
+1 2 3 4 5 6 7 8 9 10
+1 2 3 4 5 6 7 8 9 10
+시작
+5
+```
