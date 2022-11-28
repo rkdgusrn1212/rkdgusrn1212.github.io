@@ -67,7 +67,7 @@ private static int readInt() throws IOException {
 1. 정수 입력앞에 개행(운영체제별 개행방법 모두 고려)과 공백이 연속해서 존재할 경우도 고려.
 2. 1번 조건에 해당하지 않는 문자들은 모두 정수로 가정하고 처리하므로 입력에 정수앞에 공백과 개행 이외의 문자가 남아있을때는 문자열 입력 받는 커스텀 메소드로 해당 문자들을 읽어들인 후에 정수를 읽도록 해야한다.
 
-## 4. 22-11-24일 추가로 개선된 버전
+## 4. 22년 11월 24일 추가로 개선된 버전
 
 변경 세부사항
 
@@ -101,7 +101,7 @@ private static String readStr(int bufSize){
 }
 ```
 
-```
+```java
 private static int readInt() {
 		try {
 			int sum;
