@@ -14,9 +14,9 @@ function Footer() {
           </Row>
           <Row className="p-3">
             <Col className="d-flex flex-wrap justify-content-evenly">
-              <a className="text-light" href="#">깃헙</a>
-              <a className="text-light" href="#">백준</a>
-              <a className="text-light" href="#">구 블로그</a>
+              <a className="text-light" href=".\">깃헙</a>
+              <a className="text-light" href=".\">백준</a>
+              <a className="text-light" href=".\">구 블로그</a>
             </Col>
           </Row>
           <Row className="p-3">

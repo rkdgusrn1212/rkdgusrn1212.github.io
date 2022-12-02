@@ -23,4 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 #_posts copy & index.js
-/posts
+/src/posts
