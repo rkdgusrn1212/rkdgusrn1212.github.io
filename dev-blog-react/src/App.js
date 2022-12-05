@@ -1,13 +1,9 @@
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import PostListContainer from "containers/post/PostListContainer";
+import HomePage from "pages/HomePage";
 
 function App() {
   return (
     <>
-      <Header />
-      <PostListContainer/>
-      <Footer />
+      <HomePage />
     </>
   );
 }

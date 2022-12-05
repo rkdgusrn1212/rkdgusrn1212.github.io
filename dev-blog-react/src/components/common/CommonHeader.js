@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-function Header() {
+function CommonHeader() {
     return (
       <Navbar bg="primary" variant="dark" expand="lg">
         <Container>
@@ -32,4 +32,4 @@ function Header() {
     );
   }
   
-  export default Header;
+  export default CommonHeader;

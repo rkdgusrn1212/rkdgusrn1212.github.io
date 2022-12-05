@@ -5,32 +5,47 @@ import FrontMatter from "front-matter";
 import Spinner from "react-bootstrap/Spinner";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import CommonPagenation from "components/common/CommonPagination";
 
-const PostListContainer = () => {
+//게시글이 없으면 없음 메시지 띄움.
+const PostListContainer = ({ pageSize }) => {
   const [loading, setLoading] = useState(true);
-  const [fmArr, setFmArr] = useState([]);
+  const [listPage, setListPage] = useState({ fmArr: [], pgnt: [] });
+  const [pageNum, setPageNum] = useState(1);
 
-  //Mount시에 데이터 파일 읽기, mdObj로드
+  //pageSize 또는 pageNum이 변경됬을 때, 당연히 마운트 시에도 호출된다.
   useEffect(() => {
-    const tempFmArr = [];
-    Promise.all(
-      PostFiles.map((file) =>
-        fetch(file)
+    //Pagination
+    const templistPage = {
+      fmArr: [],
+      pgnt: [],
+    };
+    const pageCnt = Math.ceil(PostFiles.length / pageSize);
+    for (let i = 1; i <= pageCnt; i++) {
+      templistPage.pgnt.push(i);
+    }
+    const endIdx = Math.min(pageNum * pageSize, PostFiles.length);
+    const strIdx = Math.max((pageNum - 1) * pageSize, 0);
+    const promiseArr = [];
+    for (let i = strIdx; i < endIdx; i++) {
+      promiseArr.push(
+        fetch(PostFiles[i])
           .then((res) => res.text())
           .then((text) => {
             const fm = FrontMatter(text).attributes;
-            tempFmArr.push(fm);
+            templistPage.fmArr.push(fm);
           })
-      )
-    ).then(() => {
-      setFmArr(tempFmArr);
+      );
+    }
+    Promise.all(promiseArr).then(() => {
+      setListPage(templistPage);
     });
-  }, []);
+  }, [pageSize, pageNum]);
 
-  //mdObj의 로드가 완료되면,
+  //listPage의 로드가 완료되면,
   useEffect(() => {
     setLoading(false);
-  }, [fmArr]);
+  }, [listPage]);
 
   if (loading) {
     return (
@@ -43,7 +58,21 @@ const PostListContainer = () => {
   } else {
     return (
       <>
-        <PostList fmArr={fmArr} />
+        <Row className="justify-content-center">
+          <Col>
+            <PostList fmArr={listPage.fmArr} />
+          </Col>
+        </Row>
+        <Row className="justify-content-center">
+          <Col>
+            <CommonPagenation
+              pgnt={listPage.pgnt}
+              activePgNum={pageNum}
+              handleChange={(pgNum) => setPageNum(pgNum)}
+              className="justify-content-center"
+            />
+          </Col>
+        </Row>
       </>
     );
   }

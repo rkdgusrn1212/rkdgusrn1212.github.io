@@ -1,12 +1,16 @@
-import {Table} from 'react-bootstrap';
 import PostListItem from "components/post/PostListItem";
+import ListGroup from "react-bootstrap/container";
+
 const PostList = ({ fmArr }) => {
   return (
-    <Table bordered>
-      {fmArr.map((fm) => (
-        <PostListItem fm={fm} />
+    <ListGroup>
+      {fmArr.map((fm, i) => (
+        <>
+          <hr />
+          <PostListItem key={i} fm={fm} />
+        </>
       ))}
-    </Table>
+    </ListGroup>
   );
 };
 export default PostList;
