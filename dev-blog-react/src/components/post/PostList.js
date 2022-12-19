@@ -5,10 +5,7 @@ const PostList = ({ fmArr }) => {
   return (
     <ListGroup>
       {fmArr.map((fm, i) => (
-        <>
-          <hr />
-          <PostListItem key={i} fm={fm} />
-        </>
+         <PostListItem key={i} fm={fm} />
       ))}
     </ListGroup>
   );

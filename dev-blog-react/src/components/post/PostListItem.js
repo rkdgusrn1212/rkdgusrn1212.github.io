@@ -2,25 +2,22 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Badge from "react-bootstrap/Badge";
 
 const PostListItem = ({ fm }) => {
-  if (!Array.isArray(fm.categories)) {
-    //단일 값일땐 길이 1인 배열, null(undefined)인경우 empty array로
-    fm.categories = [fm.categories];
-  }
   return (
     <ListGroup.Item>
+      <hr/>
       <a href="./#" className="text-decoration-none">
         <p>{fm.title}</p>
       </a>
-      <p>아무내용</p>
+      <p className="text-truncate"><small>{fm.body}</small></p>
       <div className="d-flex flex-wrap">
         {fm.categories.map((cat, i) => (
-          <a href="./#">
-            <Badge className="me-1" key={i}>
+          <a href="./#" key={i}>
+            <small><Badge bg="secondary" className="me-1 pb-1">
               {cat}
-            </Badge>
+            </Badge></small>
           </a>
         ))}
-        <p className="ms-auto">{fm.date}</p>
+        <p className="ms-auto"><small>{new Date(fm.date).toString()}</small></p>
       </div>
     </ListGroup.Item>
   );
