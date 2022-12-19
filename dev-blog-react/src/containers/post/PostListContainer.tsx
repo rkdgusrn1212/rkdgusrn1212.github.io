@@ -1,15 +1,19 @@
 import PostList from "components/post/PostList";
 import PostFiles from "posts";
 import { useState, useEffect } from "react";
-import FrontMatter from "front-matter";
+import FrontMatter, { FrontMatterResult } from "front-matter";
 import Spinner from "react-bootstrap/Spinner";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import CommonPagenation from "components/common/CommonPagination";
 import removeMarkdown from "markdown-to-text";
 
+type PostListContainerProps = {
+  pageSize: number;
+};
+
 //게시글이 없으면 없음 메시지 띄움.
-const PostListContainer = ({ pageSize }) => {
+const PostListContainer: React.FC<PostListContainerProps> = ({ pageSize }) => {
   const [loading, setLoading] = useState(true);
   const [listPage, setListPage] = useState({ fmArr: [], pgnt: [] });
   const [pageNum, setPageNum] = useState(1);
@@ -33,16 +37,18 @@ const PostListContainer = ({ pageSize }) => {
         fetch(PostFiles[i])
           .then((res) => res.text())
           .then((text) => {
-            const postObj = FrontMatter(text);
+            const postObj: FrontMatterResult<{
+              categories: string | string[] | null | undefined;
+            }> = FrontMatter(text);
             const fm = postObj.attributes;
-            fm["body"] = removeMarkdown(postObj.body);//listPage.fmArr에 body 할당.
-            if(!fm.categories){
-               fm.categories = [];
-            }else if (!Array.isArray(fm.categories)) {
+            fm["body"] = removeMarkdown(postObj.body); //listPage.fmArr에 body 할당.
+            if (!fm.categories) {
+              fm.categories = [];
+            } else if (!Array.isArray(fm.categories)) {
               //단일 값일땐 길이 1인 배열, null(undefined)인경우 empty array로
               fm.categories = [fm.categories];
             }
-            fm.categories = fm.categories.map((cat)=>cat.toLowerCase());//카테고리 전부 소문자화.
+            fm.categories = fm.categories.map((cat) => cat.toLowerCase()); //카테고리 전부 소문자화.
             templistPage.fmArr.push(fm);
           })
       );

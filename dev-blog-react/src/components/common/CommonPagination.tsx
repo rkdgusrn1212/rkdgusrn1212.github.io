@@ -1,10 +1,17 @@
-import Pagination from "react-bootstrap/Pagination";
+import Pagination, { PaginationProps } from "react-bootstrap/Pagination";
 
-const CommonPagenation = ({
+type CommonPagenationProps = PaginationProps & {
+  className : string | null | undefined,
+  pgnt : number[],
+  activePgNum : number,
+  handleChange : (pgNum)=>void,
+}
+
+const CommonPagenation : React.FC<CommonPagenationProps> = ({
   className,
   size,
   pgnt,
-  activePgNum,
+  activePgNum ,
   handleChange,
 }) => {
   return (
