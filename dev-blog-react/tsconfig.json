@@ -7,7 +7,7 @@
     "baseUrl": "src",
     "moduleResolution": "Node",
     "lib": ["ES2015", "DOM", "DOM.Iterable"],
-    "jsx": "react-jsx"//JSX 컴파일에 react v17의 _jsx transform를 사용.
+    "jsx": "react-jsx" //JSX 컴파일에 react v17의 _jsx transform를 사용.
   },
   "include": ["./src/**/*"],
   "exclude": ["node_modules", "build"]

@@ -1,4 +1,4 @@
-import PostListContainer from "containers/post/PostListContainer";
+import PostListContainer from 'containers/post/PostListContainer';
 
 const PostPage = () => {
   return (

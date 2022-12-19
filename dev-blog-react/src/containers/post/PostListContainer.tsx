@@ -1,12 +1,12 @@
-import PostList from "components/post/PostList";
-import PostFiles from "posts";
-import { useState, useEffect } from "react";
-import FrontMatter, { FrontMatterResult } from "front-matter";
-import Spinner from "react-bootstrap/Spinner";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import CommonPagenation from "components/common/CommonPagination";
-import removeMarkdown from "markdown-to-text";
+import PostList from 'components/post/PostList';
+import PostFiles from 'posts';
+import { useState, useEffect } from 'react';
+import FrontMatter, { FrontMatterResult } from 'front-matter';
+import Spinner from 'react-bootstrap/Spinner';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import CommonPagenation from 'components/common/CommonPagination';
+import removeMarkdown from 'markdown-to-text';
 
 type PostListContainerProps = {
   pageSize: number;
@@ -41,7 +41,7 @@ const PostListContainer: React.FC<PostListContainerProps> = ({ pageSize }) => {
               categories: string | string[] | null | undefined;
             }> = FrontMatter(text);
             const fm = postObj.attributes;
-            fm["body"] = removeMarkdown(postObj.body); //listPage.fmArr에 body 할당.
+            fm['body'] = removeMarkdown(postObj.body); //listPage.fmArr에 body 할당.
             if (!fm.categories) {
               fm.categories = [];
             } else if (!Array.isArray(fm.categories)) {
@@ -50,7 +50,7 @@ const PostListContainer: React.FC<PostListContainerProps> = ({ pageSize }) => {
             }
             fm.categories = fm.categories.map((cat) => cat.toLowerCase()); //카테고리 전부 소문자화.
             templistPage.fmArr.push(fm);
-          })
+          }),
       );
     }
     Promise.all(promiseArr).then(() => {

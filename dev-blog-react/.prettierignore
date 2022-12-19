@@ -1,0 +1,13 @@
+# build, static, lib 파일
+/build/
+/posts/
+/node_modules/
+/public/
+
+# lock 파일
+yarn.lock
+package-lock.json
+
+# 형식 제한
+*.bat
+*.md

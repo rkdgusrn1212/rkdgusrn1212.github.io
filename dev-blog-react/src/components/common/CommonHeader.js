@@ -1,15 +1,15 @@
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import { useMemo } from "react";
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import { useMemo } from 'react';
 
 function CommonHeader({ activeHref }) {
   const pages = useMemo(() => {
     const result = {
-      "": { name: "Home", active: false },
-      "/posts": { name: "Posts", active: false },
-      "/projects": { name: "Projects", active: false },
+      '': { name: 'Home', active: false },
+      '/posts': { name: 'Posts', active: false },
+      '/projects': { name: 'Projects', active: false },
     };
     result[activeHref].active = true;
     return result;

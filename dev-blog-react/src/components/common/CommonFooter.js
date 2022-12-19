@@ -1,8 +1,8 @@
-import Container from "react-bootstrap/Container";
-import Table from "react-bootstrap/Table";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Badge from "react-bootstrap/Badge";
+import Container from 'react-bootstrap/Container';
+import Table from 'react-bootstrap/Table';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Badge from 'react-bootstrap/Badge';
 
 function CommonFooter() {
   return (
@@ -10,13 +10,21 @@ function CommonFooter() {
       <Row className="p-1">
         <Col xs="12" sm="5" className="p-2">
           <Row className="p-3">
-            <Col><h1 className="text-light text-center">9Log</h1></Col>
+            <Col>
+              <h1 className="text-light text-center">9Log</h1>
+            </Col>
           </Row>
           <Row className="p-3">
             <Col className="d-flex flex-wrap justify-content-evenly">
-              <a className="text-light" href=".\">깃헙</a>
-              <a className="text-light" href=".\">백준</a>
-              <a className="text-light" href=".\">구 블로그</a>
+              <a className="text-light" href=".\">
+                깃헙
+              </a>
+              <a className="text-light" href=".\">
+                백준
+              </a>
+              <a className="text-light" href=".\">
+                구 블로그
+              </a>
             </Col>
           </Row>
           <Row className="p-3">

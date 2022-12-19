@@ -1,13 +1,13 @@
-import Header from "components/common/CommonHeader";
-import Footer from "components/common/CommonFooter";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import PostListContainer from "containers/post/PostListContainer";
+import Header from 'components/common/CommonHeader';
+import Footer from 'components/common/CommonFooter';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import PostListContainer from 'containers/post/PostListContainer';
 
 const HomePage = () => (
   <>
-    <Header activeHref={""} />
+    <Header activeHref={''} />
     <Container fluid="md">
       <Row>
         <Col>

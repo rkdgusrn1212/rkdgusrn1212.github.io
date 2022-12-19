@@ -1,17 +1,17 @@
-import Pagination, { PaginationProps } from "react-bootstrap/Pagination";
+import Pagination, { PaginationProps } from 'react-bootstrap/Pagination';
 
 type CommonPagenationProps = PaginationProps & {
-  className : string | null | undefined,
-  pgnt : number[],
-  activePgNum : number,
-  handleChange : (pgNum)=>void,
-}
+  className: string | null | undefined;
+  pgnt: number[];
+  activePgNum: number;
+  handleChange: (pgNum) => void;
+};
 
-const CommonPagenation : React.FC<CommonPagenationProps> = ({
+const CommonPagenation: React.FC<CommonPagenationProps> = ({
   className,
   size,
   pgnt,
-  activePgNum ,
+  activePgNum,
   handleChange,
 }) => {
   return (
@@ -42,7 +42,7 @@ const CommonPagenation : React.FC<CommonPagenationProps> = ({
         ))
         .slice(
           Math.max(activePgNum - 3, 1),
-          Math.min(activePgNum + 2, pgnt.length - 1)
+          Math.min(activePgNum + 2, pgnt.length - 1),
         )}
 
       {activePgNum < pgnt.length - 3 && (

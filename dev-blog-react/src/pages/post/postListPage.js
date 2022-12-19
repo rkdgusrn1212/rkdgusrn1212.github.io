@@ -1,7 +1,4 @@
-const PostListPage = ()=>{
-    return (
-        <>
-        </>
-    );
-}
+const PostListPage = () => {
+  return <></>;
+};
 export default PostListPage;
