@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from '.';
+import { useAppDispatch } from '../store';
 import {
   fetchPostInfoByIdx,
   selectStatus,
@@ -10,7 +10,7 @@ import {
 export default function useGetPostInfoByIdx(idx: number) {
   const dispatch = useAppDispatch();
   const status = useSelector((state) => selectStatus(state, idx));
-  const categoryInfo = useSelector((state) => selectData(state, idx));
+  const postInfo = useSelector((state) => selectData(state, idx));
   useEffect(() => {
     if (status === undefined) {
       dispatch(fetchPostInfoByIdx(idx));
@@ -22,5 +22,5 @@ export default function useGetPostInfoByIdx(idx: number) {
   const isError = status === 'rejected';
   const isSuccess = status === 'fulfilled';
 
-  return { categoryInfo, isUninitialized, isLoading, isError, isSuccess };
+  return { postInfo, isUninitialized, isLoading, isError, isSuccess };
 }

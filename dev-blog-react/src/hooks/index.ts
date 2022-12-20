@@ -1,6 +1,3 @@
-import useGetPostInfo from './useGetPostInfo';
-import { useDispatch } from 'react-redux';
+import useGetPostInfoByIdx from './useGetPostInfoByIdx';
 
-const useAppDispatch = () => useDispatch();
-
-export { useGetPostInfo, useAppDispatch };
+export { useGetPostInfoByIdx };
