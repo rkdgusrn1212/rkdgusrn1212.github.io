@@ -3,7 +3,7 @@ import Footer from 'components/common/CommonFooter';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import PostListContainer from 'containers/post/PostListContainer';
+import PostListContainer from 'components/post/PostList';
 
 const HomePage = () => (
   <>

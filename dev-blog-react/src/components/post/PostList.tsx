@@ -7,6 +7,8 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import CommonPagenation from 'components/common/CommonPagination';
 import removeMarkdown from 'markdown-to-text';
+import PostListItem from 'components/post/PostListItem';
+import ListGroup from 'react-bootstrap/container';
 
 type PostListContainerProps = {
   pageSize: number;
@@ -76,7 +78,11 @@ const PostListContainer: React.FC<PostListContainerProps> = ({ pageSize }) => {
       <>
         <Row className="justify-content-center">
           <Col>
-            <PostList fmArr={listPage.fmArr} />
+            <ListGroup>
+              {listPage.fmArr.map((fm, i) => (
+                <PostListItem key={i} fm={fm} />
+              ))}
+            </ListGroup>
           </Col>
         </Row>
         <Row className="justify-content-center">
