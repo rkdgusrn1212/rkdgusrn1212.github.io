@@ -30,14 +30,20 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-mac":"react-scripts start",
     "build": "react-scripts build",
+    "build-mac":"react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "load": "load_post.bat",
+    "load-mac":"sh load_post.sh",
     "prebuild": "yarn load",
+    "prebuild-mac":"yarn load-mac",
     "prestart": "yarn load",
+    "prestart-mac":"yarn load-mac",
     "predeploy": "yarn build",
     "purge": "rmdir /s /q ..\\react-static\\ && xcopy .\\build\\ ..\\react-static\\ /E /Y && xcopy ..\\react-static\\index.html ..\\_layouts\\home.* /Y",
+    "purge-mac":"rm -r ../react-static && rsync build/* ../react-static/ && rsync ../react-static/index.html ../layouts/home.html",
     "deploy": "yarn purge"
   },
   "eslintConfig": {
