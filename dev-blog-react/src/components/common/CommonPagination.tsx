@@ -4,6 +4,8 @@ type CommonPagenationProps = PaginationProps & {
   className: string | null | undefined;
   pgnt: number[];
   activePgNum: number;
+  maxPage: number;
+  pgntHalfSize: number;
   handleChange: (pgNum) => void;
 };
 
@@ -12,8 +14,17 @@ const CommonPagenation: React.FC<CommonPagenationProps> = ({
   size,
   pgnt,
   activePgNum,
+  maxPage,
+  pgntHalfSize,
   handleChange,
 }) => {
+  if (pgnt[0] == 1) {
+    pgnt.splice(0, 1);
+  }
+  if (pgnt[pgnt.length - 1] == maxPage) {
+    pgnt.splice(pgnt.length - 1);
+  }
+
   return (
     <Pagination size={size} className={className}>
       <Pagination.Item
@@ -23,13 +34,11 @@ const CommonPagenation: React.FC<CommonPagenationProps> = ({
       >
         {1}
       </Pagination.Item>
-      {activePgNum > 4 && (
+      {activePgNum > pgntHalfSize + 2 && (
         <Pagination.Ellipsis
-          key={activePgNum - 3}
           onClick={() => handleChange(activePgNum - 3)}
         />
       )}
-
       {pgnt
         .map((pgNum) => (
           <Pagination.Item
@@ -39,24 +48,18 @@ const CommonPagenation: React.FC<CommonPagenationProps> = ({
           >
             {pgNum}
           </Pagination.Item>
-        ))
-        .slice(
-          Math.max(activePgNum - 3, 1),
-          Math.min(activePgNum + 2, pgnt.length - 1),
-        )}
-
-      {activePgNum < pgnt.length - 3 && (
+        ))}
+      {activePgNum < maxPage - pgntHalfSize - 1 && (
         <Pagination.Ellipsis
-          key={activePgNum + 3}
           onClick={() => handleChange(activePgNum + 3)}
         />
       )}
       <Pagination.Item
-        key={pgnt.length}
-        active={pgnt.length === activePgNum}
-        onClick={() => handleChange(pgnt.length)}
+        key={maxPage}
+        active={maxPage === activePgNum}
+        onClick={() => handleChange(maxPage)}
       >
-        {pgnt.length}
+        {maxPage}
       </Pagination.Item>
     </Pagination>
   );

@@ -1,56 +1,52 @@
-import { useState, useEffect } from 'react';
-import FrontMatter, { FrontMatterResult } from 'front-matter';
-import Spinner from 'react-bootstrap/Spinner';
+import { useState, useMemo } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import CommonPagenation from 'components/common/CommonPagination';
-import removeMarkdown from 'markdown-to-text';
 import PostListItem from 'components/post/PostListItem';
 import ListGroup from 'react-bootstrap/container';
-import { useGetPostInfoByIdx } from 'hooks';
-
-type PostListContainerProps = {
-  pageSize: number;
-};
+import { postTotal } from 'services/postApi';
 
 //게시글이 없으면 없음 메시지 띄움.
-const PostListContainer: React.FC<PostListContainerProps> = ({ pageSize }) => {
+const PostList: React.FC<{ pageSize: number, pgntHalfSize: number }> = ({ pageSize, pgntHalfSize }) => {
   const [pageNum, setPageNum] = useState(1);
-  const { postInfo, isUninitialized, isLoading, isError, isSuccess } =
-    useGetPostInfoByIdx(1);
 
-  if (loading) {
-    return (
+  const pgntSize = useMemo(() => pgntHalfSize * 2 + 1, [pgntHalfSize]);
+  const maxPage = useMemo(() => Math.ceil(postTotal / pageSize), [pageSize]);
+  const idxArr = [...Array(pageSize).keys()].map(i => i + (pageNum - 1) * pageSize);
+  const pgnt = [...Array(pgntSize).keys()].map(i => i + (pageNum) - pgntHalfSize);
+
+  if (pageNum <= pgntHalfSize) {
+    pgnt.splice(0, pgntHalfSize + 1 - pageNum);
+  }
+  if (pageNum > maxPage - pgntHalfSize) {
+    pgnt.splice(pgnt.length - (pageNum + pgntHalfSize - maxPage));
+  }
+  if (pageNum >= maxPage) {
+    idxArr.splice(pageSize - (maxPage * pageSize - postTotal));
+  }
+
+  return (
+    <>
       <Row className="justify-content-center">
         <Col>
-          <Spinner animation="grow" variant="info" /> loading...
+          <ListGroup>
+            {idxArr.map(idx => <PostListItem key={idx} idx={idx} />)}
+          </ListGroup>
         </Col>
       </Row>
-    );
-  } else {
-    return (
-      <>
-        <Row className="justify-content-center">
-          <Col>
-            <ListGroup>
-              {listPage.fmArr.map((fm, i) => (
-                <PostListItem key={i} fm={fm} />
-              ))}
-            </ListGroup>
-          </Col>
-        </Row>
-        <Row className="justify-content-center">
-          <Col>
-            <CommonPagenation
-              pgnt={listPage.pgnt}
-              activePgNum={pageNum}
-              handleChange={(pgNum) => setPageNum(pgNum)}
-              className="justify-content-center"
-            />
-          </Col>
-        </Row>
-      </>
-    );
-  }
+      <Row className="justify-content-center">
+        <Col>
+          <CommonPagenation
+            pgnt={pgnt}
+            activePgNum={pageNum}
+            handleChange={(pgNum) => setPageNum(pgNum)}
+            maxPage={maxPage}
+            pgntHalfSize={pgntHalfSize}
+            className="justify-content-center"
+          />
+        </Col>
+      </Row>
+    </>
+  );
 };
-export default PostListContainer;
+export default PostList;

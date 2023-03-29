@@ -3,7 +3,7 @@ import Footer from 'components/common/CommonFooter';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import PostListContainer from 'components/post/PostList';
+import PostList from 'components/post/PostList';
 
 const HomePage = () => (
   <>
@@ -11,7 +11,7 @@ const HomePage = () => (
     <Container fluid="md">
       <Row>
         <Col>
-          <PostListContainer pageSize={10} />
+          <PostList pageSize={5} pgntHalfSize={2} />
         </Col>
       </Row>
     </Container>
