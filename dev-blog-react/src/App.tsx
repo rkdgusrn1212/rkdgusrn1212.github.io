@@ -1,10 +1,14 @@
 import HomePage from 'pages/HomePage';
+import PostListPage from 'pages/post/postListPage';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
-    <>
-      <HomePage />
-    </>
+    <Routes>
+      <Route path="" element={<HomePage />}></Route>
+      <Route path="posts" element={<PostListPage />}></Route>
+      {/* <Route path="*" element={<>404 NOT FOUND</>}></Route> */}
+    </Routes >
   );
 }
 

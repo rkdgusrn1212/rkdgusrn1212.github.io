@@ -3,8 +3,13 @@
 rm -r src/posts
 mkdir src/posts
 mkdir src/posts/data
-rsync ../_posts/* src/posts/data/
-cd src/posts/data
+cd ../_posts
+for file in *
+do
+    rsync ${file} ../dev-blog-react/src/posts/data/${file:0:${#file}-3}
+    sed -i "" '1s/^/avoidjekyllparse/' ../dev-blog-react/src/posts/data/${file:0:${#file}-3}
+done
+cd ../dev-blog-react/src/posts/data
 list=
 cnt=0
 

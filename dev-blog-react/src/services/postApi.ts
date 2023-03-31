@@ -24,6 +24,7 @@ const postApi = createApi({
         url: PostFiles[data],
       }),
       transformResponse: (response: string) => {
+        response = response.substring(16);
         const frontMatterResult: FrontMatterResult<{
           layout: string;
           title: string;

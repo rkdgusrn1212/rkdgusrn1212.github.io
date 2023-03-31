@@ -1,0 +1,28 @@
+avoidjekyllparse---
+layout: post
+title: "JSP 개요"
+date: 2022-10-07 09:40:00 +0900
+categories: ["Java","Java EE", "JSP"]
+---
+
+## 1. JSP 란?
+
+- *JavaServer Page* 기술은 동적으로 웹 콘텐츠 (*HTML*, *DTHML*, *XHTML*, *XML*)을 생성하는 *Java EE*의 기술이다.
+- *JSP* page는 *Servlet*이랑 역할이 겹치지만 *JSP page*는 일종의 *text-based Document*라는 점이 다르다.
+- [JSR 245](https://jcp.org/en/jsr/detail?id=245)에 기술 스펙 정의.
+  + 마지막 버전 PDF : [JSP 2.3 spec](https://download.oracle.com/otn-pub/jcp/jsp-2_3-mrel2-eval-spec/JSP2.3MR.pdf?AuthParam=1665101028_cffbcbb4c451bef5ec5d2058c4938067)
+  + 마지막인 이유는 [Jakarta EE](/java/java%20ee/jakarta%20ee/2022/10/04/jakarta-ee-intro.html) 참조
+
+## 2. JSP page의 구성
+
+*JSP* 페이지는 *element*들과 *templete data*로 구성.
+
+- *element*
+
+  *JSP container*가 아는 *element type*들의 인스턴스, *JSP translator*가 해석 가능.
+
+- *templete data*
+
+  *element*가 아닌것들, *JSP translator*가 해석 불가.
+
+>  JSP page has elements and template data. An element is an instance of an element type known to the JSP container. Template data is everything else; that is, anything that the JSP translator does not know about. [-JSP 2.3 spec-](https://download.oracle.com/otn-pub/jcp/jsp-2_3-mrel2-eval-spec/JSP2.3MR.pdf?AuthParam=1665101028_cffbcbb4c451bef5ec5d2058c4938067)

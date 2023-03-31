@@ -7,7 +7,7 @@ import PostList from 'components/post/PostList';
 
 const HomePage = () => (
   <>
-    <Header activeHref={''} />
+    <Header activeHref={'/'} />
     <Container fluid="md">
       <Row>
         <Col>
