@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-static/static/css/main.44f8b8b5.css",
-    "main.js": "/react-static/static/js/main.999b56f3.js",
+    "main.js": "/react-static/static/js/main.b33cb286.js",
     "static/js/787.aa3517fe.chunk.js": "/react-static/static/js/787.aa3517fe.chunk.js",
     "static/media/2022-10-10-page-directive-intro": "/react-static/static/media/2022-10-10-page-directive-intro.7ed6427af42e5de3f76b",
     "static/media/2022-10-20-fastedst-int-reader": "/react-static/static/media/2022-10-20-fastedst-int-reader.f2f030203bd06024a1c1",
@@ -30,11 +30,11 @@
     "static/media/2022-10-05-mvc-was-intro": "/react-static/static/media/2022-10-05-mvc-was-intro.a78c72fac60a2116b402",
     "static/media/2022-10-11-spring-framework-intro": "/react-static/static/media/2022-10-11-spring-framework-intro.f0554b39d2896540b5c9",
     "main.44f8b8b5.css.map": "/react-static/static/css/main.44f8b8b5.css.map",
-    "main.999b56f3.js.map": "/react-static/static/js/main.999b56f3.js.map",
+    "main.b33cb286.js.map": "/react-static/static/js/main.b33cb286.js.map",
     "787.aa3517fe.chunk.js.map": "/react-static/static/js/787.aa3517fe.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.44f8b8b5.css",
-    "static/js/main.999b56f3.js"
+    "static/js/main.b33cb286.js"
   ]
 }
