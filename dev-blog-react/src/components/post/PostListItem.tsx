@@ -10,7 +10,7 @@ const PostListItem: React.FC<{ idx: number }> = ({ idx }) => {
   return (
     <ListGroup.Item>
       <hr />
-      <a href="./#" className="text-decoration-none">
+      <a href={"/#/post/" + idx} className="text-decoration-none">
         <p>
           {readPostResult.isSuccess ?
             readPostResult.data.title : <Placeholder />}
