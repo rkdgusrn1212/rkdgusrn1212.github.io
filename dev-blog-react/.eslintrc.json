@@ -1,0 +1,29 @@
+{
+  "env": {
+    "jest": true,
+    "es6": true,
+    "browser": true,
+    "commonjs": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:react-hooks/recommended"
+  ],
+  "overrides": [],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": { "jsx": true }
+  },
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-console": "off"
+  }
+}
