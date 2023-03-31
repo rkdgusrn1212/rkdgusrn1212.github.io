@@ -1,27 +1,27 @@
 import ListGroup from 'react-bootstrap/ListGroup';
 import Badge from 'react-bootstrap/Badge';
 import Placeholder from 'react-bootstrap/Placeholder';
-import { useReadPostQuery } from 'services/postApi';
+import { useReadPostInfoQuery } from 'services/postApi';
 
 const PostListItem: React.FC<{ idx: number }> = ({ idx }) => {
 
-  const readPostResult = useReadPostQuery(idx);
+  const readPostInfoResult = useReadPostInfoQuery(idx);
 
   return (
     <ListGroup.Item>
       <hr />
       <a href={"/#/post/" + idx} className="text-decoration-none">
         <p>
-          {readPostResult.isSuccess ?
-            readPostResult.data.title : <Placeholder />}
+          {readPostInfoResult.isSuccess ?
+            readPostInfoResult.data.title : <Placeholder />}
         </p>
       </a>
       <p className="text-truncate">
         <small>
-          {readPostResult.isSuccess ? readPostResult.data.body : <Placeholder />}</small>
+          {readPostInfoResult.isSuccess ? readPostInfoResult.data.summary : <Placeholder />}</small>
       </p>
       <div className="d-flex flex-wrap">
-        {readPostResult.isSuccess ? readPostResult.data.categories.map((cat, i) => (
+        {readPostInfoResult.isSuccess ? readPostInfoResult.data.categories.map((cat, i) => (
           <a href="./#" key={i}>
             <small>
               <Badge bg="secondary" className="me-1 pb-1">
@@ -32,7 +32,7 @@ const PostListItem: React.FC<{ idx: number }> = ({ idx }) => {
         )) : <Placeholder />}
         <p className="ms-auto">
           <small>
-            {readPostResult.isSuccess ? (new Date(readPostResult.data.date).toString()) : <Placeholder />}</small>
+            {readPostInfoResult.isSuccess ? (new Date(readPostInfoResult.data.date).toString()) : <Placeholder />}</small>
         </p>
       </div>
     </ListGroup.Item>

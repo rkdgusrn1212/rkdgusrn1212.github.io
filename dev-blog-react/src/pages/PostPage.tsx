@@ -15,7 +15,7 @@ const PostPage: React.FC = () => {
         {readPostResult.isSuccess ? (
           <>
             <h1>{readPostResult.data.title}</h1>
-            <p>{readPostResult.data.body}</p>
+            <div className="content" dangerouslySetInnerHTML={{ __html: readPostResult.data.body }}></div>
           </>
         ) : <>로딩중</>}
       </Container>
