@@ -4,14 +4,14 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useMemo } from 'react';
 
-const CommonHeader: React.FC<{ activeHref: '/' | '/posts' | '/projects' }> = ({
+const CommonHeader: React.FC<{ activeHref: '/' | '/#/posts' | '/#/projects' }> = ({
   activeHref,
 }) => {
   const pages = useMemo(() => {
     const result = {
       '/': { name: 'Home', active: false },
-      '/posts': { name: 'Posts', active: false },
-      '/projects': { name: 'Projects', active: false },
+      '/#/posts': { name: 'Posts', active: false },
+      '/#/projects': { name: 'Projects', active: false },
     };
     result[activeHref].active = true;
     return result;

@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 const PostListPage: React.FC = () => {
   return (
     <>
-      <CommonHeader activeHref={'/posts'} />
+      <CommonHeader activeHref={'/#/posts'} />
       <Container>
         <PostList pageSize={8} pgntHalfSize={4} />
       </Container>
