@@ -2,8 +2,6 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import FrontMatter, { FrontMatterResult } from 'front-matter';
 import removeMarkdown from 'markdown-to-text';
 import PostFiles from 'posts';
-import { micromark } from 'micromark';
-
 export const postTotal = PostFiles.length;
 
 export interface PostInfo {
@@ -86,7 +84,7 @@ const postApi = createApi({
         return {
           ...frontMatterResult.attributes,
           categories,
-          body: micromark(frontMatterResult.body),
+          body: frontMatterResult.body,
         };
       },
     }),
