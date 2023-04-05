@@ -7,6 +7,11 @@ import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import * as dayjs from 'dayjs';
 
+const defaultFont = {
+  color: '#1F2318',
+  fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji;'
+};
+
 const PostPage: React.FC = () => {
   const params = useParams<'idx'>();
   const readPostResult = useReadPostQuery(parseInt(params.idx));
@@ -24,12 +29,15 @@ const PostPage: React.FC = () => {
                 </time></p>
             </header>
             <ReactMarkdown components={{
-              h1: ({ node, ...props }) => <h1 {...props} style={{ fontSize: '32px', padding: '0 0 9.6px', margin: '0 0 16px', borderBottom: '1px solid grey' }} />,
-              h2: ({ node, ...props }) => <h2 {...props} style={{ fontSize: '24px', padding: '0 0 7.2px', margin: '24px 0 16px', borderBottom: '1px solid grey' }} />,
-              h3: ({ node, ...props }) => <h3 {...props} style={{ fontSize: '20px', margin: '24px 0 16px' }} />,
-              h4: 'h3',
-              h5: 'h4',
-              h6: 'h5'
+              h1: ({ node, ...props }) => <h1 {...props} style={{ ...defaultFont, fontSize: '32px', padding: '0 0 9.6px', margin: '0 0 16px', borderBottom: '1px solid grey' }} />,
+              h2: ({ node, ...props }) => <h2 {...props} style={{ ...defaultFont, fontSize: '24px', padding: '0 0 7.2px', margin: '24px 0 16px', borderBottom: '1px solid grey' }} />,
+              h3: ({ node, ...props }) => <h3 {...props} style={{ ...defaultFont, fontSize: '20px', margin: '24px 0 16px' }} />,
+              h4: ({ node, ...props }) => <h4 {...props} style={{ ...defaultFont, fontSize: '16px', margin: '24px 0 16px' }} />,
+              h5: ({ node, ...props }) => <h5 {...props} style={{ ...defaultFont, fontSize: '14px', margin: '24px 0 16px' }} />,
+              h6: ({ node, ...props }) => <h6 {...props} style={{ ...defaultFont, fontSize: '13.6px', margin: '24px 0 16px' }} />,
+              p: ({ node, ...props }) => <p {...props} style={{ ...defaultFont, fontSize: '16px', margin: '0 0 16px' }} />,
+              pre: ({ node, ...props }) => <pre {...props} style={{ background: '#F6F8FA', margin: '0 0 16px', padding: '16px' }} />,
+              code: ({ node, ...props }) => <code {...props} style={{ ...defaultFont, fontSize: '13.6px', fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace' }} />
             }} remarkPlugins={[remarkGfm]}>{readPostResult.data.body}</ReactMarkdown>
           </>
         ) : <>로딩중</>
