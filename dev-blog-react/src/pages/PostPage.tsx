@@ -1,15 +1,17 @@
-import CommonFooter from 'components/common/CommonFooter';
-import CommonHeader from 'components/common/CommonHeader';
 import Container from 'react-bootstrap/Container';
 import { useParams } from 'react-router-dom';
 import { useReadPostQuery } from 'services/postApi';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import * as dayjs from 'dayjs';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import CommonFooter from 'components/common/CommonFooter';
+import CommonHeader from 'components/common/CommonHeader';
 
 const defaultFont = {
   color: '#1F2318',
-  fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji;'
+  fontFamily: '-apple-system, BlinkMacSystemFont,Segoe UI,Noto Sans,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji'
 };
 
 const PostPage: React.FC = () => {
@@ -36,8 +38,32 @@ const PostPage: React.FC = () => {
               h5: ({ node, ...props }) => <h5 {...props} style={{ ...defaultFont, fontSize: '14px', margin: '24px 0 16px' }} />,
               h6: ({ node, ...props }) => <h6 {...props} style={{ ...defaultFont, fontSize: '13.6px', margin: '24px 0 16px' }} />,
               p: ({ node, ...props }) => <p {...props} style={{ ...defaultFont, fontSize: '16px', margin: '0 0 16px' }} />,
-              pre: ({ node, ...props }) => <pre {...props} style={{ background: '#F6F8FA', margin: '0 0 16px', padding: '16px' }} />,
-              code: ({ node, ...props }) => <code {...props} style={{ ...defaultFont, fontSize: '13.6px', fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace' }} />
+              pre: ({ node, ...props }) => {
+                let match = false;
+                for (const child of node.children) {
+                  if (child['tagName'] === 'code' && /language-(\w+)/.exec(child['properties']['className'] || '')) {
+                    match = true;
+                    break;
+                  }
+                }
+                return match ? <pre {...props} /> : (<pre {...props} style={{ background: '#F6F8FA', margin: '0 0 16px', padding: '16px' }} />);
+              },
+              code({ node, inline, className, children, ...props }) {
+                const match = /language-(\w+)/.exec(className || '')
+                return !inline && match ? (
+                  <SyntaxHighlighter
+                    {...props}
+                    children={String(children).replace(/\n$/, '')}
+                    style={okaidia}
+                    language={match[1]}
+                    PreTag="div"
+                  />
+                ) : (
+                  <code {...props} className={className} style={{ ...defaultFont, fontSize: '13.6px', fontFamily: 'ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospace' }}>
+                    {children}
+                  </code>
+                )
+              }
             }} remarkPlugins={[remarkGfm]}>{readPostResult.data.body}</ReactMarkdown>
           </>
         ) : <>로딩중</>
