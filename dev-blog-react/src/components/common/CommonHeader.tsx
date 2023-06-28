@@ -4,9 +4,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useMemo } from 'react';
 
-const CommonHeader: React.FC<{ activeHref?: '/' | '/#/posts' | '/#/projects' }> = ({
-  activeHref,
-}) => {
+const CommonHeader: React.FC<{
+  activeHref?: '/' | '/#/posts' | '/#/projects';
+}> = ({ activeHref }) => {
   const pages = useMemo(() => {
     const result = {
       '/': { name: 'Home', active: false },
@@ -20,14 +20,16 @@ const CommonHeader: React.FC<{ activeHref?: '/' | '/#/posts' | '/#/projects' }> 
   }, [activeHref]);
 
   return (
-    <Navbar bg="primary" variant="dark" expand="lg">
+    <Navbar bg="primary" variant="dark" expand="lg" sticky="top">
       <Container>
         <Navbar.Brand href="/">9Log</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" role="navigation">
           <Nav className="me-auto">
             {Object.entries(pages).map((entry) => (
-              <Nav.Link key={entry[0]} href={entry[0]} active={entry[1].active}>{entry[1].name}</Nav.Link>
+              <Nav.Link key={entry[0]} href={entry[0]} active={entry[1].active}>
+                {entry[1].name}
+              </Nav.Link>
             ))}
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
