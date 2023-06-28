@@ -6,8 +6,8 @@ import remarkGfm from 'remark-gfm';
 import * as dayjs from 'dayjs';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import CommonFooter from 'components/common/CommonFooter';
-import CommonHeader from 'components/common/CommonHeader';
+import CommonFooter from 'components/Footer';
+import CommonHeader from 'components/Header';
 
 const defaultFont = {
   color: '#1F2318',

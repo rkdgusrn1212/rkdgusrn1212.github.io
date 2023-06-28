@@ -1,6 +1,6 @@
-import CommonFooter from 'components/common/CommonFooter';
-import CommonHeader from 'components/common/CommonHeader';
-import PostList from 'components/post/PostList';
+import CommonFooter from 'components/Footer';
+import CommonHeader from 'components/Header';
+import PostList from 'components/PostList';
 import Container from 'react-bootstrap/Container';
 
 const PostListPage: React.FC = () => {

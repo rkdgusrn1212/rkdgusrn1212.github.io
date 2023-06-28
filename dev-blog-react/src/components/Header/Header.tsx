@@ -5,7 +5,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-import styles from './CommonHeader.module.scss';
+import styles from './Header.module.scss';
 
 const CommonHeader: React.FC<{
   activeHref?: '/' | '/#/posts' | '/#/projects';

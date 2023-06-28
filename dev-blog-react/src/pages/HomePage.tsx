@@ -1,9 +1,9 @@
-import Header from 'components/common/CommonHeader';
-import Footer from 'components/common/CommonFooter';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import PostList from 'components/post/PostList';
+import PostList from 'components/PostList';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Stack from 'react-bootstrap/Stack';
@@ -12,9 +12,9 @@ const HomePage = () => (
   <>
     <Stack className="vh-100">
       <Header activeHref={'/'} />
-      <Container fluid="md">
-        <Row>
-          <Col xs={12} md={6}>
+      <Container fluid="md" className="flex-grow-1 h-50">
+        <Row className="h-100 py-3">
+          <Col xs={12} md={6} className="h-100">
             <PostList pageSize={5} pgntHalfSize={2} />
           </Col>
           <Col xs={12} md={6}>
