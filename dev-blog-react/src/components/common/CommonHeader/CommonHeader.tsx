@@ -1,8 +1,11 @@
+import { useMemo } from 'react';
+
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import { useMemo } from 'react';
+
+import styles from './CommonHeader.module.scss';
 
 const CommonHeader: React.FC<{
   activeHref?: '/' | '/#/posts' | '/#/projects';
@@ -20,7 +23,13 @@ const CommonHeader: React.FC<{
   }, [activeHref]);
 
   return (
-    <Navbar bg="primary" variant="dark" expand="lg" sticky="top">
+    <Navbar
+      bg="primary"
+      variant="dark"
+      expand="lg"
+      sticky="top"
+      className={styles.header}
+    >
       <Container>
         <Navbar.Brand href="/">9Log</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

@@ -11,6 +11,7 @@ const PostListPage: React.FC = () => {
         <PostList pageSize={8} pgntHalfSize={4} />
       </Container>
       <CommonFooter />
-    </>);
+    </>
+  );
 };
 export default PostListPage;
