@@ -47,7 +47,7 @@ const PostList: React.FC<{ pageSize: number; pgntHalfSize: number }> = ({
         handleChange={(pgNum) => setPageNum(pgNum)}
         maxPage={maxPage}
         pgntHalfSize={pgntHalfSize}
-        className="justify-content-center sticky-bottom pb-2 mb-0"
+        className="justify-content-center sticky-bottom pb-4 mb-0"
       />
     </div>
   );

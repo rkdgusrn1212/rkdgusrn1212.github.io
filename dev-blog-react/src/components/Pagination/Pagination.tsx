@@ -1,4 +1,6 @@
+import { Stack } from 'react-bootstrap';
 import Pagination, { PaginationProps } from 'react-bootstrap/Pagination';
+import styles from './Pagination.module.scss';
 
 type CommonPagenationProps = PaginationProps & {
   className: string | null | undefined;
@@ -11,7 +13,6 @@ type CommonPagenationProps = PaginationProps & {
 
 const CommonPagenation: React.FC<CommonPagenationProps> = ({
   className,
-  size,
   pgnt,
   activePgNum,
   maxPage,
@@ -26,42 +27,41 @@ const CommonPagenation: React.FC<CommonPagenationProps> = ({
   }
 
   return (
-    <Pagination size={size} className={className}>
-      <Pagination.Item
-        active={1 === activePgNum}
+    <Stack
+      direction="horizontal"
+      gap={2}
+      className={styles.pagination + ' ' + className}
+    >
+      <li
+        data-active={1 === activePgNum}
         key={1}
         onClick={() => handleChange(1)}
       >
         {1}
-      </Pagination.Item>
+      </li>
       {activePgNum > pgntHalfSize + 2 && (
-        <Pagination.Ellipsis
-          onClick={() => handleChange(activePgNum - 3)}
-        />
+        <Pagination.Ellipsis onClick={() => handleChange(activePgNum - 3)} />
       )}
-      {pgnt
-        .map((pgNum) => (
-          <Pagination.Item
-            key={pgNum}
-            active={pgNum === activePgNum}
-            onClick={() => handleChange(pgNum)}
-          >
-            {pgNum}
-          </Pagination.Item>
-        ))}
+      {pgnt.map((pgNum) => (
+        <li
+          key={pgNum}
+          data-active={pgNum === activePgNum}
+          onClick={() => handleChange(pgNum)}
+        >
+          {pgNum}
+        </li>
+      ))}
       {activePgNum < maxPage - pgntHalfSize - 1 && (
-        <Pagination.Ellipsis
-          onClick={() => handleChange(activePgNum + 3)}
-        />
+        <Pagination.Ellipsis onClick={() => handleChange(activePgNum + 3)} />
       )}
-      <Pagination.Item
+      <li
         key={maxPage}
-        active={maxPage === activePgNum}
+        data-active={maxPage === activePgNum}
         onClick={() => handleChange(maxPage)}
       >
         {maxPage}
-      </Pagination.Item>
-    </Pagination>
+      </li>
+    </Stack>
   );
 };
 export default CommonPagenation;
