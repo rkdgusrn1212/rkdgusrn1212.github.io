@@ -7,7 +7,7 @@ import * as dayjs from 'dayjs';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import CommonFooter from 'components/Footer';
-import CommonHeader from 'components/Header';
+import Header from 'components/Header';
 
 const defaultFont = {
   color: '#1F2318',
@@ -21,7 +21,7 @@ const PostPage: React.FC = () => {
 
   return (
     <>
-      <CommonHeader />
+      <Header />
       <Container fluid="md">
         {readPostResult.isSuccess ? (
           <>

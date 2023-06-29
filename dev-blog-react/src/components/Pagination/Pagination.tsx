@@ -1,23 +1,27 @@
 import { Stack } from 'react-bootstrap';
-import Pagination, { PaginationProps } from 'react-bootstrap/Pagination';
+import { StackDirection } from 'react-bootstrap/Stack';
+import OriginPagination from 'react-bootstrap/Pagination';
 import styles from './Pagination.module.scss';
 
-type CommonPagenationProps = PaginationProps & {
+type PaginationProps = {
   className: string | null | undefined;
   pgnt: number[];
   activePgNum: number;
   maxPage: number;
   pgntHalfSize: number;
+  direction: StackDirection;
   handleChange: (pgNum) => void;
 };
 
-const CommonPagenation: React.FC<CommonPagenationProps> = ({
+const Pagination: React.FC<PaginationProps> = ({
   className,
   pgnt,
   activePgNum,
   maxPage,
   pgntHalfSize,
+  direction = 'horizontal',
   handleChange,
+  ...props
 }) => {
   if (pgnt[0] == 1) {
     pgnt.splice(0, 1);
@@ -28,40 +32,40 @@ const CommonPagenation: React.FC<CommonPagenationProps> = ({
 
   return (
     <Stack
-      direction="horizontal"
+      direction={direction}
       gap={2}
       className={styles.pagination + ' ' + className}
     >
-      <li
+      <a
         data-active={1 === activePgNum}
         key={1}
         onClick={() => handleChange(1)}
       >
         {1}
-      </li>
+      </a>
       {activePgNum > pgntHalfSize + 2 && (
-        <Pagination.Ellipsis onClick={() => handleChange(activePgNum - 3)} />
+        <a onClick={() => handleChange(activePgNum - 3)}>...</a>
       )}
       {pgnt.map((pgNum) => (
-        <li
+        <a
           key={pgNum}
           data-active={pgNum === activePgNum}
           onClick={() => handleChange(pgNum)}
         >
           {pgNum}
-        </li>
+        </a>
       ))}
       {activePgNum < maxPage - pgntHalfSize - 1 && (
-        <Pagination.Ellipsis onClick={() => handleChange(activePgNum + 3)} />
+        <a onClick={() => handleChange(activePgNum + 3)}>...</a>
       )}
-      <li
+      <a
         key={maxPage}
         data-active={maxPage === activePgNum}
         onClick={() => handleChange(maxPage)}
       >
         {maxPage}
-      </li>
+      </a>
     </Stack>
   );
 };
-export default CommonPagenation;
+export default Pagination;

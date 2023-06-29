@@ -1,12 +1,9 @@
 import { useState, useMemo } from 'react';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import CommonPagenation from 'components/Pagination';
+import Pagination from 'components/Pagination';
 import PostListItem from 'components/PostList/PostListItem';
 import ListGroup from 'react-bootstrap/container';
 import { postTotal } from 'services/postApi';
 import styles from './PostList.module.scss';
-import { Stack } from 'react-bootstrap';
 
 //게시글이 없으면 없음 메시지 띄움.
 const PostList: React.FC<{ pageSize: number; pgntHalfSize: number }> = ({
@@ -41,13 +38,14 @@ const PostList: React.FC<{ pageSize: number; pgntHalfSize: number }> = ({
           <PostListItem key={idx} idx={idx} />
         ))}
       </ListGroup>
-      <CommonPagenation
+      <Pagination
         pgnt={pgnt}
         activePgNum={pageNum}
         handleChange={(pgNum) => setPageNum(pgNum)}
         maxPage={maxPage}
         pgntHalfSize={pgntHalfSize}
-        className="justify-content-center sticky-bottom pb-4 mb-0"
+        direction="horizontal"
+        className="justify-content-center sticky-bottom pb-4 pe-4 mb-0"
       />
     </div>
   );
