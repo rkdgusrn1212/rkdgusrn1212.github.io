@@ -1,3 +1,5 @@
+@import 'constant.scss';
+
 .header {
-  background: linear-gradient(90deg, #00008b, #ffd700);
+  background: linear-gradient(90deg, $blog-primary, $blog-tertiary);
 }

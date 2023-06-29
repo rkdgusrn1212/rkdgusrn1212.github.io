@@ -10,9 +10,9 @@ import Stack from 'react-bootstrap/Stack';
 
 const HomePage = () => (
   <>
-    <Stack className="vh-100">
+    <Stack className="vh-100 overflow-scroll">
       <Header activeHref={'/'} />
-      <Container fluid="md" className="flex-grow-1 h-50">
+      <Container fluid="md" className="flex-grow-1 h-25">
         <Row className="h-100 py-3">
           <Col xs={12} md={6} className="h-100">
             <PostList pageSize={5} pgntHalfSize={2} />

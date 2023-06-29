@@ -2,9 +2,9 @@
   "compilerOptions": {
     "allowJs": true,
     "target": "ES2015",
-    "rootDir": "src",
+    //"rootDir": "src", 다양한 가상 디렉토리들을 선언하면, 해당 디렉토리들을 하나의 디렉토리 루트를 가지는 것처럼 합치는 기능을 함. 난 필요없음.
     "outDir": "build",
-    "baseUrl": "src",
+    "baseUrl": "src", //비상대적 경로 선언시 모듈 리솔루션에 사용되는 루트 경로, node의 비상대적 경로 탐색(node_modules 써치) 보다 우선순위를 가진다.
     "moduleResolution": "Node",
     "lib": ["ES2015", "DOM", "DOM.Iterable"],
     "jsx": "react-jsx" //JSX 컴파일에 react v17의 _jsx transform를 사용.

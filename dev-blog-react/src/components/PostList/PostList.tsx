@@ -6,6 +6,7 @@ import PostListItem from 'components/PostList/PostListItem';
 import ListGroup from 'react-bootstrap/container';
 import { postTotal } from 'services/postApi';
 import styles from './PostList.module.scss';
+import { Stack } from 'react-bootstrap';
 
 //게시글이 없으면 없음 메시지 띄움.
 const PostList: React.FC<{ pageSize: number; pgntHalfSize: number }> = ({
@@ -34,8 +35,8 @@ const PostList: React.FC<{ pageSize: number; pgntHalfSize: number }> = ({
   }
 
   return (
-    <div className={styles.container}>
-      <ListGroup>
+    <div className={`h-100 overflow-scroll ${styles.container}`}>
+      <ListGroup className="mt-3">
         {idxArr.map((idx) => (
           <PostListItem key={idx} idx={idx} />
         ))}
@@ -46,7 +47,7 @@ const PostList: React.FC<{ pageSize: number; pgntHalfSize: number }> = ({
         handleChange={(pgNum) => setPageNum(pgNum)}
         maxPage={maxPage}
         pgntHalfSize={pgntHalfSize}
-        className="justify-content-center sticky-bottom"
+        className="justify-content-center sticky-bottom pb-2 mb-0"
       />
     </div>
   );

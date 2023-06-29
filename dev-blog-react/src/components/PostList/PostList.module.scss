@@ -1,6 +1,10 @@
+@import 'constant.scss';
+
 .container {
-  height: 100%;
-  overflow: scroll;
-  border: 1px solid black;
+  border: 2px solid transparent;
   border-radius: 10px;
+  background-image: linear-gradient(white, white),
+    linear-gradient($blog-secondary, $blog-tertiary);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
 }
