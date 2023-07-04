@@ -4,5 +4,11 @@
     "description": "온라인에서 옷을 쉽게 매치해볼수 있는 차세대 쇼핑몰",
     "link": "https://github.com/rkdgusrn1212/sanghai_twist",
     "image": "https://user-images.githubusercontent.com/18836863/208285371-b68b3938-93c5-403d-9de9-266df2188dcf.gif"
+  },
+  {
+    "title": "강호신 LIS",
+    "description": "진단검사시스템",
+    "link": "https://github.com/rkdgusrn1212/laboratory_information_system-aws",
+    "image": "https://user-images.githubusercontent.com/18836863/210029513-ba13f53a-9a6b-40c6-bc6f-62776ad841d6.jpg"
   }
 ]
