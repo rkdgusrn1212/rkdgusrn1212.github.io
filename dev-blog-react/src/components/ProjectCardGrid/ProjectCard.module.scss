@@ -1,11 +1,11 @@
 @import 'constant.scss';
 
 .card {
-  border: 2px solid transparent;
+  border: 2px solid $blog-secondary;
+  padding: 2px;
   border-radius: 10px;
-  background: $blog-tertiary-light;
-  box-shadow: 1px 1px 5px gray;
-
+  background: white;
+  box-shadow: 0 0 1px lightgray inset, 1px 1px 5px gray;
   .previewImage {
     width: 100%;
     height: 100%;
@@ -15,11 +15,21 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-clip: border-box;
+    border: 1px solid $blog-quaternary;
   }
   .title {
     color: black;
   }
   .description {
     color: black;
+  }
+  .button {
+    color: $blog-quaternary;
+    background-color: transparent;
+    border: 1px solid $blog-quaternary;
+    &:hover {
+      background-color: $blog-quaternary;
+      color: white;
+    }
   }
 }

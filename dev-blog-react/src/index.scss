@@ -2,5 +2,7 @@
 
 //여기다 부트스트랩 기본값 커스터마이징
 
+$body-bg: $blog-background;
+
 //덥어쓸 부트스트랩 scss
 @import '../node_modules/bootstrap/scss/bootstrap';
