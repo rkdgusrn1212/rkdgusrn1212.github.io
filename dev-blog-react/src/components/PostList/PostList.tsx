@@ -1,4 +1,6 @@
 import { useState, useMemo } from 'react';
+
+import Stack from 'react-bootstrap/Stack';
 import Pagination from 'components/Pagination';
 import PostListItem from 'components/PostList/PostListItem';
 import ListGroup from 'react-bootstrap/container';
@@ -32,12 +34,15 @@ const PostList: React.FC<{ pageSize: number; pgntHalfSize: number }> = ({
   }
 
   return (
-    <div className={`h-100 overflow-scroll ${styles.container}`}>
+    <Stack
+      className={`h-100 overflow-scroll justify-content-between ${styles.container}`}
+    >
       <ListGroup className="mt-3">
         {idxArr.map((idx) => (
           <PostListItem key={idx} idx={idx} />
         ))}
       </ListGroup>
+
       <Pagination
         pgnt={pgnt}
         activePgNum={pageNum}
@@ -47,7 +52,7 @@ const PostList: React.FC<{ pageSize: number; pgntHalfSize: number }> = ({
         direction="horizontal"
         className="justify-content-center sticky-bottom pb-4 pe-4 mb-0"
       />
-    </div>
+    </Stack>
   );
 };
 export default PostList;

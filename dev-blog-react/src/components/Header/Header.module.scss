@@ -2,4 +2,5 @@
 
 .header {
   background: linear-gradient(90deg, $blog-primary, $blog-tertiary);
+  z-index: 1029; //기본 스티키 1020 그 위의 fixed가 1030이므로
 }
