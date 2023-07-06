@@ -45,10 +45,7 @@
     "prebuild": "yarn load",
     "prestart": "yarn load",
     "predeploy": "yarn build",
-    "purge": "rmdir /s /q ..\\react-static\\ && xcopy .\\build\\ ..\\react-static\\ /E /Y && xcopy ..\\react-static\\index.html ..\\_layouts\\home.* /Y",
-    "purge-mac": "rm -r ../react-static && rsync -r build/ ../react-static/ && rsync ../react-static/index.html ../_layouts/home.html",
-    "deploy": "yarn purge",
-    "deploy-mac": "yarn purge-mac"
+    "deploy": "node deploy.js"
   },
   "eslintConfig": {
     "extends": [
