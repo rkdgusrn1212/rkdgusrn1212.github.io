@@ -58,13 +58,15 @@ const Pagination: React.FC<PaginationProps> = ({
       {activePgNum < maxPage - pgntHalfSize - 1 && (
         <a onClick={() => handleChange(activePgNum + 3)}>...</a>
       )}
-      <a
-        key={maxPage}
-        data-active={maxPage === activePgNum}
-        onClick={() => handleChange(maxPage)}
-      >
-        {maxPage}
-      </a>
+      {maxPage > 1 && (
+        <a
+          key={maxPage}
+          data-active={maxPage === activePgNum}
+          onClick={() => handleChange(maxPage)}
+        >
+          {maxPage}
+        </a>
+      )}
     </Stack>
   );
 };

@@ -28,5 +28,10 @@ do
     write_md_info "${i}"
 done
 
-echo "const fileList = [${list:0:${#list}-1}];" >> ../index.js
+if [ ${#list} -gt 0 ]
+then
+    echo "const fileList = [${list:0:${#list}-1}];" >> ../index.js
+else
+    echo "const fileList = [];" >> ../index.js
+fi
 echo "export default fileList;" >> ../index.js

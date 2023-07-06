@@ -16,7 +16,10 @@ const PostList: React.FC<{
   const [pageNum, setPageNum] = useState(1);
 
   const pgntSize = useMemo(() => pgntHalfSize * 2 + 1, [pgntHalfSize]);
-  const maxPage = useMemo(() => Math.ceil(postTotal / pageSize), [pageSize]);
+  const maxPage = useMemo(
+    () => (postTotal > 0 ? Math.ceil(postTotal / pageSize) : 1),
+    [pageSize],
+  ); //0일때는 예외적으로 최대 페이지가 1
   const idxArr = [...Array(pageSize).keys()].map(
     (i) => i + (pageNum - 1) * pageSize,
   );
