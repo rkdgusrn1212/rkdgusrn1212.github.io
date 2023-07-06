@@ -4,8 +4,6 @@ import ProjectCardGrid from 'components/ProjectCardGrid';
 import projectList from 'projects/project-list.json';
 import { Col, Row } from 'react-bootstrap';
 
-console.log(typeof projectList);
-
 const HomePage = () => (
   <ScrollViewportContainer activeHref="/">
     <Row className="h-100 py-3">

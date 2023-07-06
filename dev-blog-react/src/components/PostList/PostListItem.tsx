@@ -15,7 +15,7 @@ const PostListItem: React.FC<{ idx: number; selected: boolean }> = ({
       className={'px-3 ' + styles.listItem}
       data-selected={selected}
     >
-      <a href={'/#/post/' + idx} className="text-decoration-none">
+      <a href={'/#/posts/' + idx} className="text-decoration-none">
         <p>
           {readPostInfoResult.isSuccess ? (
             readPostInfoResult.data.title

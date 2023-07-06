@@ -4,7 +4,6 @@ import * as dayjs from 'dayjs';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-import { useParams } from 'react-router-dom';
 import { useReadPostQuery } from 'services/postApi';
 import styles from './Post.module.scss';
 
@@ -14,9 +13,8 @@ const defaultFont = {
     '-apple-system, BlinkMacSystemFont,Segoe UI,Noto Sans,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji',
 };
 
-const Post: React.FC = () => {
-  const params = useParams<'idx'>();
-  const readPostResult = useReadPostQuery(parseInt(params.idx));
+const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
+  const readPostResult = useReadPostQuery(postNo);
 
   return (
     <div className={'p-5 ' + styles.container}>
