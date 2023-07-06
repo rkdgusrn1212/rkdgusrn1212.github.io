@@ -2,12 +2,19 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Badge from 'react-bootstrap/Badge';
 import Placeholder from 'react-bootstrap/Placeholder';
 import { useReadPostInfoQuery } from 'services/postApi';
+import styles from './PostList.module.scss';
 
-const PostListItem: React.FC<{ idx: number }> = ({ idx }) => {
+const PostListItem: React.FC<{ idx: number; selected: boolean }> = ({
+  idx,
+  selected,
+}) => {
   const readPostInfoResult = useReadPostInfoQuery(idx);
 
   return (
-    <ListGroup.Item>
+    <ListGroup.Item
+      className={'px-3 ' + styles.listItem}
+      data-selected={selected}
+    >
       <a href={'/#/post/' + idx} className="text-decoration-none">
         <p>
           {readPostInfoResult.isSuccess ? (

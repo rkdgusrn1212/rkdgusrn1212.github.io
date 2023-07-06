@@ -8,10 +8,11 @@ import { postTotal } from 'services/postApi';
 import styles from './PostList.module.scss';
 
 //게시글이 없으면 없음 메시지 띄움.
-const PostList: React.FC<{ pageSize: number; pgntHalfSize: number }> = ({
-  pageSize,
-  pgntHalfSize,
-}) => {
+const PostList: React.FC<{
+  pageSize: number;
+  pgntHalfSize: number;
+  selected?: number;
+}> = ({ pageSize, pgntHalfSize, selected }) => {
   const [pageNum, setPageNum] = useState(1);
 
   const pgntSize = useMemo(() => pgntHalfSize * 2 + 1, [pgntHalfSize]);
@@ -37,9 +38,9 @@ const PostList: React.FC<{ pageSize: number; pgntHalfSize: number }> = ({
     <Stack
       className={`h-100 overflow-scroll justify-content-between ${styles.container}`}
     >
-      <ListGroup className="mt-3">
+      <ListGroup className="mt-3 px-0">
         {idxArr.map((idx) => (
-          <PostListItem key={idx} idx={idx} />
+          <PostListItem key={idx} idx={idx} selected={idx === selected} />
         ))}
       </ListGroup>
 
