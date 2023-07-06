@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Badge from 'react-bootstrap/Badge';
 
-function CommonFooter() {
+function Footer() {
   return (
     <Container fluid="true" className="bg-dark bg-gradient">
       <Row className="p-1">
@@ -71,4 +71,4 @@ function CommonFooter() {
   );
 }
 
-export default CommonFooter;
+export default Footer;

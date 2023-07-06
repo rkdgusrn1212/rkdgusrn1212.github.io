@@ -1,15 +1,12 @@
 import { useMemo } from 'react';
-
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-
+import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import styles from './Header.module.scss';
 
-const CommonHeader: React.FC<{
-  activeHref?: '/' | '/#/posts' | '/#/projects';
-}> = ({ activeHref }) => {
+export interface HeaderProps {
+  activeHref: '/' | '/#/posts' | '/#/projects';
+}
+
+const Header: React.FC<HeaderProps> = ({ activeHref }) => {
   const pages = useMemo(() => {
     const result = {
       '/': { name: 'Home', active: false },
@@ -58,4 +55,4 @@ const CommonHeader: React.FC<{
   );
 };
 
-export default CommonHeader;
+export default Header;
