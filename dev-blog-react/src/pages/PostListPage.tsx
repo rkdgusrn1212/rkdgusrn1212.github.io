@@ -1,17 +1,16 @@
-import CommonFooter from 'components/Footer';
-import Header from 'components/Header';
+import { Col, Row } from 'react-bootstrap';
 import PostList from 'components/PostList';
-import Container from 'react-bootstrap/Container';
+import ScrollViewportContainer from 'components/ScrollViewportContainer';
 
 const PostListPage: React.FC = () => {
   return (
-    <>
-      <Header activeHref={'/#/posts'} />
-      <Container>
-        <PostList pageSize={8} pgntHalfSize={4} />
-      </Container>
-      <CommonFooter />
-    </>
+    <ScrollViewportContainer activeHref={'/#/posts'}>
+      <Row className="h-100 py-2">
+        <Col className="h-100">
+          <PostList pageSize={8} pgntHalfSize={4} />
+        </Col>
+      </Row>
+    </ScrollViewportContainer>
   );
 };
 export default PostListPage;

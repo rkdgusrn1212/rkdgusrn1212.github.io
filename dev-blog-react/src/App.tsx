@@ -1,7 +1,7 @@
+import { Route, Routes } from 'react-router-dom';
 import HomePage from 'pages/HomePage';
 import PostListPage from 'pages/PostListPage';
 import PostPage from 'pages/PostPage';
-import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Route path="posts" element={<PostListPage />}></Route>
       <Route path="post/:idx" element={<PostPage />}></Route>
       <Route path="*" element={<>404 NOT FOUND</>}></Route>
-    </Routes >
+    </Routes>
   );
 }
 
