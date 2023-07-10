@@ -6,6 +6,9 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://rkdgusrn1212.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  rkdgusrn1212
 
+plugins:
+  - jekyll-feed
+
 # Build settings
 exclude:
   - dev-blog-react
