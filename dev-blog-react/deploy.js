@@ -12,8 +12,9 @@ console.log('react-static is deleted');
 fs.copySync(path.join(__dirname, 'build'), reactStaticDir);
 console.log('copied react-static to build');
 
-fs.copySync(
-  path.join(reactStaticDir, 'index.html'),
-  path.join(__dirname, '..', '_layouts', 'home.html'),
-);
+const rootIdx = path.join(__dirname, '..', 'index.html');
+fs.removeSync(rootIdx);
+console.log('index.html is deleted');
+
+fs.moveSync(path.join(reactStaticDir, 'index.html'), path.join(rootIdx));
 console.log('done');
