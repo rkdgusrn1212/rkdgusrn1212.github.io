@@ -1,0 +1,9 @@
+@import 'constant.scss';
+.a {
+  color: white;
+  text-decoration: none;
+  &:hover {
+    color: $blog-secondary;
+    text-decoration: underline;
+  }
+}
