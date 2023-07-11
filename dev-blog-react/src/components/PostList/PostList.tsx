@@ -21,7 +21,7 @@ const PostList: React.FC<{
     [pageSize],
   ); //0일때는 예외적으로 최대 페이지가 1
   const idxArr = [...Array(pageSize).keys()].map(
-    (i) => i + (pageNum - 1) * pageSize,
+    (i) => postTotal - 1 - (i + (pageNum - 1) * pageSize), //가장 높은 번호가 맨 앞으로
   );
   const pgnt = [...Array(pgntSize).keys()].map(
     (i) => i + pageNum - pgntHalfSize,
