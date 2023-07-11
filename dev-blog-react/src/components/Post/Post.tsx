@@ -6,6 +6,7 @@ import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import { useReadPostQuery } from 'services/postApi';
 import styles from './Post.module.scss';
+import rehypeRaw from 'rehype-raw';
 
 const defaultFont = {
   color: '#1F2318',
@@ -112,6 +113,9 @@ const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
                   }}
                 />
               ),
+              table: ({ node, ...props }) => (
+                <table {...props} className={styles.table} />
+              ),
               pre: ({ node, ...props }) => {
                 let match = false;
                 for (const child of node.children) {
@@ -165,6 +169,7 @@ const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
               },
             }}
             remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeRaw]}
           >
             {readPostResult.data.body}
           </ReactMarkdown>

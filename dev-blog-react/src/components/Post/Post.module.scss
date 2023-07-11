@@ -3,3 +3,12 @@
   box-shadow: 0px 0px 1px lightgray inset;
   min-height: 100%; //부트스트랩 클래스에 min w or h는 없음
 }
+
+.table {
+  th {
+    border-bottom: 2px solid #000;
+  }
+  td {
+    border-bottom: 1px solid #ddd;
+  }
+}
