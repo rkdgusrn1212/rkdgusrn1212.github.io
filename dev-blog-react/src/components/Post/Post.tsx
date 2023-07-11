@@ -43,6 +43,7 @@ const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
                 <h1
                   {...props}
                   style={{
+                    ...props.style,
                     ...defaultFont,
                     fontSize: '32px',
                     padding: '0 0 9.6px',
@@ -55,6 +56,7 @@ const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
                 <h2
                   {...props}
                   style={{
+                    ...props.style,
                     ...defaultFont,
                     fontSize: '24px',
                     padding: '0 0 7.2px',
@@ -67,6 +69,7 @@ const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
                 <h3
                   {...props}
                   style={{
+                    ...props.style,
                     ...defaultFont,
                     fontSize: '20px',
                     margin: '24px 0 16px',
@@ -77,6 +80,7 @@ const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
                 <h4
                   {...props}
                   style={{
+                    ...props.style,
                     ...defaultFont,
                     fontSize: '16px',
                     margin: '24px 0 16px',
@@ -87,6 +91,7 @@ const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
                 <h5
                   {...props}
                   style={{
+                    ...props.style,
                     ...defaultFont,
                     fontSize: '14px',
                     margin: '24px 0 16px',
@@ -97,6 +102,7 @@ const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
                 <h6
                   {...props}
                   style={{
+                    ...props.style,
                     ...defaultFont,
                     fontSize: '13.6px',
                     margin: '24px 0 16px',
@@ -107,6 +113,7 @@ const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
                 <p
                   {...props}
                   style={{
+                    ...props.style,
                     ...defaultFont,
                     fontSize: '16px',
                     margin: '0 0 16px',
@@ -135,6 +142,7 @@ const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
                   <pre
                     {...props}
                     style={{
+                      ...props.style,
                       background: '#F6F8FA',
                       margin: '0 0 16px',
                       padding: '16px',
@@ -157,6 +165,7 @@ const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
                     {...props}
                     className={className}
                     style={{
+                      ...props.style,
                       ...defaultFont,
                       fontSize: '13.6px',
                       fontFamily:
