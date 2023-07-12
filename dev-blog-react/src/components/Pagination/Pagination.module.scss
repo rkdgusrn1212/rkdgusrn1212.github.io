@@ -8,7 +8,6 @@
     text-align: center;
     justify-content: center;
     align-items: center;
-    color: $blog-primary;
     background-color: white;
     border-radius: 50%;
     box-shadow: 0 0 1px lightgray inset, 0.5px 1px 2px gray;
@@ -16,12 +15,12 @@
     transition-duration: 0.2s;
     transition-timing-function: ease;
     &:hover {
-      color: $blog-primary !important;
+      color: $blog-quaternary !important;
       box-shadow: 0 0 1px gray inset, 1px 2px 4px gray;
       transform: translateY(-2px);
     }
     &[data-active~='true'] {
-      background-color: $blog-primary;
+      background-color: $blog-quaternary;
       color: white;
       &:hover {
         background-color: white;
