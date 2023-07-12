@@ -13,7 +13,9 @@ const PostList: React.FC<{
   pgntHalfSize: number;
   selected?: number;
 }> = ({ pageSize, pgntHalfSize, selected }) => {
-  const [pageNum, setPageNum] = useState(1);
+  const [pageNum, setPageNum] = useState(
+    selected ? Math.floor((postTotal - 1 - selected) / pageSize) + 1 : 1, //먼저 현재 페이지를 초기화
+  );
 
   const pgntSize = useMemo(() => pgntHalfSize * 2 + 1, [pgntHalfSize]);
   const maxPage = useMemo(

@@ -1,6 +1,5 @@
 import { Stack } from 'react-bootstrap';
 import { StackDirection } from 'react-bootstrap/Stack';
-import OriginPagination from 'react-bootstrap/Pagination';
 import styles from './Pagination.module.scss';
 
 type PaginationProps = {
@@ -10,7 +9,7 @@ type PaginationProps = {
   maxPage: number;
   pgntHalfSize: number;
   direction: StackDirection;
-  handleChange: (pgNum) => void;
+  handleChange: (pgNum: number) => void;
 };
 
 const Pagination: React.FC<PaginationProps> = ({
@@ -21,7 +20,6 @@ const Pagination: React.FC<PaginationProps> = ({
   pgntHalfSize,
   direction = 'horizontal',
   handleChange,
-  ...props
 }) => {
   if (pgnt[0] == 1) {
     pgnt.splice(0, 1);

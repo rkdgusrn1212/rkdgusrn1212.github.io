@@ -27,7 +27,7 @@ const PostsPage: React.FC = () => {
           {postNo >= 0 && <Post postNo={postNo} />}
         </Col>
         <Col xs={12} xl={3} className="h-100 py-2">
-          <PostList pageSize={10} pgntHalfSize={2} selected={postNo} />
+          <PostList pageSize={5} pgntHalfSize={2} selected={postNo} />
         </Col>
       </Row>
     </ScrollViewportContainer>
