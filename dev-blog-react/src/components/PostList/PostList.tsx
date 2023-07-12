@@ -41,7 +41,7 @@ const PostList: React.FC<{
 
   return (
     <Stack
-      className={`h-100 overflow-scroll justify-content-between ${styles.container}`}
+      className={`h-100 overflow-y-scroll justify-content-between ${styles.container}`}
     >
       <ListGroup className="mt-3 px-0">
         {idxArr.map((idx) => (

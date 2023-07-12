@@ -14,17 +14,17 @@ const PostListItem: React.FC<{ idx: number; selected: boolean }> = ({
     <ListGroup.Item
       className={'px-3 ' + styles.listItem}
       data-selected={selected}
+      as="a"
+      href={'/#/posts/' + idx}
     >
-      <a href={'/#/posts/' + idx} className="text-decoration-none">
-        <p>
-          {readPostInfoResult.isSuccess ? (
-            readPostInfoResult.data.title
-          ) : (
-            <Placeholder />
-          )}
-        </p>
-      </a>
-      <p className="text-truncate">
+      <p id={styles.title}>
+        {readPostInfoResult.isSuccess ? (
+          readPostInfoResult.data.title
+        ) : (
+          <Placeholder />
+        )}
+      </p>
+      <p id={styles.summary} className="text-truncate">
         <small>
           {readPostInfoResult.isSuccess ? (
             readPostInfoResult.data.summary
@@ -47,7 +47,7 @@ const PostListItem: React.FC<{ idx: number; selected: boolean }> = ({
         ) : (
           <Placeholder />
         )}
-        <p className="ms-auto">
+        <p id={styles.time} className="ms-auto">
           <small>
             {readPostInfoResult.isSuccess ? (
               new Date(readPostInfoResult.data.date).toString()
