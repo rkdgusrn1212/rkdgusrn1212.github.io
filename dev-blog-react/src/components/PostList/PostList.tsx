@@ -56,7 +56,10 @@ const PostList: React.FC<{
         maxPage={maxPage}
         pgntHalfSize={pgntHalfSize}
         direction="horizontal"
-        className="justify-content-center sticky-bottom pb-4 pe-4 mb-0"
+        className={
+          'justify-content-center sticky-bottom pb-4 pt-3 my-0 ' +
+          styles.pagination
+        }
       />
     </Stack>
   );
