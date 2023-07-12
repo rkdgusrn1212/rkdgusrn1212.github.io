@@ -11,23 +11,23 @@ const isInteger = /^[0-9]+$/;
 const PostsPage: React.FC = () => {
   const params = useParams<'idx'>();
 
-  let pageNo = postTotal - 1;
+  let postNo = postTotal - 1;
   if (params.idx && isInteger.test(params.idx)) {
     const idxNum = parseInt(params.idx);
-    if (pageNo < postTotal && pageNo >= 0) {
-      pageNo = idxNum;
+    if (postNo < postTotal && postNo >= 0) {
+      postNo = idxNum;
     }
   }
-  //이시점에선 범위 내 입력 값 or postTotal-1만 남음. 이제 pageNo가 0이상일때만 출력해주면 됨.
+  //이시점에선 범위 내 입력 값 or postTotal-1만 남음. 이제 postNo가 0이상일때만 출력해주면 됨.
 
   return (
     <ScrollViewportContainer activeHref="/#/posts">
       <Row className="h-100 flex-row-reverse">
         <Col xs={12} xl={9} className="h-100 overflow-scroll">
-          {pageNo >= 0 && <Post postNo={pageNo} />}
+          {postNo >= 0 && <Post postNo={postNo} />}
         </Col>
         <Col xs={12} xl={3} className="h-100 py-2">
-          <PostList pageSize={10} pgntHalfSize={2} />
+          <PostList pageSize={10} pgntHalfSize={2} selected={postNo} />
         </Col>
       </Row>
     </ScrollViewportContainer>
