@@ -8,5 +8,5 @@ $body-bg: $blog-background;
 
 //최종 css 커스터마이징
 body {
-  min-width: 500px;
+  min-width: 300px; //모바일 브라우져 해상도 최하치 미만.
 }
