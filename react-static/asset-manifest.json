@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-static/static/css/main.e93743c7.css",
+    "main.css": "/react-static/static/css/main.5caec7f2.css",
     "main.js": "/react-static/static/js/main.e8ce070c.js",
     "static/js/787.aa3517fe.chunk.js": "/react-static/static/js/787.aa3517fe.chunk.js",
     "static/media/2022-10-10-page-directive-intro.md": "/react-static/static/media/2022-10-10-page-directive-intro.7ed6427af42e5de3f76b.md",
@@ -32,12 +32,12 @@
     "index.html": "/react-static/index.html",
     "static/media/2022-10-05-mvc-was-intro.md": "/react-static/static/media/2022-10-05-mvc-was-intro.a78c72fac60a2116b402.md",
     "static/media/2022-10-11-spring-framework-intro.md": "/react-static/static/media/2022-10-11-spring-framework-intro.f0554b39d2896540b5c9.md",
-    "main.e93743c7.css.map": "/react-static/static/css/main.e93743c7.css.map",
+    "main.5caec7f2.css.map": "/react-static/static/css/main.5caec7f2.css.map",
     "main.e8ce070c.js.map": "/react-static/static/js/main.e8ce070c.js.map",
     "787.aa3517fe.chunk.js.map": "/react-static/static/js/787.aa3517fe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e93743c7.css",
+    "static/css/main.5caec7f2.css",
     "static/js/main.e8ce070c.js"
   ]
 }
