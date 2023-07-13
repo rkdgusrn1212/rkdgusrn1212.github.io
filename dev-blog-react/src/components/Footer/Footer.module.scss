@@ -20,7 +20,7 @@
       content: url(./github-mark-white.svg);
     }
     #beakjunIcon {
-      color: grey;
+      color: white;
       .character {
         color: skyblue;
       }
@@ -35,7 +35,7 @@
         content: url(./github-mark-white-hover.svg);
       }
       #beakjunIcon,
-      #beakjunIcon * {
+      #beakjunIcon .character {
         color: $blog-primary-light;
       }
     }
