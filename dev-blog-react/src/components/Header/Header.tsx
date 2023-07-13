@@ -9,9 +9,9 @@ export interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ activeHref }) => {
   const pages = useMemo(() => {
     const result = {
-      '/': { name: 'Home', active: false },
-      '/#/posts': { name: 'Posts', active: false },
-      '/#/projects': { name: 'Projects', active: false },
+      '/': { name: '블로그 홈', active: false },
+      '/#/posts': { name: '내 포스트들', active: false },
+      '/#/projects': { name: '내 프로젝트들', active: false },
     };
     if (activeHref) {
       result[activeHref].active = true;
@@ -37,17 +37,6 @@ const Header: React.FC<HeaderProps> = ({ activeHref }) => {
                 {entry[1].name}
               </Nav.Link>
             ))}
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>
