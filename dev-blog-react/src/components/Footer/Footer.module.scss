@@ -17,9 +17,9 @@
     #githubIcon {
       width: $footer-font-size;
       height: $footer-font-size;
-      content: url(./github-mark-white.svg);
+      content: url(/assets/github/github-mark-white.svg);
     }
-    #beakjunIcon {
+    #beakjoonIcon {
       color: white;
       .character {
         color: skyblue;
@@ -32,10 +32,10 @@
         text-decoration: underline;
       }
       #githubIcon {
-        content: url(./github-mark-white-hover.svg);
+        content: url(/assets/github/github-mark-primary-light.svg);
       }
-      #beakjunIcon,
-      #beakjunIcon .character {
+      #beakjoonIcon,
+      #beakjoonIcon .character {
         color: $blog-primary-light;
       }
     }

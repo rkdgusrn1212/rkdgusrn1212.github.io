@@ -1,6 +1,6 @@
 import ProjectCardGrid from 'components/ProjectCardGrid';
 import ScrollViewportContainer from 'components/ScrollViewportContainer';
-import projectList from 'projects/project-list.json';
+import projectList from 'assets/project-list.json';
 
 const ProjectsPage: React.FC = () => {
   return (

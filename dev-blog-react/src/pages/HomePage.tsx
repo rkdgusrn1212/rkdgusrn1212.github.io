@@ -1,7 +1,7 @@
 import ScrollViewportContainer from 'components/ScrollViewportContainer';
 import PostList from 'components/PostList';
 import ProjectCardGrid from 'components/ProjectCardGrid';
-import projectList from 'projects/project-list.json';
+import projectList from 'assets/project-list.json';
 import { Col, Row } from 'react-bootstrap';
 
 const HomePage = () => (
