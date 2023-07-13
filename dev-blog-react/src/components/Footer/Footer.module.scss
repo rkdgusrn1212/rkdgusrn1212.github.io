@@ -1,9 +1,43 @@
 @import 'constant.scss';
-.a {
-  color: white;
-  text-decoration: none;
-  &:hover {
-    color: $blog-secondary;
-    text-decoration: underline;
+.footer {
+  background: linear-gradient($blog-tertiary, $blog-secondary);
+  .a {
+    border: 3px solid white;
+    border-radius: 25px;
+    margin-left: 10px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 2px 10px 2px 10px;
+    gap: 5px;
+    font-size: $footer-font-size;
+    line-height: 1;
+
+    #githubIcon {
+      width: $footer-font-size;
+      height: $footer-font-size;
+      content: url(./github-mark-white.svg);
+    }
+    #beakjunIcon {
+      color: grey;
+      .character {
+        color: skyblue;
+      }
+    }
+    &:hover {
+      border-color: $blog-primary-light;
+      .text {
+        color: $blog-primary-light;
+        text-decoration: underline;
+      }
+      #githubIcon {
+        content: url(./github-mark-white-hover.svg);
+      }
+      #beakjunIcon,
+      #beakjunIcon * {
+        color: $blog-primary-light;
+      }
+    }
   }
 }
