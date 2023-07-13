@@ -7,11 +7,14 @@ function Footer() {
       <Container fluid="md">
         <Stack direction="horizontal" className="w-100">
           <img
-            width="128px"
-            height="128px"
+            width="100px"
+            height="100px"
             src="/react-static/logo512.png"
-            className="me-auto mx-5 my-2"
+            className="ms-md-5 ms-xs-1 me-1 my-2"
           />
+          <p id={styles.copyright}>
+            Copyright ©️ 2022. 강현구. All Rights Reserved.
+          </p>
           <a className={styles.a} href="http://www.github.com/rkdgusrn1212">
             <img id={styles.githubIcon} />
             <span className={'d-none d-md-block ' + styles.text} id="text">

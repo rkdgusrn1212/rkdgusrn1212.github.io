@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-static/static/css/main.426461f8.css",
-    "main.js": "/react-static/static/js/main.207cf0fb.js",
+    "main.css": "/react-static/static/css/main.a0d4b36a.css",
+    "main.js": "/react-static/static/js/main.7252e2aa.js",
     "static/js/787.aa3517fe.chunk.js": "/react-static/static/js/787.aa3517fe.chunk.js",
     "static/media/2022-10-10-page-directive-intro.md": "/react-static/static/media/2022-10-10-page-directive-intro.7ed6427af42e5de3f76b.md",
     "static/media/2022-10-20-fastedst-int-reader.md": "/react-static/static/media/2022-10-20-fastedst-int-reader.f2f030203bd06024a1c1.md",
@@ -33,12 +33,12 @@
     "index.html": "/react-static/index.html",
     "static/media/2022-10-05-mvc-was-intro.md": "/react-static/static/media/2022-10-05-mvc-was-intro.a78c72fac60a2116b402.md",
     "static/media/2022-10-11-spring-framework-intro.md": "/react-static/static/media/2022-10-11-spring-framework-intro.f0554b39d2896540b5c9.md",
-    "main.426461f8.css.map": "/react-static/static/css/main.426461f8.css.map",
-    "main.207cf0fb.js.map": "/react-static/static/js/main.207cf0fb.js.map",
+    "main.a0d4b36a.css.map": "/react-static/static/css/main.a0d4b36a.css.map",
+    "main.7252e2aa.js.map": "/react-static/static/js/main.7252e2aa.js.map",
     "787.aa3517fe.chunk.js.map": "/react-static/static/js/787.aa3517fe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.426461f8.css",
-    "static/js/main.207cf0fb.js"
+    "static/css/main.a0d4b36a.css",
+    "static/js/main.7252e2aa.js"
   ]
 }
