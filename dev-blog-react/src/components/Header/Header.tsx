@@ -2,7 +2,6 @@ import { useMemo } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import styles from './Header.module.scss';
 import linkList from 'assets/link-list.json';
-import logo from 'assets/blog/logo.png';
 
 export interface HeaderProps {
   activeHref: '/' | '/#/posts' | '/#/projects';

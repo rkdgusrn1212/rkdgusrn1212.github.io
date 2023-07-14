@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-static/static/css/main.12949c4e.css",
-    "main.js": "/react-static/static/js/main.47a7c3ad.js",
+    "main.css": "/react-static/static/css/main.64fe448d.css",
+    "main.js": "/react-static/static/js/main.681cd493.js",
     "static/js/787.aa3517fe.chunk.js": "/react-static/static/js/787.aa3517fe.chunk.js",
     "static/media/logo.png": "/react-static/static/media/logo.f1089bda2c499498b363.png",
     "static/media/2022-10-10-page-directive-intro.md": "/react-static/static/media/2022-10-10-page-directive-intro.7ed6427af42e5de3f76b.md",
@@ -27,20 +27,18 @@
     "static/media/2022-10-07-jsp-intro.md": "/react-static/static/media/2022-10-07-jsp-intro.c84cb7f0d6331c3297a3.md",
     "static/media/2022-10-05-directive-intro.md": "/react-static/static/media/2022-10-05-directive-intro.5c72e023db4a6c11f965.md",
     "static/media/2022-10-26-fastest-write-system-out-stream.md": "/react-static/static/media/2022-10-26-fastest-write-system-out-stream.f172e453c4602f00f68f.md",
-    "static/media/github-mark-primary-light.svg": "/react-static/static/media/github-mark-primary-light.8e4bda10956d433e1d50.svg",
-    "static/media/github-mark-white-alpha.svg": "/react-static/static/media/github-mark-white-alpha.848ebc59a67f5f33506b.svg",
     "static/media/github-mark-white.svg": "/react-static/static/media/github-mark-white.97ed8e7eef60d61ca469.svg",
     "static/media/2022-10-11-spring-web-mvc-framework-controller.md": "/react-static/static/media/2022-10-11-spring-web-mvc-framework-controller.cdf186e72606429b2bf1.md",
     "static/media/2022-10-27-fastest-compararison-operator.md": "/react-static/static/media/2022-10-27-fastest-compararison-operator.d6d36697d2d7408aaff5.md",
     "index.html": "/react-static/index.html",
     "static/media/2022-10-05-mvc-was-intro.md": "/react-static/static/media/2022-10-05-mvc-was-intro.a78c72fac60a2116b402.md",
     "static/media/2022-10-11-spring-framework-intro.md": "/react-static/static/media/2022-10-11-spring-framework-intro.f0554b39d2896540b5c9.md",
-    "main.12949c4e.css.map": "/react-static/static/css/main.12949c4e.css.map",
-    "main.47a7c3ad.js.map": "/react-static/static/js/main.47a7c3ad.js.map",
+    "main.64fe448d.css.map": "/react-static/static/css/main.64fe448d.css.map",
+    "main.681cd493.js.map": "/react-static/static/js/main.681cd493.js.map",
     "787.aa3517fe.chunk.js.map": "/react-static/static/js/787.aa3517fe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.12949c4e.css",
-    "static/js/main.47a7c3ad.js"
+    "static/css/main.64fe448d.css",
+    "static/js/main.681cd493.js"
   ]
 }
