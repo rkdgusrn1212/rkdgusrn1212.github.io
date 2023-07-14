@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import styles from './Header.module.scss';
 import linkList from 'assets/link-list.json';
+import logo from 'assets/blog/logo.png';
 
 export interface HeaderProps {
   activeHref: '/' | '/#/posts' | '/#/projects';
@@ -29,7 +30,9 @@ const Header: React.FC<HeaderProps> = ({ activeHref }) => {
       className={styles.header}
     >
       <Container>
-        <Navbar.Brand href="/">9Log</Navbar.Brand>
+        <Navbar.Brand href="/" className="ms-2">
+          9LOG
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" role="navigation">
           <Nav className="w-100">
@@ -43,10 +46,11 @@ const Header: React.FC<HeaderProps> = ({ activeHref }) => {
                 {entry[1].name}
               </Nav.Link>
             ))}
-            <div className="d-flex gap-3">
-              <Nav.Link href={linkList['my-github']}>
-                <img width="20" height="20" className={styles.githubIcon} />
-              </Nav.Link>
+            <div className="d-flex gap-3 align-items-center">
+              <Nav.Link
+                href={linkList['my-github']}
+                className={styles.githubIcon}
+              ></Nav.Link>
               <Nav.Link href={linkList['my-beakjoon']}>
                 <p className={styles.beakjoonIcon + ' mb-0'}>{'/< >'}</p>
               </Nav.Link>

@@ -17,7 +17,9 @@
     #githubIcon {
       width: $footer-font-size;
       height: $footer-font-size;
-      content: url(/assets/github/github-mark-white.svg);
+      background-color: white;
+      mask: url(/assets/github/github-mark-white.svg) no-repeat center;
+      mask-size: contain;
     }
     #beakjoonIcon {
       color: white;
@@ -32,7 +34,7 @@
         text-decoration: underline;
       }
       #githubIcon {
-        content: url(/assets/github/github-mark-primary-light.svg);
+        background-color: $blog-primary-light;
       }
       #beakjoonIcon,
       #beakjoonIcon .character {

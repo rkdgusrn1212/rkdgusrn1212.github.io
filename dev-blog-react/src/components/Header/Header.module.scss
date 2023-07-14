@@ -1,21 +1,24 @@
 @import 'constant.scss';
 
 .header {
-  background: linear-gradient(90deg, $blog-primary, $blog-tertiary);
+  background: linear-gradient(90deg, $blog-primary-light, 70%, $blog-primary);
   z-index: 1029; //기본 스티키 1020 그 위의 fixed가 1030이므로
 
   .githubIcon {
-    transition: all 1s ease;
-    content: url(/assets/github/github-mark-white-alpha.svg);
+    width: 20px;
+    height: 20px;
+    background-color: #fff8;
+    mask: url(/assets/github/github-mark-white.svg) no-repeat center;
+    mask-size: contain;
     &:hover {
-      content: url(/assets/github/github-mark-white.svg);
+      background-color: white;
     }
   }
 
   .beakjoonIcon {
     color: #fff8;
     &:hover {
-      color: #ffffff;
+      color: #fff;
     }
   }
 }

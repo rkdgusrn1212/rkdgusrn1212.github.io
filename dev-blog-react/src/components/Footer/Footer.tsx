@@ -18,7 +18,7 @@ function Footer() {
             Copyright ©️ 2022. 강현구. All Rights Reserved.
           </p>
           <a className={styles.a} href={linkList['my-github']}>
-            <img id={styles.githubIcon} />
+            <div id={styles.githubIcon} />
             <span className={'d-none d-md-block ' + styles.text} id="text">
               @rkdgusrn1212
             </span>
