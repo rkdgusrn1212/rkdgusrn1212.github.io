@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-static/static/css/main.793acc66.css",
-    "main.js": "/react-static/static/js/main.681cd493.js",
+    "main.css": "/react-static/static/css/main.70ab5444.css",
+    "main.js": "/react-static/static/js/main.584bcf7e.js",
     "static/js/787.aa3517fe.chunk.js": "/react-static/static/js/787.aa3517fe.chunk.js",
     "static/media/logo.png": "/react-static/static/media/logo.f1089bda2c499498b363.png",
     "static/media/2022-10-10-page-directive-intro.md": "/react-static/static/media/2022-10-10-page-directive-intro.7ed6427af42e5de3f76b.md",
@@ -33,12 +33,12 @@
     "index.html": "/react-static/index.html",
     "static/media/2022-10-05-mvc-was-intro.md": "/react-static/static/media/2022-10-05-mvc-was-intro.a78c72fac60a2116b402.md",
     "static/media/2022-10-11-spring-framework-intro.md": "/react-static/static/media/2022-10-11-spring-framework-intro.f0554b39d2896540b5c9.md",
-    "main.793acc66.css.map": "/react-static/static/css/main.793acc66.css.map",
-    "main.681cd493.js.map": "/react-static/static/js/main.681cd493.js.map",
+    "main.70ab5444.css.map": "/react-static/static/css/main.70ab5444.css.map",
+    "main.584bcf7e.js.map": "/react-static/static/js/main.584bcf7e.js.map",
     "787.aa3517fe.chunk.js.map": "/react-static/static/js/787.aa3517fe.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.793acc66.css",
-    "static/js/main.681cd493.js"
+    "static/css/main.70ab5444.css",
+    "static/js/main.584bcf7e.js"
   ]
 }

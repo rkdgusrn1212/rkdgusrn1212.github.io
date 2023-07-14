@@ -21,13 +21,7 @@ const Header: React.FC<HeaderProps> = ({ activeHref }) => {
   }, [activeHref]);
 
   return (
-    <Navbar
-      bg="primary"
-      variant="dark"
-      expand="lg"
-      sticky="top"
-      className={styles.header}
-    >
+    <Navbar variant="dark" expand="lg" sticky="top" className={styles.header}>
       <Container>
         <Navbar.Brand href="/" className="ms-2">
           9LOG
