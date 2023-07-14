@@ -1,7 +1,7 @@
 @import 'constant.scss';
 
 .header {
-  background: linear-gradient(90deg, $blog-primary-light, 70%, $blog-primary);
+  background: linear-gradient($blog-primary-light, 20%, $blog-primary);
   z-index: 1029; //기본 스티키 1020 그 위의 fixed가 1030이므로
 
   .githubIcon {
