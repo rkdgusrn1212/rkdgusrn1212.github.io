@@ -2,11 +2,13 @@
 
 .header {
   background-color: $blog-primary-light;
+  box-shadow: 0px 2px 2px gray;
   z-index: 1029; //기본 스티키 1020 그 위의 fixed가 1030이므로
 
   .githubIcon {
     width: 20px;
     height: 20px;
+    transition: background-color 0.3s ease;
     background-color: #fff8;
     mask: url(/assets/github/github-mark-white.svg) no-repeat center;
     mask-size: contain;
@@ -17,6 +19,7 @@
 
   .beakjoonIcon {
     color: #fff8;
+    transition: color 0.3s ease;
     &:hover {
       color: #fff;
     }
