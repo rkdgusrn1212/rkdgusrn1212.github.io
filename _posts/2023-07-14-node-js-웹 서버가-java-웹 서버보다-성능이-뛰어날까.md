@@ -58,7 +58,7 @@ Node.js 웹 서버가 JAVA 웹 서버보다 성능이 뛰어나다는 소문에 
 
 <br/>
 
-### 2.2. Node.js는 Java 보다 I/O 집약적인 Thread Pool을 가진다
+### 2.2. Node.js 웹 서버는 보다 I/O 집약적인 Thread Pool을 가진다
 
 <br/>
 
