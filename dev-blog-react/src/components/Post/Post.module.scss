@@ -1,3 +1,5 @@
+@import 'constant.scss';
+
 .container {
   background-color: white;
   box-shadow: 0px 0px 1px lightgray inset;
@@ -11,4 +13,9 @@
   td {
     border-bottom: 1px solid #ddd;
   }
+}
+
+.blockquote {
+  padding: 3px 10px 3px 10px;
+  border-left: 2px solid $blog-primary;
 }

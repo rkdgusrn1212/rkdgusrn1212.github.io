@@ -123,6 +123,9 @@ const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
               table: ({ node, ...props }) => (
                 <table {...props} className={styles.table} />
               ),
+              blockquote: ({ node, ...props }) => (
+                <blockquote {...props} className={styles.blockquote} />
+              ),
               pre: ({ node, ...props }) => {
                 let match = false;
                 for (const child of node.children) {
