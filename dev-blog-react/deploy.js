@@ -2,19 +2,19 @@
 
 'use strict';
 
-const fs = require('fs-extra');
-const path = require('path');
+import { removeSync, copySync, moveSync } from 'fs-extra';
+import { join } from 'path';
 
-const reactStaticDir = path.join(__dirname, '..', 'react-static');
-fs.removeSync(reactStaticDir);
+const reactStaticDir = join(__dirname, '..', 'react-static');
+removeSync(reactStaticDir);
 console.log('react-static is deleted');
 
-fs.copySync(path.join(__dirname, 'build'), reactStaticDir);
+copySync(join(__dirname, 'build'), reactStaticDir);
 console.log('copied react-static to build');
 
-const rootIdx = path.join(__dirname, '..', 'index.html');
-fs.removeSync(rootIdx);
+const rootIdx = join(__dirname, '..', 'index.html');
+removeSync(rootIdx);
 console.log('index.html is deleted');
 
-fs.moveSync(path.join(reactStaticDir, 'index.html'), path.join(rootIdx));
+moveSync(join(reactStaticDir, 'index.html'), join(rootIdx));
 console.log('done');

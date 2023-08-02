@@ -3,7 +3,7 @@ import styles from './Footer.module.scss';
 import logo from 'assets/blog/logo.png';
 import linkList from 'assets/link-list.json';
 
-function Footer() {
+const Footer: React.FC = () => {
   return (
     <div className={styles.footer}>
       <Container fluid="md">
@@ -36,6 +36,6 @@ function Footer() {
       </Container>
     </div>
   );
-}
+};
 
 export default Footer;

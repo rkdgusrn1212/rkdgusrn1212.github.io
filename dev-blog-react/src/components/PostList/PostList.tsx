@@ -7,12 +7,17 @@ import ListGroup from 'react-bootstrap/container';
 import { postTotal } from 'services/postApi';
 import styles from './PostList.module.scss';
 
-//게시글이 없으면 없음 메시지 띄움.
-const PostList: React.FC<{
+interface PostListProps {
   pageSize: number;
   pgntHalfSize: number;
   selected?: number;
-}> = ({ pageSize, pgntHalfSize, selected }) => {
+}
+//게시글이 없으면 없음 메시지 띄움.
+const PostList: React.FC<PostListProps> = ({
+  pageSize,
+  pgntHalfSize,
+  selected,
+}: PostListProps) => {
   const [pageNum, setPageNum] = useState(
     selected ? Math.floor((postTotal - 1 - selected) / pageSize) + 1 : 1, //먼저 현재 페이지를 초기화
   );

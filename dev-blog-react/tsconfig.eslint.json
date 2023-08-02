@@ -1,0 +1,4 @@
+{
+  "extends": "./tsconfig.json",
+  "files": [".eslintrc.cjs", "./deploy.js", "./src/**/*.ts"]
+}

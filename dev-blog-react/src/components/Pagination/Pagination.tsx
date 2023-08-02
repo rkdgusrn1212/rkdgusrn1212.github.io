@@ -9,6 +9,7 @@ type PaginationProps = {
   maxPage: number;
   pgntHalfSize: number;
   direction: StackDirection;
+  // eslint-disable-next-line no-unused-vars
   handleChange: (pgNum: number) => void;
 };
 
@@ -20,7 +21,7 @@ const Pagination: React.FC<PaginationProps> = ({
   pgntHalfSize,
   direction = 'horizontal',
   handleChange,
-}) => {
+}: PaginationProps) => {
   if (pgnt[0] == 1) {
     pgnt.splice(0, 1);
   }

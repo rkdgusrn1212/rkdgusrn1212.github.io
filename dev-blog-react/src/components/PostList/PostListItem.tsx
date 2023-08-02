@@ -4,10 +4,15 @@ import Placeholder from 'react-bootstrap/Placeholder';
 import { useReadPostInfoQuery } from 'services/postApi';
 import styles from './PostList.module.scss';
 
-const PostListItem: React.FC<{ idx: number; selected: boolean }> = ({
+interface PostListItemProps {
+  idx: number;
+  selected: boolean;
+}
+
+const PostListItem: React.FC<PostListItemProps> = ({
   idx,
   selected,
-}) => {
+}: PostListItemProps) => {
   const readPostInfoResult = useReadPostInfoQuery(idx);
 
   return (

@@ -7,7 +7,7 @@ export interface HeaderProps {
   activeHref: '/' | '/#/posts' | '/#/projects';
 }
 
-const Header: React.FC<HeaderProps> = ({ activeHref }) => {
+const Header: React.FC<HeaderProps> = ({ activeHref }: HeaderProps) => {
   const pages = useMemo(() => {
     const result = {
       '/': { name: '블로그 홈', active: false },

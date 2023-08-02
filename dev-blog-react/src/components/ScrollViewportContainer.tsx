@@ -9,7 +9,7 @@ import Header, { HeaderProps } from 'components/Header';
 const ScrollViewportContainer: React.FC<PropsWithChildren<HeaderProps>> = ({
   activeHref,
   children,
-}) => {
+}: PropsWithChildren<HeaderProps>) => {
   return (
     <>
       <Stack className="vh-100 overflow-scroll">

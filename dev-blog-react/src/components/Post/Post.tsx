@@ -7,6 +7,7 @@ import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { useReadPostQuery } from 'services/postApi';
 import styles from './Post.module.scss';
 import rehypeRaw from 'rehype-raw';
+import { HeadingProps } from 'react-markdown/lib/ast-to-react';
 
 const defaultFont = {
   color: '#1F2318',
@@ -14,7 +15,11 @@ const defaultFont = {
     '-apple-system, BlinkMacSystemFont,Segoe UI,Noto Sans,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji',
 };
 
-const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
+interface PostProps {
+  postNo: number;
+}
+
+const Post: React.FC<PostProps> = ({ postNo }: PostProps) => {
   const readPostResult = useReadPostQuery(postNo);
 
   return (
@@ -39,7 +44,7 @@ const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
           </header>
           <ReactMarkdown
             components={{
-              h1: ({ node, ...props }) => (
+              h1: ({ ...props }: HeadingProps) => (
                 <h1
                   {...props}
                   style={{
@@ -52,7 +57,7 @@ const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
                   }}
                 />
               ),
-              h2: ({ node, ...props }) => (
+              h2: ({ ...props }: HeadingProps) => (
                 <h2
                   {...props}
                   style={{
@@ -65,7 +70,7 @@ const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
                   }}
                 />
               ),
-              h3: ({ node, ...props }) => (
+              h3: ({ ...props }: HeadingProps) => (
                 <h3
                   {...props}
                   style={{
@@ -76,7 +81,7 @@ const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
                   }}
                 />
               ),
-              h4: ({ node, ...props }) => (
+              h4: ({ ...props }: HeadingProps) => (
                 <h4
                   {...props}
                   style={{
@@ -87,7 +92,7 @@ const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
                   }}
                 />
               ),
-              h5: ({ node, ...props }) => (
+              h5: ({ ...props }) => (
                 <h5
                   {...props}
                   style={{
@@ -98,7 +103,7 @@ const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
                   }}
                 />
               ),
-              h6: ({ node, ...props }) => (
+              h6: ({ ...props }) => (
                 <h6
                   {...props}
                   style={{
@@ -109,7 +114,7 @@ const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
                   }}
                 />
               ),
-              p: ({ node, ...props }) => (
+              p: ({ ...props }) => (
                 <p
                   {...props}
                   style={{
@@ -120,10 +125,10 @@ const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
                   }}
                 />
               ),
-              table: ({ node, ...props }) => (
+              table: ({ ...props }) => (
                 <table {...props} className={styles.table} />
               ),
-              blockquote: ({ node, ...props }) => (
+              blockquote: ({ ...props }) => (
                 <blockquote {...props} className={styles.blockquote} />
               ),
               pre: ({ node, ...props }) => {
@@ -153,7 +158,7 @@ const Post: React.FC<{ postNo: number }> = ({ postNo }) => {
                   />
                 );
               },
-              code({ node, inline, className, children, ...props }) {
+              code({ inline, className, children, ...props }) {
                 const match = /language-(\w+)/.exec(className || '');
                 return !inline && match ? (
                   <SyntaxHighlighter
