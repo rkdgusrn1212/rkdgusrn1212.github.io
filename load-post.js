@@ -2,9 +2,10 @@
 
 'use strict';
 
+const { execSync } = require('child_process');
 const fs = require('fs-extra');
 const path = require('path');
-const srcPath = path.join(__dirname, '..', '_posts');
+const srcPath = path.join(__dirname, '_posts');
 console.log('from :' + srcPath);
 
 const dstPath = path.join(__dirname, 'src', 'posts');
@@ -31,8 +32,9 @@ for (const i in files) {
   fs.writeSync(fd, data, 0, data.length, buf.length);
   fs.close(fd);
 }
+const dstFilePath = path.join(dstPath, 'index.js');
 fs.writeFileSync(
-  path.join(dstPath, 'index.js'),
+  dstFilePath,
   idxData +
     `const fileList = [${files
       .map((file, i) => `post${i}`)
@@ -40,3 +42,6 @@ fs.writeFileSync(
     'export default fileList;',
 );
 console.log('done');
+
+execSync(`yarn prettier -w "${dstFilePath}"`);
+console.log(`yarn prettier -w "${dstFilePath}"`);

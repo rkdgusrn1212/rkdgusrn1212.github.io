@@ -16,7 +16,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   title,
   description,
   link,
-}) => {
+}: ProjectCardProps) => {
   const handleClick: React.MouseEventHandler<HTMLButtonElement> = () => {
     /*
     noopener : 새 탭의 window.openner 참조를 null로 만든다. 원 페이지와의 브라우저 컨텍스트를 분리하여 원 페이지 컨텍스트 참조를 원천 차단함.

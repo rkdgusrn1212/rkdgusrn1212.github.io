@@ -14,7 +14,7 @@ const ProjectCardGrid: React.FC<ProjectCardGridProps> = ({
   md = 4,
   lg = 3,
   xl = 2,
-}) => {
+}: ProjectCardGridProps) => {
   return (
     <Row gap={2}>
       {projectList.map((project) => (

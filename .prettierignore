@@ -1,6 +1,4 @@
 # build, static, lib 파일
-/build/
-/posts/
 /node_modules/
 /public/
 
