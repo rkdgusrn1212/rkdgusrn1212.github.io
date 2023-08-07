@@ -2,6 +2,8 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 import FrontMatter, { FrontMatterResult } from 'front-matter';
 import removeMarkdown from 'markdown-to-text';
 import PostFiles from 'posts';
+import fetch from 'cross-fetch';
+
 export const postTotal = PostFiles.length;
 
 export interface PostInfo {
@@ -21,7 +23,7 @@ export interface Post {
 }
 
 const postApi = createApi({
-  baseQuery: fetchBaseQuery(),
+  baseQuery: fetchBaseQuery({ fetchFn: fetch }),
   reducerPath: 'postApi',
   endpoints: (builder) => ({
     readPostInfo: builder.query<PostInfo, number>({

@@ -1,4 +1,4 @@
 {
   "extends": "./tsconfig.json",
-  "files": [".eslintrc.cjs", "./deploy.js", "./src/**/*.ts"]
+  "files": [".eslintrc.cjs", "./deploy.js", "./src/**/*.ts", "load-post.js"]
 }
