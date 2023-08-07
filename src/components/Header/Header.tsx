@@ -4,15 +4,15 @@ import styles from './Header.module.scss';
 import linkList from 'assets/link-list.json';
 
 export interface HeaderProps {
-  activeHref: '/' | '/#/posts' | '/#/projects';
+  activeHref: '/' | '/posts' | '/projects';
 }
 
 const Header: React.FC<HeaderProps> = ({ activeHref }: HeaderProps) => {
   const pages = useMemo(() => {
     const result = {
       '/': { name: '블로그 홈', active: false },
-      '/#/posts': { name: '내 포스트들', active: false },
-      '/#/projects': { name: '내 프로젝트들', active: false },
+      '/posts': { name: '내 포스트들', active: false },
+      '/projects': { name: '내 프로젝트들', active: false },
     };
     if (activeHref) {
       result[activeHref].active = true;

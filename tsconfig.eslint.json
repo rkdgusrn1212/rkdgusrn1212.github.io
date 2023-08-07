@@ -1,4 +1,16 @@
 {
   "extends": "./tsconfig.json",
-  "files": [".eslintrc.cjs", "./deploy.js", "./src/**/*.ts", "load-post.js"]
+  "files": ["./.eslintrc.cjs", "./load-post.js"],
+  "include": [
+    "./config/**/*.js",
+    "./config/**/*.config.js",
+    "./scripts/**/*.js",
+    "./src/**/*.ts",
+    "./src/**/*.d.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.js",
+    "./src/**/*.jsx",
+    "./src/**/*.json", //resource
+    "./src/**/*.scss"
+  ]
 }

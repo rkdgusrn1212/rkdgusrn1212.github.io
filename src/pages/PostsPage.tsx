@@ -21,7 +21,7 @@ const PostsPage: React.FC = () => {
   //이시점에선 범위 내 입력 값 or postTotal-1만 남음. 이제 postNo가 0이상일때만 출력해주면 됨.
 
   return (
-    <ScrollViewportContainer activeHref="/#/posts">
+    <ScrollViewportContainer activeHref="/posts">
       <Row className="h-100 flex-row-reverse">
         <Col xs={12} xl={9} className="h-100 overflow-scroll">
           {postNo >= 0 && <Post postNo={postNo} />}

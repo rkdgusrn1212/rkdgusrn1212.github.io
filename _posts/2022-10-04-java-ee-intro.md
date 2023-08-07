@@ -1,21 +1,21 @@
 ---
 layout: post
-title: "Java EE 개요"
+title: 'Java EE 개요'
 date: 2022-10-04 13:05:00 +0900
-categories: ["Java","Java EE"]
+categories: ['Java', 'Java EE']
 ---
 
 ## 1. Java EE란?
 
-- *Java Enterprise Edition*
+- _Java Enterprise Edition_
 - 기업용 분산 어플리케이션 개발 목적의 산업 표준 플렛폼.
 - *Java SE*의 확장.
-- *Web Profile*(JSP, Servlet등 웹 어플리케이션 서버에 관련된 사양)이 포함된다.
+- _Web Profile_(JSP, Servlet등 웹 어플리케이션 서버에 관련된 사양)이 포함된다.
 
 ## 2. Java EE의 기술들(Technologies)
 
-- 마지막 버전인 *Java EE 8* 의 기술목록, [오라클 공식 문서](https://www.oracle.com/java/technologies/javaee/javaeetechnologies.html) 참조
-- 더 이상의 업데이트는 없다. 이유는 [Jakarta EE](/java/java%20ee/jakarta%20ee/2022/10/04/jakarta-ee-intro.html)포스트를 참조.
+- 마지막 버전인 _Java EE 8_ 의 기술목록, [오라클 공식 문서](https://www.oracle.com/java/technologies/javaee/javaeetechnologies.html) 참조
+- 더 이상의 업데이트는 없다. 이유는 [Jakarta EE](/posts/4)포스트를 참조.
 
 ### 2.1 웹 어플리케이션 기술들
 
@@ -23,10 +23,10 @@ categories: ["Java","Java EE"]
 - JSON Binding 1.0
 - JSON Processing 1.1
 - Java Servlet 4.0
-- JavaServer Faces(*JSF*) 2.3
-- Expression Language(*EL*) 3.0
-- JavaServer Pages(*JSP*) 2.3
-- Standard Tag Library for JavaServer Pages(*JSTL*) 1.2
+- JavaServer Faces(_JSF_) 2.3
+- Expression Language(_EL_) 3.0
+- JavaServer Pages(_JSP_) 2.3
+- Standard Tag Library for JavaServer Pages(_JSTL_) 1.2
 
 ### 2.2 엔터프라이즈 어플리케이션 기술들
 

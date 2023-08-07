@@ -1,2 +1,3 @@
 - prettier 3 버전에서 printWidth를 통한 wrap 이 되지 않는 버그가 있음. 따라서 2.8.8버전을 사용함
 - 2.8.8 버전에서는 eslint-plugin-prettier@>5버전과 호환이 되지않아 4.2.1버전을 사용함.
+- react-snap은 include된 파일을 기준으로 href 링크를 따라 크롤링됨. 따라서 a또는 Link를 사용하는게 좋으나. 해시주소가 아닌 Brouser router환경에서 필연적인 페이지 리프레시를 href를 쓰면서 막으려면 Link를 써야되기 때문에 Link를 써야함.

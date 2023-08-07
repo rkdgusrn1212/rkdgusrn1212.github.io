@@ -4,7 +4,7 @@ import projectList from 'assets/project-list.json';
 
 const ProjectsPage: React.FC = () => {
   return (
-    <ScrollViewportContainer activeHref="/#/projects">
+    <ScrollViewportContainer activeHref="/projects">
       <div className="py-2">
         <ProjectCardGrid projectList={projectList} />
       </div>

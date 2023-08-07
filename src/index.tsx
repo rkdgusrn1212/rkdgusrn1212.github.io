@@ -1,18 +1,11 @@
-import * as React from 'react';
 import './index.scss';
 import App from './App';
-import { Provider } from 'react-redux';
-import store from './store';
-import { HashRouter } from 'react-router-dom';
-import { render } from 'react-snapshot';
+import ReactDom from 'react-dom/client';
 
-render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <HashRouter>
-        <App />
-      </HashRouter>
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById('root'),
-);
+const rootElement = document.getElementById('root');
+const root = ReactDom.createRoot(rootElement);
+if (rootElement.hasChildNodes()) {
+  ReactDom.hydrateRoot(rootElement, <App />);
+} else {
+  root.render(<App />);
+}
