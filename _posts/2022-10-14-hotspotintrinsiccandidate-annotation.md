@@ -1,8 +1,11 @@
 ---
-layout: post
-title:  "@HotSpotIntrinsicCandidate을 활용한 성능 향상"
-date:   2022-10-14 16:58:00 +0900
-categories: ["java", "jvm", "hotspot", "hotspotintrinsiccandidate"]
+title: '@HotSpotIntrinsicCandidate을 활용한 성능 향상'
+date: 2022-10-14T07:58:00.000Z
+tags:
+  - java
+  - jvm
+  - hotspot
+  - hotspotintrinsiccandidate
 ---
 
 ## 1. @HotSpotIntrinsicCandidate 역할
@@ -27,13 +30,8 @@ categories: ["java", "jvm", "hotspot", "hotspotintrinsiccandidate"]
 
 **HotSpot**은 구동되는 타겟 OS, 벤더에 따라 그 구현이 조금씩 다르다. 따라서 각 구현마다 **내장 함수** 목록도 조금씩 달라서 @HotSpotIntrinsicCandidate이 쓰여있더라도 하드웨어에 설치된 **HotSpot**에서는 **내장 함수**로 치환이 안될 수 있다.
 
-> \* The HotSpot VM defines (internally) a list of intrinsics. Not all intrinsic
- \* are available on all platforms supported by the HotSpot VM. Furthermore,
- \* the availability of an intrinsic on a given platform depends on the
- \* configuration of the HotSpot VM (e.g., the set of VM flags enabled).
- \* Therefore, annotating a method with {@code @HotSpotIntrinsicCandidate} does
- \* not guarantee that the marked method is intrinsified by the HotSpot VM.
- [OpenJDK11 JavaDoc](https://github.com/AdoptOpenJDK/openjdk-jdk11/blob/master/src/java.base/share/classes/jdk/internal/HotSpotIntrinsicCandidate.java)
+> \* The HotSpot VM defines (internally) a list of intrinsics. Not all intrinsic \* are available on all platforms supported by the HotSpot VM. Furthermore, \* the availability of an intrinsic on a given platform depends on the \* configuration of the HotSpot VM (e.g., the set of VM flags enabled). \* Therefore, annotating a method with {@code @HotSpotIntrinsicCandidate} does \* not guarantee that the marked method is intrinsified by the HotSpot VM.
+> [OpenJDK11 JavaDoc](https://github.com/AdoptOpenJDK/openjdk-jdk11/blob/master/src/java.base/share/classes/jdk/internal/HotSpotIntrinsicCandidate.java)
 
 ## 4. @HotSpotIntrinsicCandidate는 반드시 표시되어야 한다
 
@@ -41,14 +39,8 @@ categories: ["java", "jvm", "hotspot", "hotspotintrinsiccandidate"]
 
 **OpenJDK 11**의 **JavaDoc**에 따르면 **HotSpot JVM**의 JIT를 실행할 때 **CheckIntrinsics** 플레그를 통해 **내장 함수** 치환 기능을 제공하는데, 해당 플레그가 참일 때(Default는 참), 클래스를 로드하는 시점에서 해당 어노테이션을 가지고 있는 메소드가 **HotSpot**의 **내장 함수** 리스트에 있는지를 검사한다고 한다. 해당 사항에 대해선 **OpenJDK**와 **JDK**는 같은 스펙을 공유한다.
 
-> \* If the {@code CheckIntrinsics} VM flag is enabled, the HotSpot VM checks
- \* (when loading a class) that (1) all methods of that class that are also on
- \* the VM's list of intrinsics are annotated with {@code @HotSpotIntrinsicCandidate}
- \* and that (2) for all methods of that class annotated with
- \* {@code @HotSpotIntrinsicCandidate} there is an intrinsic in the list.
- \*
- \* @since 9 [OpenJDK11 JavaDoc](https://github.com/AdoptOpenJDK/openjdk-jdk11/blob/master/src/java.base/share/classes/jdk/internal/HotSpotIntrinsicCandidate.java)
+> \* If the {@code CheckIntrinsics} VM flag is enabled, the HotSpot VM checks \* (when loading a class) that (1) all methods of that class that are also on \* the VM's list of intrinsics are annotated with {@code @HotSpotIntrinsicCandidate} \* and that (2) for all methods of that class annotated with \* {@code @HotSpotIntrinsicCandidate} there is an intrinsic in the list. \* \* @since 9 [OpenJDK11 JavaDoc](https://github.com/AdoptOpenJDK/openjdk-jdk11/blob/master/src/java.base/share/classes/jdk/internal/HotSpotIntrinsicCandidate.java)
 
-* [관련 이슈 링크](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=8076112).
-* [관련 블로그 링크](https://simonis.github.io/GeekOut2018/HotspotIntrinscs/intrinsics.xhtml#/9)
-* [관련 블로그 링크2](https://alidg.me/blog/2020/12/10/hotspot-intrinsics)
+- [관련 이슈 링크](https://bugs.java.com/bugdatabase/view_bug.do?bug_id=8076112).
+- [관련 블로그 링크](https://simonis.github.io/GeekOut2018/HotspotIntrinscs/intrinsics.xhtml#/9)
+- [관련 블로그 링크2](https://alidg.me/blog/2020/12/10/hotspot-intrinsics)

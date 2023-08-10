@@ -36,11 +36,11 @@ const PostListItem: React.FC<PostListItemProps> = ({
         </p>
         <div className="d-flex flex-wrap">
           {readPostInfoResult.isSuccess ? (
-            readPostInfoResult.data.categories.map((cat, i) => (
-              <p key={cat}>
+            readPostInfoResult.data.tags.map((tag) => (
+              <p key={tag}>
                 <small>
                   <Badge bg="secondary" className="me-1 pb-1">
-                    {cat}
+                    {tag}
                   </Badge>
                 </small>
               </p>

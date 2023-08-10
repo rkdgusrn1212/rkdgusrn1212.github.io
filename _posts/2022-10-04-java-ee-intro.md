@@ -1,8 +1,9 @@
 ---
-layout: post
-title: 'Java EE 개요'
-date: 2022-10-04 13:05:00 +0900
-categories: ['Java', 'Java EE']
+title: Java EE 개요
+date: 2022-10-04T04:05:00.000Z
+tags:
+  - Java
+  - Java EE
 ---
 
 ## 1. Java EE란?

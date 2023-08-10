@@ -10,7 +10,8 @@
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true, //이거 false하고 * as문법 사용하면 배열 객체가 아닌 module 객체로 뜸. (배열 메소드 사용불가) 또한 배열을 상위 오브젝트의 맴버로 넘기려고 하면 해당 맴버 참조가 Export, reexported as, was not found (possible exports)... 애러를 뱉는다.
     "module": "ES2020", //2020부터 모듈시스템이 dynamic import를 지원.
-    "composite": true
+    "composite": true,
+    "lib": ["dom", "ES2020"]
   },
   "include": [
     "./src/**/*.ts",

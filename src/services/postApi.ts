@@ -11,7 +11,7 @@ export interface PostInfo {
   title: string;
   date: string;
   summary: string;
-  categories: string[];
+  tags: string[];
 }
 
 export interface Post {
@@ -19,7 +19,7 @@ export interface Post {
   title: string;
   date: string;
   body: string;
-  categories: string[];
+  tags: string[];
 }
 
 const postApi = createApi({
@@ -34,26 +34,29 @@ const postApi = createApi({
       }),
       transformResponse: (response: string) => {
         response = response.substring(16);
-        const frontMatterResult: FrontMatterResult<{
+        const frontMatterResult = FrontMatter<{
           layout: string;
           title: string;
-          date: string;
-          categories: string[];
-        }> = FrontMatter(response);
+          date: Date;
+          tags: string[];
+        }>(response);
 
-        let categories = frontMatterResult.attributes.categories;
+        const date = frontMatterResult.attributes.date.toISOString();
+
+        let tags = frontMatterResult.attributes.tags;
 
         //단일 값일땐 길이 1인 배열, null(undefined)인경우 empty array로
-        if (!categories) {
-          categories = [];
-        } else if (!Array.isArray(categories)) {
-          categories = [categories];
+        if (!tags) {
+          tags = [];
+        } else if (!Array.isArray(tags)) {
+          tags = [tags];
         }
-        categories = categories.map((cat) => cat.toLowerCase()); //카테고리 전부 소문자화.
+        tags = tags.map((cat) => cat.toLowerCase()); //카테고리 전부 소문자화.
 
         return {
           ...frontMatterResult.attributes,
-          categories,
+          date,
+          tags,
           summary: removeMarkdown(frontMatterResult.body),
         };
       },
@@ -66,26 +69,29 @@ const postApi = createApi({
       }),
       transformResponse: (response: string) => {
         response = response.substring(16);
-        const frontMatterResult: FrontMatterResult<{
+        const frontMatterResult = FrontMatter<{
           layout: string;
           title: string;
-          date: string;
-          categories: string[];
-        }> = FrontMatter(response);
+          date: Date;
+          tags: string[];
+        }>(response);
 
-        let categories = frontMatterResult.attributes.categories;
+        const date = frontMatterResult.attributes.date.toISOString();
+
+        let tags = frontMatterResult.attributes.tags;
 
         //단일 값일땐 길이 1인 배열, null(undefined)인경우 empty array로
-        if (!categories) {
-          categories = [];
-        } else if (!Array.isArray(categories)) {
-          categories = [categories];
+        if (!tags) {
+          tags = [];
+        } else if (!Array.isArray(tags)) {
+          tags = [tags];
         }
-        categories = categories.map((cat) => cat.toLowerCase()); //카테고리 전부 소문자화.
+        tags = tags.map((cat) => cat.toLowerCase()); //카테고리 전부 소문자화.
 
         return {
           ...frontMatterResult.attributes,
-          categories,
+          date,
+          tags,
           body: frontMatterResult.body,
         };
       },

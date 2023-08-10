@@ -1,9 +1,12 @@
 ---
-layout: post
-title: 'trimDirectiveWhitespaces 설정을 통한 JSP Page 응답 소스의 최상단 공백 제거'
-date: 2022-10-10 23:28:00 +0900
-categories:
-  ['Java', 'Java EE', 'Directive', 'Page Directive', 'trimDirectiveWhitespaces']
+title: trimDirectiveWhitespaces 설정을 통한 JSP Page 응답 소스의 최상단 공백 제거
+date: 2022-10-10T14:28:00.000Z
+tags:
+  - Java
+  - Java EE
+  - Directive
+  - Page Directive
+  - trimDirectiveWhitespaces
 ---
 
 ## 1. JSP Page 응답 소스의 최상단에 공백이 발생하는 이유.

@@ -1,8 +1,10 @@
 ---
-layout: post
-title: "Model 2 구조의 자바 웹 어플리케이션 개발"
-date: 2022-10-05 17:17:00 +0900
-categories: ["Java","Java EE", "Directive"]
+title: Model 2 구조의 자바 웹 어플리케이션 개발
+date: 2022-10-05T08:17:00.000Z
+tags:
+  - Java
+  - Java EE
+  - Directive
 ---
 
 ## 1. Model 2 패턴?

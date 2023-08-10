@@ -1,10 +1,8 @@
 ---
-layout: post
-title:  "가장 빠르게 정수와 문자열 입력을 받는법"
-date:   2022-10-23 16:39:00 +0900
-categories:
+title: 가장 빠르게 정수와 문자열 입력을 받는법
+date: 2022-10-23T07:39:00.000Z
+tags: null
 ---
-
 
 이 포스팅은 [가장 빠른 정수 입력 받기](/) 포스팅의 연장이다.
 
@@ -14,7 +12,7 @@ categories:
 
 ## 2. 문자열 입력 커스텀 메소드
 
-``` java
+```java
 private static String readStr(int bufSize) throws IOException{
 		byte[] bytes = new byte[bufSize];
 		int i=0;
@@ -34,6 +32,7 @@ private static String readStr(int bufSize) throws IOException{
 		}
 }
 ```
+
 1. 문자열앞에 개행(운영체제별 개행방법 모두 고려)과 공백이 연속해서 존재할 경우도 고려.
 2. 운영체제 또는 입력 인코딩에 따라 메소드 종료 후에 InputStream에 개행문자가 남을 가능성이 있다.
 3. 2번의 이유로 연달아 쓸때 오류를 발생 시키지 않기 위해 1번 조건을 만족시키는 설계를 하게되었다.
@@ -64,6 +63,7 @@ private static int readInt() throws IOException {
 		}
 }
 ```
+
 1. 정수 입력앞에 개행(운영체제별 개행방법 모두 고려)과 공백이 연속해서 존재할 경우도 고려.
 2. 1번 조건에 해당하지 않는 문자들은 모두 정수로 가정하고 처리하므로 입력에 정수앞에 공백과 개행 이외의 문자가 남아있을때는 문자열 입력 받는 커스텀 메소드로 해당 문자들을 읽어들인 후에 정수를 읽도록 해야한다.
 

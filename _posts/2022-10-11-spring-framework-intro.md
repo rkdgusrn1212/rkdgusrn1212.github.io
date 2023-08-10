@@ -1,8 +1,7 @@
 ---
-layout: post
-title:  "STS 프로젝트의 빌드 자동화 도구"
-date:   2022-10-11 09:21:00 +0900
-categories: jekyll
+title: STS 프로젝트의 빌드 자동화 도구
+date: 2022-10-11T00:21:00.000Z
+tags: jekyll
 ---
 
 ## STS 프로젝트는 기본적으로 Maven 기반

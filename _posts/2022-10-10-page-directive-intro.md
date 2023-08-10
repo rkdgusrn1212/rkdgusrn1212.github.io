@@ -1,8 +1,11 @@
 ---
-layout: post
-title: 'Page Directive 개요'
-date: 2022-10-10 16:35:00 +0900
-categories: ['Java', 'Java EE', 'Directive', 'Page Directive']
+title: Page Directive 개요
+date: 2022-10-10T07:35:00.000Z
+tags:
+  - Java
+  - Java EE
+  - Directive
+  - Page Directive
 ---
 
 ## 1. Page Directive

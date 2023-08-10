@@ -1,8 +1,7 @@
 ---
-layout: post
-title:  "JVM에서 가장 빠른 비교연산자"
-date:   2022-10-27 09:49:00 +0900
-categories:
+title: JVM에서 가장 빠른 비교연산자
+date: 2022-10-27T00:49:00.000Z
+tags: null
 ---
 
 ## 1. 비교연산자의 구분 Equal과 Less, Greater

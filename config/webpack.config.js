@@ -27,6 +27,7 @@ const ForkTsCheckerWebpackPlugin =
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 const createEnvironmentHash = require('./webpack/persistentCache/createEnvironmentHash');
+const WebpackObfuscatorPlugin = require('webpack-obfuscator');
 
 // Source maps are resource heavy and can cause out of memory issue for large source files.
 const shouldUseSourceMap = process.env.GENERATE_SOURCEMAP !== 'false';
@@ -719,6 +720,10 @@ module.exports = function (webpackEnv) {
           logger: {
             infrastructure: 'silent',
           },
+        }),
+      isEnvProduction &&
+        new WebpackObfuscatorPlugin({
+          rotateStringArray: true,
         }),
     ].filter(Boolean),
     // Turn off performance processing because we utilize
