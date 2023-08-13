@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import FrontMatter, { FrontMatterResult } from 'front-matter';
+import FrontMatter from 'front-matter';
 import removeMarkdown from 'markdown-to-text';
-import PostFiles from 'posts';
+import PostFiles from 'assets/posts';
 import fetch from 'cross-fetch';
 
 export const postTotal = PostFiles.length;
@@ -33,7 +33,6 @@ const postApi = createApi({
         url: PostFiles[data],
       }),
       transformResponse: (response: string) => {
-        response = response.substring(16);
         const frontMatterResult = FrontMatter<{
           layout: string;
           title: string;
@@ -68,7 +67,6 @@ const postApi = createApi({
         url: PostFiles[data],
       }),
       transformResponse: (response: string) => {
-        response = response.substring(16);
         const frontMatterResult = FrontMatter<{
           layout: string;
           title: string;

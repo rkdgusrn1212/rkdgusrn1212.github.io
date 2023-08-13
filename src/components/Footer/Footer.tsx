@@ -1,6 +1,6 @@
 import { Stack, Container } from 'react-bootstrap';
 import styles from './Footer.module.scss';
-import logo from 'assets/blog/logo.png';
+import logo from 'assets/images/blog/logo.png';
 import linkList from 'assets/link-list.json';
 
 const Footer: React.FC = () => {
