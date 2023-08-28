@@ -1,11 +1,12 @@
 {
   "files": {
-    "main.js": "/static/js/main.6005ccf7.js",
+    "main.js": "/static/js/main.0c0b98d4.js",
     "main.css": "/static/css/main.cf7063f5.css",
     "static/media/logo.png": "/static/media/logo.f1089bda2c499498b363.png",
     "static/media/2023-07-14-node-js-웹 서버가-java-웹 서버보다-성능이-뛰어날까.md": "/static/media/2023-07-14-node-js-웹 서버가-java-웹 서버보다-성능이-뛰어날까.00ba9e1ce7bbdcb59bc7.md",
     "static/media/2022-10-10-page-directive-intro.md": "/static/media/2022-10-10-page-directive-intro.bb2a4d1f03c094632556.md",
     "static/media/2022-10-20-fastedst-int-reader.md": "/static/media/2022-10-20-fastedst-int-reader.e7ca5b54ff908b9a05a6.md",
+    "static/media/2023-08-28-nextjs-rendering.md": "/static/media/2023-08-28-nextjs-rendering.7b4dd9ba4b15de0aea8d.md",
     "static/media/2022-11-28-javascript-this.md": "/static/media/2022-11-28-javascript-this.99f6cb885367b0d59d9d.md",
     "static/media/2022-11-21-java-memory-strategy-in-algorithm.md": "/static/media/2022-11-21-java-memory-strategy-in-algorithm.87e4c6254253b9ad10bb.md",
     "static/media/2022-10-14-hotspotintrinsiccandidate-annotation.md": "/static/media/2022-10-14-hotspotintrinsiccandidate-annotation.96d0a505967f88b5f214.md",
@@ -36,7 +37,7 @@
     "main.cf7063f5.css.map": "/static/css/main.cf7063f5.css.map"
   },
   "entrypoints": [
-    "static/js/main.6005ccf7.js",
+    "static/js/main.0c0b98d4.js",
     "static/css/main.cf7063f5.css"
   ]
 }
