@@ -15,12 +15,12 @@
     "title": "오목판 안드로이드",
     "description": "인공지능 대전, 2인 대전(한 화면에서), 블루투스 대전, 온라인 대전, 출시 8년차 10만 다운로드 앱",
     "link": "https://play.google.com/store/apps/details?id=com.khgkjg12.gomoku",
-    "image": "/assets/img/gomokuboard-android"
+    "image": "/gomokuboard-android.png"
   },
   {
     "title": "오목판 웹",
     "description": "인공지능 대전, 2인 대전(한 화면에서), 온라인 대전, 웹 기반 체험 및 프로모션 앱",
     "link": "https://khgkjg12.blogspot.com/2026/09/blog-post.html",
-    "image": "/assets/img/gomokuboard-web.png"
+    "image": "/gomokuboard-web.png"
   }
 ]

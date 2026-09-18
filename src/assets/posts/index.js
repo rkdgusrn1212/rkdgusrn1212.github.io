@@ -27,6 +27,7 @@ import post25 from './2023-07-10-github-page-dependencies.md';
 import post26 from './2023-07-11-전세보증보험.md';
 import post27 from './2023-07-14-node-js-웹 서버가-java-웹 서버보다-성능이-뛰어날까.md';
 import post28 from './2023-08-28-nextjs-rendering.md';
+import post29 from './2025-03-10-maintain-method.md';
 const fileList = [
   post0,
   post1,
@@ -57,5 +58,6 @@ const fileList = [
   post26,
   post27,
   post28,
+  post29,
 ];
 export default fileList;
