@@ -15,7 +15,10 @@ npm run smoke   # 배포된 사이트 점검 (주소 인자로 로컬도 가능)
 
 ## 구조
 
-- `app/data/projects.ts`: 프로젝트 소개의 원천 데이터 (README·Google Play에 있는 사실만)
+- `app/data/profile.ts`: 분야별 기술(실무/학습), 소개 수치, 경력, 연혁
+- `app/data/evidence.ts`: 기술 지도의 근거 (경력은 설명만, 나머지는 공개 자료 링크)
+- `app/data/projects.ts`: 대표 프로젝트 (홈 카드와 상세 페이지가 함께 씀)
+- `app/components/toys/`: 프로젝트 체험 (오목판 실제 화면, 상·하의 맞추기, LIS 환자 접수 흐름)
 - `app/routes/projects/<slug>/`: 상세 페이지. 그 페이지의 이미지·영상은 같은 폴더에 두고 `import`한다
 - `app/routes/legacy-post.tsx`: 옛 블로그 주소 `/posts/0~29` → Blogger 이동 (`app/data/blogger-map.json`)
 - `scripts/postbuild.mjs`: `__spa-fallback.html`을 GitHub Pages용 `404.html`로 복사 (유일한 우회책)
@@ -25,5 +28,7 @@ npm run smoke   # 배포된 사이트 점검 (주소 인자로 로컬도 가능)
 
 - 오목판 웹 체험판은 광고가 있는 블로그 글로만 연결한다. 웹 앱을 임베드하거나 직접 링크하지 않고, 둘 수 있는 판도 만들지 않는다.
 - 버전은 고정한다. Node 24(`.nvmrc`), 러너 `ubuntu-24.04`, 의존성은 정확한 버전.
+- 공개 원칙: 현 회사명은 "의료 IT 기업"으로 일반화, 병원명·현업 소스·화면 비공개, 업무 단위 성과 수치는 머리에 두지 않는다.
+- 스타일은 옛 9LOG 블로그 팔레트(초록·분홍·아몬드·주황)를 잇는다.
 
 옛 블로그(CRA + react-snap) 코드와 md 글 원본은 git 히스토리에 남아 있다. 글은 [9 Log](https://khgkjg12.blogspot.com)로 옮겼다.

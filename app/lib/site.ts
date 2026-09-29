@@ -13,7 +13,7 @@ export const canonicalUrl = (path: string) => SITE_URL + (path.endsWith("/") ? p
 /** 페이지마다 제목·설명·공유 미리보기·canonical을 한 번에 만든다. */
 export function seo({ title, description, path }: { title?: string; description: string; path: string }) {
   const url = canonicalUrl(path);
-  const fullTitle = title ? `${title} · ${SITE_NAME}` : `${SITE_NAME} · 한 수씩, 끝까지`;
+  const fullTitle = title ? `${title} · ${SITE_NAME}` : `${SITE_NAME} · 포트폴리오`;
   return [
     { title: fullTitle },
     { name: "description", content: description },

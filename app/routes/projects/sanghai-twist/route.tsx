@@ -1,5 +1,6 @@
 import type { Route } from "./+types/route";
 import { ProjectDetail } from "~/components/project-detail";
+import { OutfitMatch } from "~/components/toys/outfit-match";
 import { getProject } from "~/data/projects";
 import { seo } from "~/lib/site";
 
@@ -14,5 +15,5 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export default function SanghaiTwist() {
-  return <ProjectDetail project={project} demo={<span className="caption">상·하의 맞추기 체험 자리 (P2)</span>} />;
+  return <ProjectDetail project={project} tryLabel="상·하의 맞추기" demo={<OutfitMatch />} />;
 }
