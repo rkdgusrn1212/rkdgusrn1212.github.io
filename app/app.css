@@ -1,0 +1,266 @@
+@import "tailwindcss";
+
+/* ── 디자인 토큰 (시안 v2 확정안) ─────────────────────────────
+   석판 바탕 위에 비자나무 판. 나무색은 판에만 쓰고,
+   강조색은 오목 앱의 "마지막 수" 빨간 점 하나뿐이다. */
+:root {
+  --ground: #e8ebee;
+  --surface: #f6f7f8;
+  --surface-2: #dce1e5;
+  --ink: #15181b;
+  --muted: #56606a;
+  --hair: #c7ced4;
+  --kaya: #d6a860;
+  --kaya-2: #c08e45;
+  --line: #3a2812;
+  --stone-b: #16181b;
+  --stone-w: #f4f3ee;
+  --accent: #d0392b;
+  --accent-soft: rgba(208, 57, 43, 0.14);
+  --on-accent: #ffffff;
+  --shadow: 0 1px 2px rgba(20, 24, 28, 0.08), 0 8px 24px rgba(20, 24, 28, 0.08);
+  --top: env(safe-area-inset-top, 0px);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --ground: #0e1012;
+    --surface: #161a1d;
+    --surface-2: #1f2428;
+    --ink: #e8ebed;
+    --muted: #9aa3ac;
+    --hair: #2b3137;
+    --kaya: #b98c4a;
+    --kaya-2: #9e7536;
+    --line: #22160a;
+    --stone-b: #0a0b0c;
+    --stone-w: #eceae3;
+    --accent: #ff5a48;
+    --accent-soft: rgba(255, 90, 72, 0.16);
+    --on-accent: #1a0906;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 10px 28px rgba(0, 0, 0, 0.35);
+  }
+}
+
+@theme {
+  --font-display: "Hahmlet", "Nanum Myeongjo", "Apple SD Gothic Neo", serif;
+  --font-sans: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+}
+
+html,
+body {
+  background: var(--ground);
+  color: var(--ink);
+}
+body {
+  font: 16px/1.65 var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ── 공통 ── */
+.wrap {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 40px);
+}
+.page {
+  display: grid;
+  gap: 18px;
+  padding-block: 48px 72px;
+}
+.eyebrow {
+  font: 500 12px/1.4 var(--font-mono);
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin: 0;
+}
+.display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  text-wrap: balance;
+  font-size: clamp(38px, 6vw, 72px);
+  margin: 0;
+}
+.lede {
+  color: var(--muted);
+  max-width: 44ch;
+  margin: 0;
+  text-wrap: pretty;
+}
+.caption {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+}
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  font: 500 12px/1 var(--font-mono);
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: var(--surface-2);
+  white-space: nowrap;
+}
+.chip.hot {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--hair);
+  background: var(--surface);
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+.btn:hover {
+  border-color: var(--ink);
+}
+.btn.primary {
+  background: var(--ink);
+  color: var(--ground);
+  border-color: var(--ink);
+}
+.btn.accent {
+  background: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent);
+}
+
+/* ── 상단 바 · 바닥글 ── */
+.topbar {
+  position: sticky;
+  top: var(--top);
+  z-index: 20;
+  background: color-mix(in srgb, var(--ground) 86%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--hair);
+}
+.topbar-in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 20px;
+  padding-block: 12px;
+  flex-wrap: wrap;
+}
+.brand {
+  font: 800 20px/1 var(--font-display);
+  text-decoration: none;
+}
+.topnav {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+.topnav a {
+  text-decoration: none;
+  color: var(--muted);
+}
+.topnav a.active,
+.topnav a:hover {
+  color: var(--ink);
+}
+.site-footer {
+  display: grid;
+  gap: 12px;
+  padding-block: 32px 48px;
+  border-top: 1px solid var(--hair);
+}
+
+/* ── 홈: 장 (P2에서 스크롤 연출을 얹는다) ── */
+.chapter {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(24px, 5vw, 72px);
+  border-top: 1px solid var(--hair);
+  padding-block: 56px;
+}
+.chapter h2 {
+  font: 800 clamp(32px, 4.4vw, 52px) / 1.08 var(--font-display);
+  margin: 0;
+}
+.chapter .num {
+  font: 500 12px/1 var(--font-mono);
+  color: var(--accent);
+}
+.ch-text {
+  display: grid;
+  gap: 16px;
+  align-content: start;
+}
+.stage {
+  background: var(--surface);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  min-height: 320px;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+@media (max-width: 860px) {
+  .chapter {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── 상세 ── */
+.facts {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 18px;
+  margin: 0;
+  font-size: 15px;
+}
+.facts dt {
+  color: var(--muted);
+}
+.facts dd {
+  margin: 0;
+}
+.section {
+  display: grid;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px dashed var(--hair);
+}
+.section h2 {
+  font: 600 18px/1.3 var(--font-sans);
+  margin: 0;
+}
+.dev-stack {
+  overflow-x: auto;
+  font-size: 12px;
+  background: var(--surface);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

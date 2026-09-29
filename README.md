@@ -1,11 +1,29 @@
-- prettier 3 버전에서 printWidth를 통한 wrap 이 되지 않는 버그가 있음. 따라서 2.8.8버전을 사용함
-- 2.8.8 버전에서는 eslint-plugin-prettier@>5버전과 호환이 되지않아 4.2.1버전을 사용함.
-- react-snap은 include된 파일을 기준으로 href 링크를 따라 크롤링됨. 따라서 a또는 Link를 사용하는게 좋으나. 해시주소가 아닌 Brouser router환경에서 필연적인 페이지 리프레시를 href를 쓰면서 막으려면 Link를 써야되기 때문에 Link를 써야함
+# rkdgusrn1212.github.io
 
-## react-snap의 200.html과 404.html
+강현구의 인터랙티브 포트폴리오. React Router 8 프레임워크 모드로, 서버 없이(`ssr: false`) 빌드 시점에 모든 페이지를 HTML로 만들어 GitHub Pages에 올린다.
 
-react-snap은 pre rendered hydrate를 지원하기 위해 200과 404.html 파일을 빌드 파일에 생성한다.
+## 작업
 
-- 200.html은 아무런 역할을 하지 않는다. get 요청에서는 해당 경로의 리소스가 있어야 200 request가 뜨는데 이 경우 해당 리소스가 응답되어지게 되고, 경로에 리소스가 없다면 404 request와 함께 404.html이 반환될것이기 때문에 적어도 200.html이 get요청에서 응답되어 질 일은 없을 것이다.
-- 404.html은 static 서버 환경에서의 브라우저 라우터에서 필수 적이다. 404.html을 통해 html 파일이 존재하지 않는 경로에 대한 페이지 요청도 404.html에 연동될 리엑트 라우터를 통해 처리할 수 있게 되기 때문이다. 404.html이 없다면 해당 경로는 아예 github 자체 404와 함께 접근 불가 될것이다.
-- react-snap의 pre-rendered html 파일은 UI 불일치 애러 메시지를 유발해서 그냥 hydrate를 통한 페이지 렌더링은 포기하고 render로 처음부터 랜더링하게 하였다. 허나, 여전히 js가 구동되기전 bot은 pre-rendered된 html파일을 볼것이다.
+```bash
+npm ci          # 의존성 설치 (버전 고정)
+npm run dev     # 로컬 개발 서버
+npm run build   # build/client 생성 (+ 404.html)
+npm run smoke   # 배포된 사이트 점검 (주소 인자로 로컬도 가능)
+```
+
+배포는 `main`에 push하면 GitHub Actions가 빌드 → 배포 → 점검까지 한다. 빌드 산출물은 커밋하지 않는다.
+
+## 구조
+
+- `app/data/projects.ts`: 프로젝트 소개의 원천 데이터 (README·Google Play에 있는 사실만)
+- `app/routes/projects/<slug>/`: 상세 페이지. 그 페이지의 이미지·영상은 같은 폴더에 두고 `import`한다
+- `app/routes/legacy-post.tsx`: 옛 블로그 주소 `/posts/0~29` → Blogger 이동 (`app/data/blogger-map.json`)
+- `scripts/postbuild.mjs`: `__spa-fallback.html`을 GitHub Pages용 `404.html`로 복사 (유일한 우회책)
+- `scripts/smoke.mjs`: 배포 후 전 페이지 200, 제목 중복, 옛 주소 이동, 404 점검
+
+## 원칙
+
+- 오목판 웹 체험판은 광고가 있는 블로그 글로만 연결한다. 웹 앱을 임베드하거나 직접 링크하지 않고, 둘 수 있는 판도 만들지 않는다.
+- 버전은 고정한다. Node 24(`.nvmrc`), 러너 `ubuntu-24.04`, 의존성은 정확한 버전.
+
+옛 블로그(CRA + react-snap) 코드와 md 글 원본은 git 히스토리에 남아 있다. 글은 [9 Log](https://khgkjg12.blogspot.com)로 옮겼다.

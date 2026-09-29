@@ -1,7 +1,0 @@
-# build, static, lib 파일
-node_modules/
-public/
-
-# lock 파일
-yarn.lock
-package-lock.json

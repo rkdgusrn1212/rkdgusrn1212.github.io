@@ -1,0 +1,187 @@
+{
+  "migratedAt": "2026-09-25",
+  "blog": "https://khgkjg12.blogspot.com",
+  "note": "gitblog md 30편 → Blogger 이전 결과. 옛 /posts/N 주소를 새 포트폴리오에서 리다이렉트할 때 사용",
+  "posts": [
+    {
+      "oldPath": "/posts/0",
+      "file": "2022-10-02-jekyll-intro.md",
+      "title": "Jekyll 정적 사이트 생성기",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/jekyll-intro.html"
+    },
+    {
+      "oldPath": "/posts/1",
+      "file": "2022-10-03-jquery-intro.md",
+      "title": "JQuery 개요",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/jquery-intro.html"
+    },
+    {
+      "oldPath": "/posts/2",
+      "file": "2022-10-04-el-intro.md",
+      "title": "EL 개요",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/el-intro.html"
+    },
+    {
+      "oldPath": "/posts/3",
+      "file": "2022-10-04-jakarta-ee-intro.md",
+      "title": "Jakarta EE 개요",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/jakarta-ee-intro.html"
+    },
+    {
+      "oldPath": "/posts/4",
+      "file": "2022-10-04-java-ee-intro.md",
+      "title": "Java EE 개요",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/java-ee-intro.html"
+    },
+    {
+      "oldPath": "/posts/5",
+      "file": "2022-10-04-jstl-intro.md",
+      "title": "JSTL 개요",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/jstl-intro.html"
+    },
+    {
+      "oldPath": "/posts/6",
+      "file": "2022-10-05-directive-intro.md",
+      "title": "Directive 개요",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/directive-intro.html"
+    },
+    {
+      "oldPath": "/posts/7",
+      "file": "2022-10-05-mvc-was-intro.md",
+      "title": "Model 2 구조의 자바 웹 어플리케이션 개발",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/mvc-was-intro.html"
+    },
+    {
+      "oldPath": "/posts/8",
+      "file": "2022-10-06-jsp-access-model-intro.md",
+      "title": "JSP Access Model 개요",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/jsp-access-model-intro.html"
+    },
+    {
+      "oldPath": "/posts/9",
+      "file": "2022-10-07-jsp-intro.md",
+      "title": "JSP 개요",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/jsp-intro.html"
+    },
+    {
+      "oldPath": "/posts/10",
+      "file": "2022-10-07-spring-sts-intro.md",
+      "title": "STS 개요",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/spring-sts-intro.html"
+    },
+    {
+      "oldPath": "/posts/11",
+      "file": "2022-10-10-page-directive-intro.md",
+      "title": "Page Directive 개요",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/page-directive_1.html"
+    },
+    {
+      "oldPath": "/posts/12",
+      "file": "2022-10-10-remove-jsp-whitespace.md",
+      "title": "trimDirectiveWhitespaces 설정을 통한 JSP Page 응답 소스의 최상단 공백 제거",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/remove-jsp-whitespace.html"
+    },
+    {
+      "oldPath": "/posts/13",
+      "file": "2022-10-11-build-automation-utility-intro.md",
+      "title": "빌드 자동화 도구 개요",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/build-automation-utility-intro.html"
+    },
+    {
+      "oldPath": "/posts/14",
+      "file": "2022-10-11-di-intro.md",
+      "title": "Dependency Injection(의존성 주입)",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/di-intro.html"
+    },
+    {
+      "oldPath": "/posts/15",
+      "file": "2022-10-11-spring-framework-intro.md",
+      "title": "STS 프로젝트의 빌드 자동화 도구",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/spring-framework-intro.html"
+    },
+    {
+      "oldPath": "/posts/16",
+      "file": "2022-10-11-spring-web-mvc-framework-controller.md",
+      "title": "Spring Web MVC Controller 구현",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/spring-web-mvc-framework-controller.html"
+    },
+    {
+      "oldPath": "/posts/17",
+      "file": "2022-10-14-hotspotintrinsiccandidate-annotation.md",
+      "title": "@HotSpotIntrinsicCandidate을 활용한 성능 향상",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/hotspotintrinsiccandidate-annotation.html"
+    },
+    {
+      "oldPath": "/posts/18",
+      "file": "2022-10-14-ioc.md",
+      "title": "IoC(Inversion of Control)",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/ioc.html"
+    },
+    {
+      "oldPath": "/posts/19",
+      "file": "2022-10-20-fastedst-int-reader.md",
+      "title": "가장 빠르게 정수 입력 스트림 읽는법",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/fastest-int-reader.html"
+    },
+    {
+      "oldPath": "/posts/20",
+      "file": "2022-10-23-fastest-way-input-str-int.md",
+      "title": "가장 빠르게 정수와 문자열 입력을 받는법",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/fastest-way-input-str-int.html"
+    },
+    {
+      "oldPath": "/posts/21",
+      "file": "2022-10-26-fastest-write-system-out-stream.md",
+      "title": "가장 빠르게 시스템 출력 스트림에 쓰는법",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/fastest-write-system-out-stream.html"
+    },
+    {
+      "oldPath": "/posts/22",
+      "file": "2022-10-27-fastest-compararison-operator.md",
+      "title": "JVM에서 가장 빠른 비교연산자",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/10/fastest-comparison-operator.html"
+    },
+    {
+      "oldPath": "/posts/23",
+      "file": "2022-11-21-java-memory-strategy-in-algorithm.md",
+      "title": "알고리즘의 자바 솔루션에서 GC로 인한 메모리 초과를 방지하는법",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/11/java-memory-strategy-in-algorithm.html"
+    },
+    {
+      "oldPath": "/posts/24",
+      "file": "2022-11-28-javascript-this.md",
+      "title": "Javascript: this 키워드",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2022/11/javascript-this.html"
+    },
+    {
+      "oldPath": "/posts/25",
+      "file": "2023-07-10-github-page-dependencies.md",
+      "title": "Github Page's Dependencies",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2023/07/github-pages-dependencies_0.html"
+    },
+    {
+      "oldPath": "/posts/26",
+      "file": "2023-07-11-전세보증보험.md",
+      "title": "전세보증보험",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2023/07/jeonse-guarantee-insurance.html"
+    },
+    {
+      "oldPath": "/posts/27",
+      "file": "2023-07-14-node-js-웹 서버가-java-웹 서버보다-성능이-뛰어날까.md",
+      "title": "Node.js 웹 서버가 JAVA 웹 서버보다 성능이 뛰어날까?",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2023/07/nodejs-vs-java-web-server.html"
+    },
+    {
+      "oldPath": "/posts/28",
+      "file": "2023-08-28-nextjs-rendering.md",
+      "title": "NextJS의 4가지 Rendering 방식과 그 구현",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2023/08/nextjs-rendering.html"
+    },
+    {
+      "oldPath": "/posts/29",
+      "file": "2025-03-10-maintain-method.md",
+      "title": "소프트웨어 유지보수 방법론",
+      "bloggerUrl": "https://khgkjg12.blogspot.com/2025/03/maintain-method.html"
+    }
+  ]
+}

@@ -1,25 +1,22 @@
 {
+  "include": ["**/*", ".react-router/types/**/*"],
+  "exclude": ["build", "node_modules"],
   "compilerOptions": {
-    "allowJs": true,
-    "target": "ES2015",
-    //"rootDir": "src", 다양한 가상 디렉토리들을 선언하면, 해당 디렉토리들을 하나의 디렉토리 루트를 가지는 것처럼 합치는 기능을 함. 난 필요없음.
-    "outDir": "build",
-    "baseUrl": "src", //비상대적 경로 선언시 모듈 리솔루션에 사용되는 루트 경로, node의 비상대적 경로 탐색(node_modules 써치) 보다 우선순위를 가진다.
-    "moduleResolution": "Node",
-    "jsx": "react-jsx", //JSX 컴파일에 react v17의 _jsx transform를 사용.
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "types": ["node", "vite/client"],
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "rootDirs": [".", "./.react-router/types"],
+    "paths": {
+      "~/*": ["./app/*"]
+    },
+    "esModuleInterop": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
     "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true, //이거 false하고 * as문법 사용하면 배열 객체가 아닌 module 객체로 뜸. (배열 메소드 사용불가) 또한 배열을 상위 오브젝트의 맴버로 넘기려고 하면 해당 맴버 참조가 Export, reexported as, was not found (possible exports)... 애러를 뱉는다.
-    "module": "ES2020", //2020부터 모듈시스템이 dynamic import를 지원.
-    "composite": true,
-    "lib": ["dom", "ES2020"]
-  },
-  "include": [
-    "./src/**/*.ts",
-    "./src/**/*.d.ts",
-    "./src/**/*.tsx",
-    "./src/**/*.js",
-    "./src/**/*.jsx",
-    "./src/**/*.json", //resource
-    "./src/**/*.scss"
-  ]
+    "skipLibCheck": true,
+    "strict": true
+  }
 }
