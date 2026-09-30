@@ -125,7 +125,6 @@ export const timelineKinds: Record<TimelineKind, string> = {
 
 /** 연혁 (연대순). 교내 해커톤의 주제와 2018년 팀/개인 여부는 확인 전이라 비워 둔다 */
 export const timeline: { date: string; kind: TimelineKind; title: string; sub?: string }[] = [
-  { date: "2014.03", kind: "edu", title: "세종대학교 컴퓨터공학과 입학" },
   { date: "2016.12", kind: "award", title: "제1회 SW해커톤(교내) 장려상", sub: "세종대학교 소프트웨어중심대학 지원사업단 · 팀" },
   { date: "2016.12", kind: "career", title: "크리스피 프리랜서 시작", sub: "Android 앱, 회사 홈페이지 · 2018.02까지, 재학 중 병행" },
   { date: "2018.06", kind: "award", title: "제4회 SW해커톤(교내) 은상", sub: "세종대학교 소프트웨어중심대학 지원사업단" },
