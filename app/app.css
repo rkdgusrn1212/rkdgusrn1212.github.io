@@ -604,8 +604,41 @@ section {
 /* ── 프로젝트 카드: 옛 9LOG ProjectCard ── */
 .projects {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
+}
+@media (max-width: 980px) {
+  .projects {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* 현업 카드 미리보기: 업무 흐름 개념도를 작게 */
+.mini-flow {
+  display: grid;
+  gap: 18px;
+  width: 100%;
+  max-width: 240px;
+}
+.mini-flow li {
+  position: relative;
+  background: #fff;
+  border-radius: 8px;
+  border-top: 3px solid var(--green);
+  box-shadow: var(--shadow-soft);
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+.mini-flow li + li::before {
+  content: "↓";
+  position: absolute;
+  top: -19px;
+  left: 0;
+  right: 0;
+  color: var(--green);
+  font-size: 12px;
+  line-height: 18px;
 }
 @media (max-width: 640px) {
   .projects {

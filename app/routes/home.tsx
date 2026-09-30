@@ -2,13 +2,13 @@ import { useState } from "react";
 import { Link } from "react-router";
 
 import type { Route } from "./+types/home";
-import { ProjectCard } from "~/components/project-card";
+import { CaseCard, ProjectCard } from "~/components/project-card";
 import { SkillMap } from "~/components/skill-map";
 import { Timeline } from "~/components/timeline";
 import { GomokuScreens } from "~/components/toys/gomoku-screens";
 import { LisFlow } from "~/components/toys/lis-flow";
 import { domains, facts, jobs, type DomainId } from "~/data/profile";
-import { casePath } from "~/data/cases";
+import { casePath, cases } from "~/data/cases";
 import { getProject, gomokuWeb } from "~/data/projects";
 import { seo } from "~/lib/site";
 
@@ -19,9 +19,18 @@ export function meta({}: Route.MetaArgs) {
   });
 }
 
+type ProjectKind = "all" | "work" | "own";
+const PROJECT_KINDS: { id: ProjectKind; label: string }[] = [
+  { id: "all", label: "전체" },
+  { id: "work", label: "현업" },
+  { id: "own", label: "개인 · 교육" },
+];
+
 export default function Home() {
   // 소개의 분야 이름과 기술 지도가 같은 선택 상태를 쓴다
   const [domain, setDomain] = useState<DomainId>("be");
+  const [projectKind, setProjectKind] = useState<ProjectKind>("all");
+  const show = (k: Exclude<ProjectKind, "all">) => projectKind === "all" || projectKind === k;
   const goToDomain = (id: DomainId) => {
     setDomain(id);
     document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" });
@@ -119,24 +128,36 @@ export default function Home() {
       <section className="sec" id="projects" aria-labelledby="projects-title">
         <div className="sec-head">
           <h2 id="projects-title">
-            대표 프로젝트 <span>· 직접 만져보기</span>
+            프로젝트 <span>· 현업부터 개인 작업까지</span>
           </h2>
+          <div className="chipset" role="group" aria-label="프로젝트 구분">
+            {PROJECT_KINDS.map((k) => (
+              <button key={k.id} type="button" aria-pressed={projectKind === k.id} onClick={() => setProjectKind(k.id)}>
+                {k.label}
+              </button>
+            ))}
+          </div>
         </div>
         <div className="projects">
-          <ProjectCard
-            project={getProject("gomoku")}
-            tryLabel="실제 화면"
-            extraLink={
-              <a className="btn" href={gomokuWeb.link.href} target="_blank" rel="noopener">
-                웹 체험판(블로그) ↗
-              </a>
-            }
-          >
-            <GomokuScreens compact />
-          </ProjectCard>
-          <ProjectCard project={getProject("lis")} tryLabel="환자 접수 흐름">
-            <LisFlow />
-          </ProjectCard>
+          {show("work") && cases.map((c) => <CaseCard key={c.slug} item={c} />)}
+          {show("own") && (
+            <ProjectCard
+              project={getProject("gomoku")}
+              tryLabel="실제 화면"
+              extraLink={
+                <a className="btn" href={gomokuWeb.link.href} target="_blank" rel="noopener">
+                  웹 체험판(블로그) ↗
+                </a>
+              }
+            >
+              <GomokuScreens compact />
+            </ProjectCard>
+          )}
+          {show("own") && (
+            <ProjectCard project={getProject("lis")} tryLabel="환자 접수 흐름">
+              <LisFlow />
+            </ProjectCard>
+          )}
         </div>
       </section>
 

@@ -88,7 +88,7 @@ export default function App() {
           <p>새 프로젝트나 협업 제안은 편하게 연락 주세요.</p>
           <nav className="pills" aria-label="연락처">
             {profileLinks.map((l) => (
-              <a key={l.href} className="pill" href={l.href} target="_blank" rel="noopener">
+              <a key={l.href} className="pill" href={l.href} {...(l.href.startsWith("http") && { target: "_blank", rel: "noopener" })}>
                 {l.label}
               </a>
             ))}

@@ -2,6 +2,7 @@ export const SITE_URL = "https://rkdgusrn1212.github.io";
 export const SITE_NAME = "강현구";
 
 export const profileLinks = [
+  { label: "khgkjg12@naver.com", href: "mailto:khgkjg12@naver.com" },
   { label: "GitHub", href: "https://github.com/rkdgusrn1212" },
   { label: "solved.ac", href: "https://solved.ac/profile/khgkjg12" },
   { label: "9 Log 블로그", href: "https://khgkjg12.blogspot.com" },
