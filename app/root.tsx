@@ -9,8 +9,12 @@ export const links: Route.LinksFunction = () => [
   { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-  { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" },
 ];
+
+// 한글 웹폰트는 파일이 커서 첫 화면을 붙잡는다. 굵기는 두 가지만 받고(500→400, 600→700으로 대체),
+// 스크립트로 붙여 비차단으로 불러온다. 폰트가 오기 전에는 시스템 글꼴로 먼저 그린다.
+const FONT_CSS = "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;700&display=swap";
+const loadFont = `(function(){var l=document.createElement("link");l.rel="stylesheet";l.href=${JSON.stringify(FONT_CSS)};document.head.appendChild(l)})()`;
 
 // 페이지별 meta가 없는 경우(404.html로 쓰이는 SPA 폴백)에만 쓰이는 기본값
 export const meta: Route.MetaFunction = () => [{ title: SITE_NAME }];
@@ -26,6 +30,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="theme-color" content="#2DC677" />
         <Meta />
         <Links />
+        <script dangerouslySetInnerHTML={{ __html: loadFont }} />
+        <noscript>
+          <link rel="stylesheet" href={FONT_CSS} />
+        </noscript>
       </head>
       <body>
         {children}
