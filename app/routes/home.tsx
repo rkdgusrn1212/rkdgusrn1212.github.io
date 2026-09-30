@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router";
 
 import type { Route } from "./+types/home";
 import { ProjectCard } from "~/components/project-card";
@@ -6,8 +7,8 @@ import { SkillMap } from "~/components/skill-map";
 import { Timeline } from "~/components/timeline";
 import { GomokuScreens } from "~/components/toys/gomoku-screens";
 import { LisFlow } from "~/components/toys/lis-flow";
-import { OutfitMatch } from "~/components/toys/outfit-match";
 import { domains, facts, jobs, type DomainId } from "~/data/profile";
+import { casePath } from "~/data/cases";
 import { getProject, gomokuWeb } from "~/data/projects";
 import { seo } from "~/lib/site";
 
@@ -72,7 +73,7 @@ export default function Home() {
       <section className="sec" id="career" aria-labelledby="career-title">
         <div className="sec-head">
           <h2 id="career-title">경력</h2>
-          <p className="eyebrow">현업 소스와 화면은 공개하지 않고 설명만 싣습니다</p>
+          <p className="eyebrow">현업 소스와 화면 대신 개념도와 가상 데이터 체험을 싣습니다</p>
         </div>
         {jobs.map((job) => (
           <article key={job.org} className={`card job${job.works.length === 1 ? " small" : ""}`}>
@@ -92,6 +93,11 @@ export default function Home() {
                         <li key={b}>{b}</li>
                       ))}
                     </ul>
+                  )}
+                  {w.case && (
+                    <Link className="job-more" to={casePath(w.case)}>
+                      사례 보기 →
+                    </Link>
                   )}
                 </div>
               ))}
@@ -127,9 +133,6 @@ export default function Home() {
             }
           >
             <GomokuScreens compact />
-          </ProjectCard>
-          <ProjectCard project={getProject("sanghai-twist")} tryLabel="상·하의 맞추기">
-            <OutfitMatch />
           </ProjectCard>
           <ProjectCard project={getProject("lis")} tryLabel="환자 접수 흐름">
             <LisFlow />
