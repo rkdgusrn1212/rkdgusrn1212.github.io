@@ -17,10 +17,10 @@ npm run smoke   # 배포된 사이트 점검 (주소 인자로 로컬도 가능)
 
 - `app/data/profile.ts`: 분야별 기술(실무/학습), 소개 수치, 경력, 연혁
 - `app/data/evidence.ts`: 기술 지도의 근거 (경력은 설명만, 나머지는 공개 자료 링크)
-- `app/data/projects.ts`: 대표 프로젝트 (홈 카드와 상세 페이지가 함께 씀)
+- `app/data/projects.ts`: 개인·교육 프로젝트 (홈 카드와 상세 페이지가 함께 씀)
 - `app/data/cases.ts`: 현업 사례 (홈 경력의 "사례 보기"와 `/work/<slug>/`가 함께 씀)
 - `app/components/toys/`: 프로젝트 체험 (오목판 실제 화면, LIS 환자 접수 흐름)
-- `app/components/cases/`: 현업 사례 체험. 가상 데이터로 만든 개념 예시 (동시 처리, 클렌징 단계, 집계 단위)
+- `app/components/cases/`: 현업 사례 체험. 가상 데이터로 만든 개념 예시 (결과 입력과 이력, 클렌징 단계, 집계 단위)
 - `app/routes/projects/<slug>/`: 상세 페이지. 그 페이지의 이미지·영상은 같은 폴더에 두고 `import`한다
 - `app/routes/legacy-post.tsx`: 옛 블로그 주소 `/posts/0~29` → Blogger 이동 (`app/data/blogger-map.json`)
 - `scripts/postbuild.mjs`: `__spa-fallback.html`을 GitHub Pages용 `404.html`로 복사 (유일한 우회책)
