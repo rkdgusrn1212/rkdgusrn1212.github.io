@@ -105,7 +105,7 @@ export default function Home() {
                   )}
                   {w.case && (
                     <Link className="job-more" to={casePath(w.case)}>
-                      사례 보기 →
+                      <span className="sr-only">{w.title} </span>사례 보기 →
                     </Link>
                   )}
                 </div>

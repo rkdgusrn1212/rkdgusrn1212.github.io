@@ -23,6 +23,13 @@ export function seo({ title, description, path }: { title?: string; description:
     { property: "og:title", content: fullTitle },
     { property: "og:description", content: description },
     { property: "og:url", content: url },
+    { property: "og:locale", content: "ko_KR" },
+    // 공유 미리보기 이미지는 전 페이지 공통 한 장 (public/og.png)
+    { property: "og:image", content: `${SITE_URL}/og.png` },
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "630" },
+    { property: "og:image:alt", content: "강현구 포트폴리오. 백엔드부터 운영까지 다뤄본 분야와 이력" },
+    { name: "twitter:card", content: "summary_large_image" },
     { tagName: "link", rel: "canonical", href: url },
   ];
 }

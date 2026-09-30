@@ -27,7 +27,7 @@ export function ProjectCard({ project: p, tryLabel, children, extraLink }: { pro
         <p className="meta">{p.note}</p>
         <div className="foot">
           <Link className="btn solid" to={`/projects/${p.slug}/`} viewTransition>
-            자세히 보기
+            <span className="sr-only">{p.title} </span>자세히 보기
           </Link>
           {p.links.map((l) => (
             <a key={l.href} className="btn" href={l.href} target="_blank" rel="noopener">
@@ -67,7 +67,7 @@ export function CaseCard({ item: c }: { item: Case }) {
         </div>
         <div className="foot">
           <Link className="btn solid" to={casePath(c.slug)} viewTransition>
-            사례 보기
+            <span className="sr-only">{c.title} </span>사례 보기
           </Link>
         </div>
       </div>
